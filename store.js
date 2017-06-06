@@ -127,12 +127,22 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         return promos.find(promo => promo.slug === slug)
       },
       findMetaDataByPath: (state, getters) => (path) => {
-        let meta_data = state.meta_data.meta_data;
-        let found = meta_data.find(meta => meta.path === path);
-        if (found) {
-          return found;
+        try {
+          let meta_data = state.meta_data.meta_data;
+          let found = meta_data.find(meta => meta.path === path);
+          if (found) {
+            return found;
+          }
+          else {
+            let meta = {
+              meta_title: null,
+              meta_description: null,
+              meta_keywords: null
+            }
+            return meta;
+          }
         }
-        else {
+        catch (err) {
           let meta = {
             meta_title: null,
             meta_description: null,
