@@ -10,9 +10,9 @@
       data: function() {
         return {
           meta: {
-            meta_title: null,
-            meta_description: null,
-            meta_keywords: null
+            meta_title: "",
+            meta_description: "",
+            meta_keywords: ""
           }
         }
       },
