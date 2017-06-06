@@ -3,6 +3,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
   const store = new Vuex.Store({
     state: {
       results: [],
+      meta_data: [],
       locale: null
     },
     actions: {
@@ -19,12 +20,11 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
       },
       LOAD_META_DATA: function ({ commit }) {
         return new Promise((resolve, reject) => {
-          axios.get("/get_meta_data").then(response => {
-            console.log(response);
-            //commit('SET_META_DATA', { list: response.data })
+          axios.get("/api/v1/get_meta_data").then(response => {
+            commit('SET_META_DATA', { list: response.data })
             resolve(response);
           }).catch(error => {
-            console.log("Data load error: " + error.message);
+            console.log("Meta Data load error: " + error.message);
             reject(error);
           });
         })
@@ -47,6 +47,9 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
       SET_LOCALE: (state, { lang }) => {
         state.locale = lang
         Cookies.set('locale', lang);
+      },
+      SET_META_DATA: (state, { list }) => {
+        state.meta_data = list
       }
     },
     getters: {
@@ -122,6 +125,21 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
       findPromoBySlug: (state, getters) => (slug) => {
         let promos = getters.processedPromos;
         return promos.find(promo => promo.slug === slug)
+      },
+      findMetaDataByPath: (state, getters) => (path) => {
+        let meta_data = state.meta_data.meta_data;
+        let found = meta_data.find(meta => meta.path === path);
+        if (found) {
+          return found;
+        }
+        else {
+          let meta = {
+            meta_title: null,
+            meta_description: null,
+            meta_keywords: null
+          }
+          return meta;
+        }
       },
       storesByAlphaIndex: (state, getters) => {
         let stores = getters.processedStores;
