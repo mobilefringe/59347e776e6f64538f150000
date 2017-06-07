@@ -7,6 +7,7 @@
         <hr/>
         <h5>Translated text example:</h5>
         <p>{{ $t("message.hello") }}</p>
+        <p>{{property.name}}</p>
         <hr/>
         <today-hours></today-hours>
       </div>
@@ -22,6 +23,11 @@
         return {
           title: "MM with Vue.js!",
           description: "An example of integration of Mall Maverick with Vue.js"
+        }
+      },
+      computed: {
+        property(){
+          return this.$state.getters.getProperty;
         }
       }
     })
