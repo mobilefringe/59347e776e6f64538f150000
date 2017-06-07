@@ -27,7 +27,7 @@
       },
       computed: {
         property(){
-          return this.$state.getters.getProperty;
+          return this.$store.getters.getProperty;
         }
       }
     })
