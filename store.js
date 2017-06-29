@@ -8,10 +8,9 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
       url: null
     },
     actions: {
-      LOAD_MALL_DATA: function ({commit}, url) {
-          console.log(url);
+      LOAD_MALL_DATA: function ({commit}, list) {
         return new Promise((resolve, reject) => {
-          axios.get(state.url).then(response => {
+          axios.get(list.url).then(response => {
             commit('SET_MALL_DATA', { list: response.data })
             resolve(response);
           }).catch(error => {
@@ -43,9 +42,6 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
       },
     },
     mutations: {
-      SET_URL: (state, { url }) => {
-        state.url = url
-      },
       SET_MALL_DATA: (state, { list }) => {
         state.results = list
       },
