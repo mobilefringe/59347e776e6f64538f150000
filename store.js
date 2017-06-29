@@ -7,7 +7,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
       locale: null
     },
     actions: {
-      LOAD_MALL_DATA: function (url, { commit }) {
+      LOAD_MALL_DATA: function ({url, commit}) {
         return new Promise((resolve, reject) => {
           axios.get(url).then(response => {
             commit('SET_MALL_DATA', { list: response.data })
