@@ -55,7 +55,7 @@ require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'lo
       this.$store.dispatch('LOAD_META_DATA');
 
       // make an async call to load mall data
-      this.$store.dispatch('LOAD_MALL_DATA', "abc").then(response => {
+      this.$store.dispatch('LOAD_MALL_DATA', {url:"abc", version: 4}).then(response => {
         this.dataLoaded = true;
       }, error => {
         console.error("Could not retrieve data from server. Please check internet connection and try again.");
