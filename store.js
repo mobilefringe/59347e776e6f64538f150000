@@ -9,7 +9,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
     actions: {
       LOAD_MALL_DATA: function ({ commit }) {
         return new Promise((resolve, reject) => {
-          axios.get("https://www.mallmaverick.com/api/v4/halifaxcentre/all.json").then(response => {
+          axios.get("https://www.mallmaverick.com/api/v3/torontopath/all.json").then(response => {
             commit('SET_MALL_DATA', { list: response.data })
             resolve(response);
           }).catch(error => {
