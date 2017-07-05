@@ -9,31 +9,7 @@
   </head>
   <body>
     <div id="app" v-cloak v-if="dataLoaded">
-      <div class="top-bar">
-        <div class="top-bar-left">
-          <ul class="menu">
-            <li class="menu-text">{{dataLoaded}}</li>
-            <router-link tag="li" to="/" active-class="active" exact>
-              <a>Home</a>
-            </router-link>
-            <router-link tag="li" to="/stores" active-class="active" exact>
-              <a>Stores</a>
-            </router-link>
-            <router-link tag="li" to="/promotions" active-class="active" exact>
-              <a>Promotions</a>
-            </router-link>
-            <router-link tag="li" to="/badlink" active-class="active" exact>
-              <a>404 Example</a>
-            </router-link>
-          </ul>
-        </div>
-        <div class="top-bar-right">
-          <a v-on:click="changeLocale('fr-ca')" v-if="locale === 'en-ca'">FR</a>
-          <a v-on:click="changeLocale('en-ca')" v-if="locale === 'fr-ca'">EN</a>
-        </div>
-      </div>
-      <br/>
-      <router-view></router-view>
+      {{dataLoaded}}
     </div>
     <script data-main="/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.3/require.min.js"></script>
   </body>
