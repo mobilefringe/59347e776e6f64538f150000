@@ -44,8 +44,50 @@ require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'lo
     data: function () {
       return {
         dataLoaded: false,
-        message: 'Hello Vue!'
+        test: 'testing'
       }
-    }
+    },
+    created() {
+      // make an async call to the data store to initialize the locale (i.e. it will check if there is a locale value saved in cookie, otherwise it will default to EN)
+      this.$store.dispatch('INITIALIZE_LOCALE');
+      
+      this.$store.dispatch('LOAD_META_DATA');
+
+      // make an async call to load mall data
+      this.$store.dispatch('LOAD_MALL_DATA', {url:"https://www.mallmaverick.com/api/v4/halifaxcentre/all.json"}).then(response => {
+        this.dataLoaded = true;
+      }, error => {
+        console.error("Could not retrieve data from server. Please check internet connection and try again.");
+      });
+    },
+    watch: {
+      // watcher to update vue-i18n when the locale has been changed by the user
+      locale: function (val, oldVal) {
+        this.$i18n.locale = val;
+        moment.locale(val);
+        // console.log(moment().format('LLLL'));
+        // console.log(this.$store.getters.getTodayHours);
+      }
+    },
+    computed: {
+      // computed property for locale which returns locale value from data store and also updates the data store with new locale information
+      locale: {
+        get () {
+          return this.$store.state.locale
+        },
+        set (value) {
+          this.$store.commit('SET_LOCALE', { lang: value })
+        }
+      }
+    },
+    methods: {
+      // utility method to allow user to change locale value
+      changeLocale: function(val) {
+        this.locale = val; // this will update the data store, which in turn will trigger the watcher to update the locale in the system
+      }
+    },
+    router: router,
+    store,
+    i18n
   });
 });
