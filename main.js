@@ -19,14 +19,16 @@ require.config({
 });
 
 require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'locales', 'moment', "vue-meta"], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta) {
-  Vue.config({
-    debug: true,
-    devtools: true
-  });
+  
   Vue.use(Meta);
   Vue.use(VueRouter);
   Vue.use(Vue2Filters);
   Vue.use(VueI18n);
+  
+  Vue.config({
+    debug: true,
+    devtools: true
+  });
 
   /* initialize router */
   const router = new VueRouter({
