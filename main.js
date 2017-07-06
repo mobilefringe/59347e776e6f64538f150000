@@ -1,6 +1,6 @@
 require.config({
   paths: {
-    'Vue': 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.min',
+    'Vue': 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue',
     'vue_router': 'https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.5.2/vue-router.min',
     'axios': 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.1/axios.min',
     'jquery': 'https://code.jquery.com/jquery-3.2.1.min',
