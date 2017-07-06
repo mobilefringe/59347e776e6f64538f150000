@@ -1,6 +1,6 @@
 require.config({
   paths: {
-    //'Vue': 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min',
+    'Vue': 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min',
     'vue_router': 'https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.5.2/vue-router.min',
     'axios': 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.1/axios.min',
     'jquery': 'https://code.jquery.com/jquery-3.2.1.min',
@@ -8,7 +8,7 @@ require.config({
     'moment': 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min',
     'moment-timezone': 'https://momentjs.com/downloads/moment-timezone-with-data-2012-2022.min',
     'vue2-filters': 'https://cdn.jsdelivr.net/vue2-filters/0.1.8/vue2-filters.min',
-    'vued': 'https://cdn.rawgit.com/edgardleal/require-vuejs/aeaff6db/dist/require-vuejs.min',
+    'vue': 'https://cdn.rawgit.com/edgardleal/require-vuejs/aeaff6db/dist/require-vuejs.min',
     'vuex': 'https://cdnjs.cloudflare.com/ajax/libs/vuex/2.3.1/vuex.min',
     'vue-i18n': 'https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/6.1.1/vue-i18n.min',
     'text': 'https://cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text.min',
@@ -18,7 +18,7 @@ require.config({
   }
 });
 
-require(['vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'locales', 'moment', "vue-meta"], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta) {
+require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'locales', 'moment', "vue-meta"], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta) {
   Vue.config.devtools = true;
   Vue.use(Meta);
   Vue.use(VueRouter);
