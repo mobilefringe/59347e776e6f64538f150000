@@ -60,7 +60,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
       },
       getTimezone: state => {
         let property = state.results.property;
-        let timezone = property.timezone_moment;
+        let timezone = property !== undefined ? property.timezone_moment : null;
         return timezone;
       },
       getProperty: state => {
