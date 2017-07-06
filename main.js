@@ -1,6 +1,6 @@
 require.config({
   paths: {
-    'Vue': 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min',
+    //'Vue': 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min',
     'vue_router': 'https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.5.2/vue-router.min',
     'axios': 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.1/axios.min',
     'jquery': 'https://code.jquery.com/jquery-3.2.1.min',
@@ -18,7 +18,7 @@ require.config({
   }
 });
 
-require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'locales', 'moment', "vue-meta"], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta) {
+require(['vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'locales', 'moment', "vue-meta"], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta) {
   Vue.config.devtools = true;
   Vue.use(Meta);
   Vue.use(VueRouter);
