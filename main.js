@@ -26,6 +26,7 @@ require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'lo
   Vue.use(VueI18n);
 
   Vue.config.devtools = true;
+  Vue.config.debug = true;
   /* initialize router */
   const router = new VueRouter({
     mode: 'history',
