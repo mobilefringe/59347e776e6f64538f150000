@@ -1,4 +1,4 @@
-define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodash'], function (Vue, Vuex, axios, Cookies, moment, tz, _) {
+define(['vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodash'], function (Vue, Vuex, axios, Cookies, moment, tz, _) {
   Vue.use(Vuex);
   const store = new Vuex.Store({
     state: {
