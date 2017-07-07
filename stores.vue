@@ -1,7 +1,7 @@
 <template>
   <div class="container"> <!-- for some reason if you do not put an outer container div this component template will not render -->
     <ul class="menu">
-      <li><a v-on:click="changeMode('alphabetical')">Alphabetical</a></li>
+      <li><a v-on:click="changeMode('alphabetical')">Alphabeticals</a></li>
       <li><a v-on:click="changeMode('category')">Category</a></li>
     </ul>
     <hr/>
