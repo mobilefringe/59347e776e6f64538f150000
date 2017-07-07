@@ -10,11 +10,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
     actions: {
       LOAD_MALL_DATA: function ({commit}, list) {
         return new Promise((resolve, reject) => {
-          axios.post("api/v1/get_mall_data", {
-            property: list.property,
-            version: list.version,
-            endpoint: list.endpoint
-          }).then(response => {
+          axios.get(list.url).then(response => {
             commit('SET_MALL_DATA', { list: response.data })
             resolve(response);
           }).catch(error => {
