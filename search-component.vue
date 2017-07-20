@@ -1,5 +1,5 @@
 <template>
-  <div class="search-component">
+  <div class="search-component" v-if="autocomplete">
     <p class="control has-icon has-icon-right">
       <input type="search" v-model="search" class="input is-large" :placeholder="placeholder" :suggestionAttribute="suggestionAttribute" @input="onInput($event.target.value)" @keyup.esc="isOpen = false" @blur="isOpen = false" @keydown.down="moveDown" @keydown.up="moveUp" @keydown.enter="select">
       <i class="fa fa-angle-down"></i>
@@ -9,6 +9,12 @@
         <slot name="item" :data="option"></slot>
       </li>
     </ul>
+  </div>
+  <div class="search-component" v-else>
+    <p class="control has-icon has-icon-right">
+      <input type="search" v-model="search" class="input is-large" :placeholder="placeholder" @keydown.enter="select">
+      <i class="fa fa-angle-down"></i>
+    </p>
   </div>
 </template>
 
@@ -62,6 +68,10 @@
     return Vue.component('search-component', {
       template: template,
       props: {
+        autocomplete:{
+          type: Boolean,
+          default: true
+        },
         placeholder: {
           type: String,
           default: 'Search...'
@@ -173,7 +183,7 @@
           if (this.id !== '') {
             options.id = this.id
           }
-          if (this.keys === undefined){
+          if (this.autocomplete == false || this.keys === undefined){
             options.keys = []
             options.keys.push(this.suggestionAttribute)
           }
@@ -216,10 +226,16 @@
           this.highlightedPosition = this.highlightedPosition - 1 < 0 ? this.result.length - 1 : this.highlightedPosition - 1
         },
         select() {
-          const selectedOption = this.result[this.highlightedPosition]
-          this.$emit('select', selectedOption)
-          this.isOpen = false
-          this.search = selectedOption[this.suggestionAttribute]
+          if (this.autocomplete){
+            const selectedOption = this.result[this.highlightedPosition]
+            this.$emit('select', selectedOption)
+            this.isOpen = false
+            this.search = selectedOption[this.suggestionAttribute]
+          }
+          else{
+            const selectedOption = this.result;
+            this.$emit('select', selectedOption)
+          }
         },
         initFuse () {
           this.fuse = new Fuse(this.list, this.options);
