@@ -15,7 +15,8 @@ require.config({
     'json': 'https://unpkg.com/requirejs-plugins-current@1.0.3/src/json',
     'js-cookie': 'https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min',
     'vue-meta': 'https://unpkg.com/vue-meta@1.0.4/lib/vue-meta.min',
-    'Fuse': 'https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min'
+    'Fuse': 'https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min',
+    'css': 'https://cdnjs.cloudflare.com/ajax/libs/require-css/0.1.10/css.min'
   }
 });
 
