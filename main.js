@@ -16,12 +16,11 @@ require.config({
     'js-cookie': 'https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min',
     'vue-meta': 'https://unpkg.com/vue-meta@1.0.4/lib/vue-meta.min',
     'Fuse': 'https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min',
-    'css': 'https://cdnjs.cloudflare.com/ajax/libs/require-css/0.1.10/css.min',
-    'foundation': 'https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css?noext'
+    'css': 'https://cdnjs.cloudflare.com/ajax/libs/require-css/0.1.10/css.min'
   }
 });
 
-require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'locales', 'moment', "vue-meta", 'css!foundation', 'css!style.css'], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta) {
+require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'locales', 'moment', "vue-meta", 'css!style.css'], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta) {
   
   Vue.use(Meta);
   Vue.use(VueRouter);
