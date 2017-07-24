@@ -1,100 +1,254 @@
-require.config({
-  paths: {
-    'Vue': 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.1/vue',
-    'vue_router': 'https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.7.0/vue-router.min',
-    'axios': 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min',
-    'jquery': 'https://code.jquery.com/jquery-3.2.1.min',
-    'lodash': 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min',
-    'moment': 'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min',
-    'moment-timezone': 'https://momentjs.com/downloads/moment-timezone-with-data-2012-2022.min',
-    'vue2-filters': 'https://cdn.jsdelivr.net/vue2-filters/0.1.8/vue2-filters.min',
-    'vue': 'https://rawgit.com/edgardleal/require-vue/master/dist/require-vuejs',
-    'vuex': 'https://cdnjs.cloudflare.com/ajax/libs/vuex/2.3.1/vuex.min',
-    'vue-i18n': 'https://cdnjs.cloudflare.com/ajax/libs/vue-i18n/6.1.1/vue-i18n.min',
-    'text': 'https://cdnjs.cloudflare.com/ajax/libs/require-text/2.0.12/text.min',
-    'json': 'https://unpkg.com/requirejs-plugins-current@1.0.3/src/json',
-    'js-cookie': 'https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min',
-    'vue-meta': 'https://unpkg.com/vue-meta@1.0.4/lib/vue-meta.min',
-    'Fuse': 'https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min'
-    // uncomment the section below if you are using CodeCloud
-    /*
-    'store': 'https://mmvue.codecloudapp.com/store',
-    'vue-moment': 'https://mmvue.codecloudapp.com/vue-moment',
-    'today_hours': 'https://mmvue.codecloudapp.com/today_hours.vue?noext', //append a dummy query string so requireJS doesn't auto-append .js to the end of the url
-    'search-component': https://mmvue.codecloudapp.com/search-component.vue?noext'
-    */
-  }
-});
+(function() {
+/*globals: define, require */
+/*
+ * css-parser.js
+ *
+ * Distributed under terms of the MIT license.
+ */
+/* jshint ignore:start */
 
-require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'locales', 'moment', "vue-meta"], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta) {
-  Vue.use(Meta);
-  Vue.use(VueRouter);
-  Vue.use(Vue2Filters);
-  Vue.use(VueI18n);
-  
-  /* initialize router */
-  const router = new VueRouter({
-    mode: 'history',
-    routes: appRoutes
-  });
+/* jshint ignore:end */
 
-  /* initialize i18n */
-  const i18n = new VueI18n({
-    locale: 'en-ca',
-    fallbackLocale: 'en-ca',
-    messages,
-  });
+define("css_parser", [], function() {
+    "use strict";
+    var extractCss = function(text) {
+        var start = text.indexOf("<style>");
+        var end = text.indexOf("</style>");
 
-  /* bootstrap app */
-  const vm = new Vue({
-    el: '#app',
-    data: function () {
-      return {
-        dataLoaded: false,
-        test: "dwddwada"
-      }
-    },
-    created() {
-      // make an async call to the data store to initialize the locale (i.e. it will check if there is a locale value saved in cookie, otherwise it will default to EN)
-      this.$store.dispatch('INITIALIZE_LOCALE');
-      
-      //this.$store.dispatch('LOAD_META_DATA');
-
-      // make an async call to load mall data
-      this.$store.dispatch('LOAD_MALL_DATA', {url:"https://www.mallmaverick.com/api/v4/halifaxcentre/all.json"}).then(response => {
-        this.dataLoaded = true;
-      }, error => {
-        console.error("Could not retrieve data from server. Please check internet connection and try again.");
-      });
-    },
-    watch: {
-      // watcher to update vue-i18n when the locale has been changed by the user
-      locale: function (val, oldVal) {
-        this.$i18n.locale = val;
-        moment.locale(val);
-        // console.log(moment().format('LLLL'));
-        // console.log(this.$store.getters.getTodayHours);
-      }
-    },
-    computed: {
-      // computed property for locale which returns locale value from data store and also updates the data store with new locale information
-      locale: {
-        get () {
-          return this.$store.state.locale
-        },
-        set (value) {
-          this.$store.commit('SET_LOCALE', { lang: value })
+        if( start === -1 ) {
+            return false;
+        } else {
+            return text.substring(start + 7, end);
         }
-      }
-    },
-    methods: {
-      // utility method to allow user to change locale value
-      changeLocale: function(val) {
-        this.locale = val; // this will update the data store, which in turn will trigger the watcher to update the locale in the system
-      }
-    },
-    router: router,
-    store,
-    i18n
-  });
+    };
+
+    var appendCSSStyle = function(css) {
+        if(css) {
+            var style = document.createElement("style");
+            var head = document.head || document.getElementsByTagName("head")[0];
+
+            style.type = "text/css";
+            if (style.styleSheet){
+                style.styleSheet.cssText = css;
+            } else {
+                style.appendChild(document.createTextNode(css));
+            }
+
+            head.appendChild(style);
+        }
+    };
+    
+    return {
+        extractCss: extractCss,
+        appendCSSStyle: appendCSSStyle,
+        functionString: function(text) {
+            var css = extractCss(text);
+            if ( css === false ) {
+                return "";
+            } else {
+                css = css
+                    .replace(/([^\\])'/g, "$1\\'")
+                    .replace(/[\n\r]+/g, "")
+                    .replace(/ {2,20}/g, " ");
+            }
+
+            var result = "(" + appendCSSStyle.toString() + ")('" + css + "');";
+            return result;
+        },
+        parse: function(text) {
+            var css = extractCss(text);
+            appendCSSStyle(css);
+        }
+    };
 });
+/* vim: set tabstop=4 softtabstop=4 shiftwidth=4 expandtab : */
+
+/*
+ * template-parser.js
+ *
+ * Distributed under terms of the MIT license.
+ */
+/* jshint ignore:start */
+
+/* jshint ignore:end */
+
+define('template_parser',[], function(){
+  
+    var extractTemplate = function(text) {
+        var start = text.indexOf("<template>");
+        var end   = text.lastIndexOf("</template>");
+        return text.substring(start + 10, end)
+            .replace(/([^\\])'/g, "$1\\'")
+            .replace(/[\n\r]+/g, "")
+            .replace(/ {2,20}/g, " ");
+    };
+
+
+    return {
+        extractTemplate: extractTemplate
+    };
+    
+});
+/* vim: set tabstop=4 softtabstop=4 shiftwidth=4 expandtab : */
+
+/*
+ * script-parser.js
+ * Copyright (C) 2017 Edgard Leal
+ *
+ * Distributed under terms of the MIT license.
+ */
+
+/* jshint ignore:start */
+
+/* jshint ignore:end */
+
+define("script_parser", [], function() {
+    return {
+        findCloseTag: function(text, start) {
+            var i = start;
+            while(i < text.length && text[i++] !== ">");
+            return i;
+        },
+        extractScript: function(text) {
+            var start = text.indexOf("<script");
+            var sizeOfStartTag = this.findCloseTag(text, start);
+            var end = text.indexOf("</script>");
+            return text.substring(sizeOfStartTag, end);
+        }
+    };
+});
+/* vim: set tabstop=4 softtabstop=4 shiftwidth=4 expandtab : */
+
+/*
+ * vue.js
+ *
+ * Distributed under terms of the MIT license.
+ */
+/* global Promise */
+/* jshint ignore:start */
+
+/* jshint ignore:end */
+
+define('plugin',["css_parser", "template_parser", "script_parser"], function(css_parser, template_parser, script_parser) {
+    "use strict";
+
+    var modulesLoaded = {};
+
+    var functionTemplate = ["(function(template){", "})("];
+
+    var parse = function(text) {
+        var template = template_parser.extractTemplate(text);
+        var source = script_parser.extractScript(text);
+        var functionString = css_parser.functionString(text);
+ 
+        return functionTemplate[0] +
+         source +
+          functionString +
+          functionTemplate[1] +
+          "'" + template + "');";
+    };
+
+    var loadLocal = function(url, name) {
+        var fs = require.nodeRequire("fs");
+        var text = fs.readFileSync(url, "utf-8");
+        if(text[0] === "\uFEFF") { // remove BOM ( Byte Mark Order ) from utf8 files 
+            text = text.substring(1);
+        }
+        var parsed = parse(text).replace(/(define\()\s*(\[.*)/, "$1\"vue!" + name + "\", $2");
+        return parsed;
+    };
+
+    return {
+        normalize: function(name) {
+            return name;
+        },
+        write: function(pluginName, moduleName, write) {
+            write.asModule(pluginName + "!" + moduleName, modulesLoaded[moduleName]);
+        },
+        load: function (name, req, onload, config) {
+            var url, extension; 
+
+            // if file name has an extension, don't add .vue
+            if(/.*(\.vue)|(\.html?)/.test(name)) {
+                extension = "";
+            } else {
+                extension = ".vue";
+            }
+
+            url = req.toUrl(name + extension);
+
+            var sourceHeader = config.isBuild?"" : "//# sourceURL=" + location.origin + url + "\n";
+            var loadRemote;
+
+            if(config.isBuild) {
+                loadRemote = function(url, callback) {
+                    return new Promise(function(resolve, reject) {
+                        try {
+                            var fs = require.nodeRequire("fs");
+                            var text = fs.readFileSync(url, "utf-8").toString();
+                            if(text[0] === "\uFEFF") { // remove BOM ( Byte Mark Order ) from utf8 files 
+                                text = text.substring(1);
+                            }
+                            var parsed = parse(text).replace(/(define\()\s*(\[.*)/, "$1\"" + name + "\", $2");
+                            callback(parsed);
+                            resolve(parsed);
+                        } catch(error) {
+                            reject(error);
+                        }
+                    });
+                };
+            } else {
+                loadRemote = function(path, callback) {
+                    var xhttp = new XMLHttpRequest();
+                    xhttp.onreadystatechange = function() {
+                        if (this.readyState === 4 && (this.status === 200 || this.status === 304)) {
+                            callback(parse(xhttp.responseText));
+                        }
+                    };
+                    xhttp.open("GET", path, true);
+                    xhttp.send();
+                };
+            }
+
+            req([], function() {
+                if(config.isBuild) {
+                    var data = loadLocal(url, name);
+                    modulesLoaded[name] = data;
+                    onload.fromText(data);
+                } else {
+                    loadRemote(url, function(text){
+                        modulesLoaded[name] = sourceHeader + text;
+                        onload.fromText(modulesLoaded[name]);
+                    });
+                }
+            });
+        }
+    };
+});
+/* vim: set tabstop=4 softtabstop=4 shiftwidth=4 expandtab : */
+
+/* jshint ignore:start */
+
+/* jshint ignore:end */
+
+define('require-vuejs',["plugin"], function(plugin){
+    return plugin;
+});
+/*vim: set ts=4 ex=4 tabshift=4 expandtab :*/
+
+/**
+ * vue.js
+ * Copyright (C) 2017  
+ *
+ * Distributed under terms of the MIT license.
+ */
+/* jshint ignore:start */
+
+/* jshint ignore:end */
+
+define("vue", ["plugin"], function(plugin) {
+    return plugin;
+});
+/* vim: set tabstop=4 softtabstop=4 shiftwidth=4 expandtab : */
+
+})();
