@@ -11,49 +11,9 @@
         <hr/>
         <today-hours></today-hours>
         <button v-on:click="greet">Greet</button>
-        <search-component :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" :search="test1" v-if="!swap">
-          <template slot="item" scope="option">
-            <article class="media">
-              <!--<figure class="media-left">
-                <p class="image is-64x64">
-                  <img :src="option.data.store_front_url_abs">
-                </p>
-              </figure>-->
-              <p>
-                <strong>{{ option.data.name }}</strong>
-              </p>
-            </article>
-          </template>
-        </search-component>
-        <search-component :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" v-if="swap" :search="test2">
-          <template slot="item" scope="option">
-            <article class="media">
-              <!--<figure class="media-left">
-                <p class="image is-64x64">
-                  <img :src="option.data.store_front_url_abs">
-                </p>
-              </figure>-->
-              <p>
-                <strong>{{ option.data.name }}</strong>
-              </p>
-            </article>
-          </template>
-        </search-component>
-        <search-component :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" :search="test2" v-if="!swap">
-          <template slot="item" scope="option">
-            <article class="media">
-              <!--<figure class="media-left">
-                <p class="image is-64x64">
-                  <img :src="option.data.store_front_url_abs">
-                </p>
-              </figure>-->
-              <p>
-                <strong>{{ option.data.name }}</strong>
-              </p>
-            </article>
-          </template>
-        </search-component>
-        <search-component :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" v-if="swap" :search="test1">
+        <input v-model="swap ? test2 : test1"/>
+        <input v-model="swap ? test1 : test2"/>
+        <search-component :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" :search="test1">
           <template slot="item" scope="option">
             <article class="media">
               <!--<figure class="media-left">
