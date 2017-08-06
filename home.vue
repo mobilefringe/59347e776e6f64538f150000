@@ -10,7 +10,22 @@
         <p>{{property.name}}</p>
         <hr/>
         <today-hours></today-hours>
-        <search-component :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect">
+        <button v-on:click="greet">Greet</button>
+        <search-component :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" :search="swap ? test2 : test1">
+          <template slot="item" scope="option">
+            <article class="media">
+              <!--<figure class="media-left">
+                <p class="image is-64x64">
+                  <img :src="option.data.store_front_url_abs">
+                </p>
+              </figure>-->
+              <p>
+                <strong>{{ option.data.name }}</strong>
+              </p>
+            </article>
+          </template>
+        </search-component>
+        <search-component :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" :search="swap ? test1: test2">
           <template slot="item" scope="option">
             <article class="media">
               <!--<figure class="media-left">
@@ -37,7 +52,10 @@
         return {
           title: "MM with Vue.js!",
           description: "An example of integration of Mall Maverick with Vue.js",
-          suggestionAttribute: 'name'
+          suggestionAttribute: 'name',
+          swap: false,
+          test1: '',
+          test2: ''
         }
       },
       computed: {
@@ -51,7 +69,15 @@
       methods: {
         onOptionSelect(option) {
           console.log('Selected option:', option)
-        }
+        },
+        greet: function (event) {
+      // `this` inside methods points to the Vue instance
+      alert('Hello ' + this.name + '!')
+      // `event` is the native DOM event
+      if (event) {
+        alert(event.target.tagName)
+      }
+    }
       }
     })
   })
