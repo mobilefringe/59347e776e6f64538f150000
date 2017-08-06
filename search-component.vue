@@ -68,6 +68,9 @@
     return Vue.component('search-component', {
       template: template,
       props: {
+        test:{
+            type: String    
+        },
         autocomplete:{
           type: Boolean,
           default: true
