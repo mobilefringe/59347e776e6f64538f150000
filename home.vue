@@ -71,13 +71,13 @@
           console.log('Selected option:', option)
         },
         greet: function (event) {
-      // `this` inside methods points to the Vue instance
-      alert('Hello ' + this.name + '!')
-      // `event` is the native DOM event
-      if (event) {
-        alert(event.target.tagName)
-      }
-    }
+          if (this.swap){
+            this.swap = false;
+          }
+          else{
+            this.swap = true;
+          }
+        }
       }
     })
   })
