@@ -10,23 +10,20 @@
         <p>{{property.name}}</p>
         <hr/>
         <today-hours></today-hours>
-        <button v-on:click="greet">Greet</button>
-        <input type="text" v-model="swap ? test2 : test1"/>
-        <input type="email" v-model="swap ? test1 : test2"/>
-        <!--<search-component :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" :search="test1">-->
-        <!--  <template slot="item" scope="option">-->
-        <!--    <article class="media">-->
+        <search-component :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect">
+          <template slot="item" scope="option">
+            <article class="media">
               <!--<figure class="media-left">
                 <p class="image is-64x64">
                   <img :src="option.data.store_front_url_abs">
                 </p>
               </figure>-->
-        <!--      <p>-->
-        <!--        <strong>{{ option.data.name }}</strong>-->
-        <!--      </p>-->
-        <!--    </article>-->
-        <!--  </template>-->
-        <!--</search-component>-->
+              <p>
+                <strong>{{ option.data.name }}</strong>
+              </p>
+            </article>
+          </template>
+        </search-component>
       </div>
     </div>
   </div>
@@ -40,10 +37,7 @@
         return {
           title: "MM with Vue.js!",
           description: "An example of integration of Mall Maverick with Vue.js",
-          suggestionAttribute: 'name',
-          swap: false,
-          test1: '',
-          test2: ''
+          suggestionAttribute: 'name'
         }
       },
       computed: {
@@ -57,14 +51,6 @@
       methods: {
         onOptionSelect(option) {
           console.log('Selected option:', option)
-        },
-        greet: function (event) {
-          if (this.swap){
-            this.swap = false;
-          }
-          else{
-            this.swap = true;
-          }
         }
       }
     })
