@@ -12,7 +12,7 @@
         <today-hours></today-hours>
         <button v-on:click="greet">Greet</button>
         <input type="text" v-model="swap ? test2 : test1"/>
-        <input type="text" v-model="swap ? test1 : test2"/>
+        <input type="email" v-model="swap ? test1 : test2"/>
         <search-component :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" :search="test1">
           <template slot="item" scope="option">
             <article class="media">
