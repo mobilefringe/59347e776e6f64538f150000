@@ -52,7 +52,10 @@
         return {
           title: "MM with Vue.js!",
           description: "An example of integration of Mall Maverick with Vue.js",
-          suggestionAttribute: 'name'
+          suggestionAttribute: 'name',
+          swap: false,
+          test1: '',
+          test2: ''
         }
       },
       computed: {
