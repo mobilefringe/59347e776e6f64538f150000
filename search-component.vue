@@ -213,8 +213,8 @@
       },
       methods: {
         onInput(value) {
-          //this.highlightedPosition = 0
-          //this.isOpen = !!value
+          this.highlightedPosition = 0
+          this.isOpen = !!value
         },
         moveDown() {
           if (!this.isOpen) {
