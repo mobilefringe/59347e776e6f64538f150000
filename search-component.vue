@@ -151,7 +151,7 @@
         return {
           isOpen: false,
           highlightedPosition: 0,
-          //search: '',
+          search: '',
           fuse: null,
           result: []
         }
