@@ -10,8 +10,7 @@
         <p>{{property.name}}</p>
         <hr/>
         <today-hours></today-hours>
-        <button v-on:click="swap = !swap">Click me</button>
-        <search-component :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect">
+        <search-component v-model="search" :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect">
           <template slot="item" scope="option">
             <article class="media">
               <!--<figure class="media-left">
@@ -40,9 +39,7 @@
           title: "MM with Vue.js!",
           description: "An example of integration of Mall Maverick with Vue.js",
           suggestionAttribute: 'name',
-          swap: false,
-          test1: '',
-          test2: ''
+          search: ''
         }
       },
       computed: {
