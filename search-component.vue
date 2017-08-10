@@ -1,7 +1,7 @@
 <template>
   <div class="search-component" v-if="autocomplete">
     <p class="control has-icon has-icon-right">
-      <input type="search" v-model="search" class="input is-large" :placeholder="placeholder" :suggestionAttribute="suggestionAttribute" @input="onInput($event.target.value)" @keyup.esc="isOpen = false" @blur="isOpen = false" @keydown.down="moveDown" @keydown.up="moveUp" @keydown.enter="select">
+      <input type="search" class="input is-large" :placeholder="placeholder" :suggestionAttribute="suggestionAttribute" @input="onInput($event.target.value)" @keyup.esc="isOpen = false" @blur="isOpen = false" @keydown.down="moveDown" @keydown.up="moveUp" @keydown.enter="select" :value="value">
       <i class="fa fa-angle-down"></i>
     </p>
     <ul v-show="isOpen" class="options-list">
@@ -12,7 +12,7 @@
   </div>
   <div class="search-component" v-else>
     <p class="control has-icon has-icon-right">
-      <input type="search" v-model="search" class="input is-large" :placeholder="placeholder" @keydown.enter="select">
+      <input type="search" class="input is-large" :placeholder="placeholder" @keydown.enter="select" @input="onInput($event.target.value)" :value="value">
       <i class="fa fa-angle-down"></i>
     </p>
   </div>
@@ -68,6 +68,10 @@
     return Vue.component('search-component', {
       template: template,
       props: {
+        value: {
+          type: String,
+          default: ''
+        },
         autocomplete:{
           type: Boolean,
           default: true
@@ -151,7 +155,7 @@
         return {
           isOpen: false,
           highlightedPosition: 0,
-          search: '',
+          //search: '',
           fuse: null,
           result: []
         }
@@ -191,8 +195,8 @@
         }
       },
       watch: {
-        search() {
-          if (this.search.trim() === ''){
+        value() {
+          if (this.value.trim() === ''){
             if (this.defaultAll) {
               this.result = this.list 
             } else {
@@ -200,7 +204,7 @@
             }
           }
           else{
-            this.result = this.fuse.search(this.search.trim())
+            this.result = this.fuse.search(this.value.trim())
           }
         },
         result () {
@@ -211,6 +215,7 @@
         onInput(value) {
           this.highlightedPosition = 0
           this.isOpen = !!value
+          this.$emit('input', value) // emit event back to parent
         },
         moveDown() {
           if (!this.isOpen) {
@@ -230,7 +235,7 @@
             const selectedOption = this.result[this.highlightedPosition]
             this.$emit('select', selectedOption)
             this.isOpen = false
-            this.search = selectedOption[this.suggestionAttribute]
+            this.$emit('input', selectedOption[this.suggestionAttribute])
           }
           else{
             const selectedOption = this.result;
