@@ -1766,7 +1766,7 @@
 
         // GET the map by ajax request
         $.ajax({
-          async: true,
+          async: false,
           url: _data.options.source,
           //                contentType: "image/svg+xml; charset=utf-8",
           //dataType: (_browser.ie) ? 'text' : 'xml', // check if IE
