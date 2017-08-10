@@ -12,7 +12,7 @@
  * Licenses: http://codecanyon.net/licenses/regular_extended
  */
 
-(function ($, Raphael) {
+(function ($) {
 
   var instances = {},
     globalID = 0,
@@ -2055,4 +2055,4 @@
 
   }; // end of $.fn.mapSvg
 
-})(jQuery, Raphael);
+})(jQuery);
