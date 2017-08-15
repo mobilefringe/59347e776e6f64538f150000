@@ -389,7 +389,8 @@
       },
       // MARK : DELETE
       markDelete: function (mark) {
-        mark.remove();
+        //mark.remove();
+        _data.RMarks.pop(mark);
       },
       // MARK : ADD
       markAdd: function (opts, create) {
