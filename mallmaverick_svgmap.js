@@ -1463,9 +1463,11 @@
       // Adding marks
       setMarks: function (marksArr) {
         if (marksArr) {
+          var marks = [];
           $.each(marksArr, function (i, mark) {
-            _this.markAdd(mark);
+            marks.push(_this.markAdd(mark));
           });
+          return marks;
         }
       },
 
