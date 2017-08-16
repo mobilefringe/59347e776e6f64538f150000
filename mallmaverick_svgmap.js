@@ -514,7 +514,7 @@
 
         _this.markAdjustPosition(RMark);
 
-
+        console.log("Rmark contains",RMark);
         return RMark;
 
       },
