@@ -412,13 +412,13 @@
 
             mark.width = this.width;
             mark.height = this.height;
-
+            console.log("helloo");
             return _this.markAddFinalStep(mark, create);
           };
 
           img.src = mark.attrs.src;
         }
-        return mark;
+        // return mark;
       },
       markAddFinalStep: function (mark, create) {
         // We don't need to open a link in edit mode
