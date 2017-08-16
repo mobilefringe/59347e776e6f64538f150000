@@ -1468,7 +1468,7 @@
           var marks = [];
           $.each(marksArr, function (i, mark) {
               var another = _this.markAdd(mark);
-              console.log("marksAdd 2", another);
+              console.log("setMarks 2", another);
             marks.push(another);
           });
           return marks;
