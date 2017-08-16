@@ -387,6 +387,7 @@
         img.src = data.attrs.src;
 
       },
+       // MARK : Reset with new mark set
       markReset : function (newMarks) {
           
       },
