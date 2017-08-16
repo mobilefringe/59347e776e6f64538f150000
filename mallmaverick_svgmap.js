@@ -412,7 +412,7 @@
 
             mark.width = this.width;
             mark.height = this.height;
-            console.log("helloo");
+            console.log("marksAdd 2");
             return _this.markAddFinalStep(mark, create);
           };
 
