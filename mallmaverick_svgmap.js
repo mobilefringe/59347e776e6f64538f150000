@@ -414,7 +414,7 @@
             mark.height = this.height;
             something = _this.markAddFinalStep(mark, create);
             console.log("marksAdd 2", something);
-            return somethin;
+            return something;
           };
 
           img.src = mark.attrs.src;
