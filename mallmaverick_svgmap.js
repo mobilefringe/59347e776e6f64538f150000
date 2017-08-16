@@ -387,10 +387,6 @@
         img.src = data.attrs.src;
 
       },
-       // MARK : Reset with new mark set
-      markReset : function (newMarks) {
-          
-      },
       // MARK : DELETE
       markDelete: function (mark) {
         //mark.remove();
