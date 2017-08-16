@@ -400,7 +400,6 @@
 
 
         if (mark.width && mark.height) {
-            console.log("marksAdd 1");
           return _this.markAddFinalStep(mark, create);
 
         } else {
