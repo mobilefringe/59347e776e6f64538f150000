@@ -401,7 +401,7 @@
 
         if (mark.width && mark.height) {
             something = _this.markAddFinalStep(mark, create);
-          return _this.markAddFinalStep(mark, create);
+          return something;
 
         } else {
 
