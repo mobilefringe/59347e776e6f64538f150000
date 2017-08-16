@@ -411,7 +411,7 @@
 
             mark.width = this.width;
             mark.height = this.height;
-            var something = _this.markAddFinalStep(mark, create);
+            something = _this.markAddFinalStep(mark, create);
             console.log("marksAdd 2", something);
             return something
           };
