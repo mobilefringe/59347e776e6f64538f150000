@@ -387,6 +387,9 @@
         img.src = data.attrs.src;
 
       },
+      markReset : function (newMarks) {
+          
+      },
       // MARK : DELETE
       markDelete: function (mark) {
         //mark.remove();
