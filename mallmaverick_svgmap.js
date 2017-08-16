@@ -1470,7 +1470,7 @@
           var marks = [];
           $.each(marksArr, function (i, mark) {
               var another = _this.markAdd(mark);
-              console.log("setMarks ", another);
+              console.log("setMarks ", _this.markAdd(mark));
             marks.push(another);
           });
           return marks;
