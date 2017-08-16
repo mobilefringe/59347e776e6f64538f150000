@@ -418,7 +418,7 @@
 
           img.src = mark.attrs.src;
         }
-        return mark;
+        return something;
       },
       markAddFinalStep: function (mark, create) {
         // We don't need to open a link in edit mode
