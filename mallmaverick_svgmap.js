@@ -397,11 +397,11 @@
 
         // Join default mark options with user-defined options
         var mark = $.extend(true, {}, markOptions, opts);
-        var something = null;
+
 
         if (mark.width && mark.height) {
-            something = _this.markAddFinalStep(mark, create);
-            return something;
+
+          return _this.markAddFinalStep(mark, create);
 
         } else {
 
@@ -412,15 +412,13 @@
 
             mark.width = this.width;
             mark.height = this.height;
-            something = _this.markAddFinalStep(mark, create);
-            console.log("marksAdd 2", something);
-            return something;
+
+            return _this.markAddFinalStep(mark, create);
           };
 
           img.src = mark.attrs.src;
         }
-        console.log("is it coming to this?".something);
-        return something;
+        return mark;
       },
       markAddFinalStep: function (mark, create) {
         // We don't need to open a link in edit mode
@@ -516,7 +514,7 @@
 
         _this.markAdjustPosition(RMark);
 
-        console.log("Rmark contains",RMark);
+
         return RMark;
 
       },
@@ -1469,9 +1467,7 @@
         if (marksArr) {
           var marks = [];
           $.each(marksArr, function (i, mark) {
-            //   var another = _this.markAdd(mark);
-              console.log("setMarks ", _this.markAdd(mark));
-            // marks.push(another);
+            marks.push(_this.markAdd(mark));
           });
           return marks;
         }
