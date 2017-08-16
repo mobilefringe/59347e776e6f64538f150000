@@ -397,7 +397,7 @@
 
         // Join default mark options with user-defined options
         var mark = $.extend(true, {}, markOptions, opts);
-        var something = "";
+        var something = null;
 
         if (mark.width && mark.height) {
             something = _this.markAddFinalStep(mark, create);
