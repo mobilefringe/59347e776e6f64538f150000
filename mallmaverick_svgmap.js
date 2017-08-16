@@ -419,7 +419,7 @@
 
           img.src = mark.attrs.src;
         }
-        console.log("is it coming to this?");
+        console.log("is it coming to this?".something);
         return something;
       },
       markAddFinalStep: function (mark, create) {
