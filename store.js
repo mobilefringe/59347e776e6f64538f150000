@@ -137,6 +137,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
       },
       findPromoById: (state, getters) => (id) => {
         let promos = getters.processedPromos;
+        console.log(promos)
         console.log(promos.find(promo => promo.id === id))
         return promos.find(promo => promo.id === id)
       },
