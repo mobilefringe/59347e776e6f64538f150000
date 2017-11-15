@@ -127,11 +127,15 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         let stores = state.results.stores;
         return stores.find(store => store.slug === slug)
       },
+      findStoreById: (state, getters) => (slug) => {
+        let stores = state.results.stores;
+        return stores.find(store => store.slug === slug)
+      },
       findPromoBySlug: (state, getters) => (slug) => {
         let promos = getters.processedPromos;
         return promos.find(promo => promo.slug === slug)
       },
-      findPromoByID: (state, getters) => (id) => {
+      findPromoById: (state, getters) => (id) => {
         let promos = getters.processedPromos;
         return promos.find(promo => promo.id === id)
       },
