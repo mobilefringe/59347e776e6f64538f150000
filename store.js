@@ -131,9 +131,9 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         let promos = getters.processedPromos;
         return promos.find(promo => promo.slug === slug)
       },
-      findPromoByID: (state, getters) => (slug) => {
+      findPromoByID: (state, getters) => (id) => {
         let promos = getters.processedPromos;
-        return promos.find(promo => promo.id === slug)
+        return promos.find(promo => promo.id === id)
       },
       findMetaDataByPath: (state, getters) => (path) => {
         try {
