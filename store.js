@@ -120,7 +120,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             event.locale = state.locale;
             event.store = null;
             if (event.eventable_type === "Store") {
-              let foundStore = stores.find(store => store.id === promo.promotionable_id.toString());
+              let foundStore = stores.find(store => store.id === event.promotionable_id.toString());
               if (foundStore) {
                 event.store = foundStore;
               }
