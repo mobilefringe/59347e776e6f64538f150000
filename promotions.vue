@@ -37,7 +37,7 @@
         promotions() {
             var promos = this.$store.getters.processedPromos;
             _.forEach(promos, function (val) {
-                 
+                if(val.description.length >100) 
             });
           return this.$store.getters.processedPromos;
         },
