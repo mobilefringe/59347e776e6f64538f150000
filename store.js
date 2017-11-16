@@ -43,7 +43,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
       LOAD_PAGE_DATA: function ({commit}, list) {
         return new Promise((resolve, reject) => {
           axios.get(list.url).then(response => {
-            commit('SET_MALL_DATA', { list: response.data })
+            // commit('SET_MALL_DATA', { list: response.data })
             resolve(response);
           }).catch(error => {
             console.log("Data load error: " + error.message);
