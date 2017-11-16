@@ -127,6 +127,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
               }
             }
           });
+          console.log(events);
           return events;
         }
         catch (err) {
