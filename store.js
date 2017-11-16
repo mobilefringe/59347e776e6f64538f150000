@@ -192,7 +192,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         return events.find(event => _.toNumber(event.id) === id)
       },
       findCouponBySlug: (state, getters) => (slug) => {
-        let coupons = getters.processedPromos;
+        let coupons = getters.processedCoupons;
         return coupons.find(coupon => coupon.slug === slug)
       },
       findCouponById: (state, getters) => (id) => {
