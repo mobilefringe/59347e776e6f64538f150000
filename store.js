@@ -132,6 +132,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
           return [];
         }
       },
+      
       processedStores: state => {
         try {
           let stores = state.results.stores;
