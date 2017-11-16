@@ -137,18 +137,18 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
           let coupons = state.results.coupons;
           let stores = state.results.stores;
           // Add image_url attribute with CDN link
-          coupons.map(promo => {
-            promo.image_url = promo.promo_image_url_abs;
-            promo.locale = state.locale;
-            promo.store = null;
-            if (promo.promotionable_type === "Store") {
-              let foundStore = stores.find(store => store.id === promo.promotionable_id.toString());
+          coupons.map(coupon => {
+            coupon.image_url = coupon.promo_image_url_abs;
+            coupon.locale = state.locale;
+            coupon.store = null;
+            if (coupon.promotionable_type === "Store") {
+              let foundStore = stores.find(store => store.id === coupon.promotionable_id.toString());
               if (foundStore) {
-                promo.store = foundStore;
+                coupon.store = foundStore;
               }
             }
           });
-          return promos;
+          return coupons;
         }
         catch (err) {
           return [];
