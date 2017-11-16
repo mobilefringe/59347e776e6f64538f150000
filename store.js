@@ -40,7 +40,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
           resolve(_locale);
         })
       },
-      LOAD_PAGEL_DATA: function ({commit}, list) {
+      LOAD_PAGE_DATA: function ({commit}, list) {
         return new Promise((resolve, reject) => {
           axios.get(list.url).then(response => {
             commit('SET_MALL_DATA', { list: response.data })
