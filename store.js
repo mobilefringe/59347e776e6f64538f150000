@@ -40,6 +40,17 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
           resolve(_locale);
         })
       },
+      LOAD_PAGEL_DATA: function ({commit}, list) {
+        return new Promise((resolve, reject) => {
+          axios.get(list.url).then(response => {
+            commit('SET_MALL_DATA', { list: response.data })
+            resolve(response);
+          }).catch(error => {
+            console.log("Data load error: " + error.message);
+            reject(error);
+          });
+        })
+      },
     },
     mutations: {
       SET_MALL_DATA: (state, { list }) => {
