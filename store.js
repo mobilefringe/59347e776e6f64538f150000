@@ -132,7 +132,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
           return [];
         }
       },
-       processedPromos: state => {
+       processedCoupons: state => {
         try {
           let promos = state.results.promotions;
           let stores = state.results.stores;
