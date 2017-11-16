@@ -196,7 +196,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         return coupons.find(coupon => coupon.slug === slug)
       },
       findCouponById: (state, getters) => (id) => {
-        let coupons = getters.processedPromos;
+        let coupons = getters.processedCoupons;
         return coupons.find(coupon => _.toNumber(coupon.id) === id)
       },
       findMetaDataByPath: (state, getters) => (path) => {
