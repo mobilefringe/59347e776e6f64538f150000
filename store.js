@@ -110,6 +110,28 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
           return [];
         }
       },
+      processedEvents: state => {
+        try {
+          let promos = state.results.promotions;
+          let stores = state.results.stores;
+          // Add image_url attribute with CDN link
+          promos.map(promo => {
+            promo.image_url = promo.promo_image_url_abs;
+            promo.locale = state.locale;
+            promo.store = null;
+            if (promo.promotionable_type === "Store") {
+              let foundStore = stores.find(store => store.id === promo.promotionable_id.toString());
+              if (foundStore) {
+                promo.store = foundStore;
+              }
+            }
+          });
+          return promos;
+        }
+        catch (err) {
+          return [];
+        }
+      },
       processedStores: state => {
         try {
           let stores = state.results.stores;
