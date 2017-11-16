@@ -134,7 +134,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
       },
        processedCoupons: state => {
         try {
-          let coupons = state.results.promotions;
+          let coupons = state.results.coupons;
           let stores = state.results.stores;
           // Add image_url attribute with CDN link
           promos.map(promo => {
