@@ -191,6 +191,14 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         let events = getters.processedEvents;
         return events.find(event => _.toNumber(event.id) === id)
       },
+      findPromoBySlug: (state, getters) => (slug) => {
+        let promos = getters.processedPromos;
+        return promos.find(promo => promo.slug === slug)
+      },
+      findPromoById: (state, getters) => (id) => {
+        let promos = getters.processedPromos;
+        return promos.find(promo => _.toNumber(promo.id) === id)
+      },
       findMetaDataByPath: (state, getters) => (path) => {
         try {
           let meta_data = state.meta_data.meta_data;
