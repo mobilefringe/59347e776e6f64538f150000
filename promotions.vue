@@ -35,6 +35,7 @@
       template: template, // the variable template will be injected
       computed: {
         promotions() {
+            var promos = this.$store.getters.processedPromos;
           return this.$store.getters.processedPromos;
         },
         timezone () {
