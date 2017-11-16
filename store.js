@@ -115,7 +115,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
           let events = state.results.events;
           let stores = state.results.stores;
           // Add image_url attribute with CDN link
-          promos.map(promo => {
+          events.map(event => {
             promo.image_url = promo.promo_image_url_abs;
             promo.locale = state.locale;
             promo.store = null;
