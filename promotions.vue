@@ -36,6 +36,9 @@
       computed: {
         promotions() {
             var promos = this.$store.getters.processedPromos;
+            _.forEach(promos, function (val) {
+                
+            });
           return this.$store.getters.processedPromos;
         },
         timezone () {
