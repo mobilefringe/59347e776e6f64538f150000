@@ -181,7 +181,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
       },
       processedCategories: state => {
         try {
-          return state.results.categories;;
+          return state.results.categories;
         }
         catch (err) {
           return [];
