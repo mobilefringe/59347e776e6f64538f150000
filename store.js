@@ -181,12 +181,8 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
       },
       processedCategories: state => {
         try {
-          let stores = state.results.stores;
-          // Add image_url attribute with CDN link
-          stores.map(store => {
-            store.image_url = "https://mallmaverick.cdn.speedyrails.net" + store.store_front_url;
-          });
-          return stores;
+          
+          return state.results.categories;;
         }
         catch (err) {
           return [];
