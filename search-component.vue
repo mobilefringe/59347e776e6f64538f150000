@@ -19,13 +19,13 @@
 </template>
 
 <style>
-  ul {
+  ul.search-component {
     list-style-type: none;
     padding: 0;
     margin: 0;
   }
 
-  li {
+  li.search-component {
     display: inline-block;
     margin: 0 10px;
   }
