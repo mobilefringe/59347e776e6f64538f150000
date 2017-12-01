@@ -219,6 +219,10 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         let coupons = getters.processedCoupons;
         return coupons.find(coupon => _.toNumber(coupon.id) === id)
       },
+      findBlogByName: (state, getters) => (name) => {
+        let blogs = state.results.blogs;
+        return blogs.find(blog => blog.name === name )
+      },
       findMetaDataByPath: (state, getters) => (path) => {
         try {
           let meta_data = state.meta_data.meta_data;
