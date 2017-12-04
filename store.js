@@ -91,6 +91,9 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             return timezone;
         },
         getProperty: state => {
+            if (state.results.property == undefined) {
+                
+            }
             let property = state.results.property;
             return property;
         },
