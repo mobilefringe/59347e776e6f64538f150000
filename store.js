@@ -55,7 +55,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
     },
     mutations: {
         SET_MALL_DATA: (state, { list, data_id }) => {
-            state.results.data_id = list
+            state.results[data_id] = list
         },
         SET_LOCALE: (state, { lang }) => {
             state.locale = lang
