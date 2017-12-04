@@ -59,6 +59,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         SET_MALL_DATA: (state, {list}) => {
             console.log("list", list);
             state.results[list[0]] = list[1];
+            console.log(state.results);
         },
         SET_LOCALE: (state, { lang }) => {
             state.locale = lang
