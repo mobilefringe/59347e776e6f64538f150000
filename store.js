@@ -13,6 +13,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                 var url = "https://www.mallmaverick.com/api/v4/" + list.url;
                 axios.get(url + "stores.json").then(response => {
                     commit('SET_MALL_DATA', { list: response.data, id : "stores" })
+                    console.log(response.data);
                     resolve(response);
                 }).catch(error => {
                     console.log("Data load error: " + error.message);
