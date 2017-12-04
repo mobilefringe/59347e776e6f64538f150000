@@ -58,7 +58,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
     mutations: {
         SET_MALL_DATA: (state, { list}) => {
             console.log(list);
-            state.results.push(list);
+            state.results.add(list);
         },
         SET_LOCALE: (state, { lang }) => {
             state.locale = lang
