@@ -218,6 +218,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             return coupons.find(coupon => _.toNumber(coupon.id) === id)
         },
         findBlogByName: (state, getters) => (name) => {
+            console.log(name)
             let blogs = state.results.blogs;
             return blogs.find(blog => blog.name === name )
         },
