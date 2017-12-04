@@ -90,9 +90,9 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             let timezone = property !== undefined ? property.timezone_moment : null;
             return timezone;
         },
-        getProperty: state => {
+        getProperty:  (state, getters, actions)  => {
             if (state.results.property == undefined) {
-                
+                LOAD_MALL_DATA
             }
             let property = state.results.property;
             return property;
