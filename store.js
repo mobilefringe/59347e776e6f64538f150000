@@ -92,7 +92,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         },
         getProperty:  (state, getters, actions)  => {
             if (state.results.property == undefined) {
-                LOAD_MALL_DATA
+                actions.LOAD_MALL_DATA
             }
             let property = state.results.property;
             return property;
