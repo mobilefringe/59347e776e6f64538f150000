@@ -225,8 +225,8 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             let blogs = state.results.blogs;
             return blogs.find(blog => blog.slug === slug )
         },
-        findBlogPostBySlug : (state, getters) => (slug) => {
-            let blogs = state.results.blogs.post;
+        findBlogPostBySlug : (state, getters) => (name, slug) => {
+            let blogs = state.results.blogs(name);
             console.log(blogs)
             return blogs.find(blog => blog.posts.slug === slug )
         },
