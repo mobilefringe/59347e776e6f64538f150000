@@ -13,7 +13,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                 var url = "https://www.mallmaverick.com/api/v4/" + list.url + "/stores.json";
                 console.log(url);
                 axios.get(url).then(response => {
-                    commit('SET_MALL_DATA', { list: response.data, id : "stores" })
+                    commit('SET_MALL_DATA', { list: response.data})
                     console.log(response.data);
                     resolve(response);
                 }).catch(error => {
@@ -56,7 +56,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         },
     },
     mutations: {
-        SET_MALL_DATA: (state, { list, id }) => {
+        SET_MALL_DATA: (state, { list}) => {
             state.results.push(list);
         },
         SET_LOCALE: (state, { lang }) => {
