@@ -10,7 +10,8 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         actions: {
         LOAD_MALL_DATA: function ({commit}, list) {
             return new Promise((resolve, reject) => {
-                axios.get(list.url).then(response => {
+                vsr url = "https://www.mallmaverick.com/api/v4/" + list.url;
+                axios.get().then(response => {
                     commit('SET_MALL_DATA', { list: response.data })
                     resolve(response);
                 }).catch(error => {
