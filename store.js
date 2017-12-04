@@ -10,11 +10,9 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         actions: {
         LOAD_MALL_DATA: function ({commit}, list) {
             return new Promise((resolve, reject) => {
-                var url = "https://www.mallmaverick.com/api/v4/" + list.url + "/stores.json";
-                console.log(url);
-                axios.get(url).then(response => {
-                    commit('SET_MALL_DATA', { list: response.data.stores, data_id: "stores"})
-                    console.log(response.data);
+                var url = "https://www.mallmaverick.com/api/v4/" + list.url;
+                axios.get(list.url).then(response => {
+                    commit('SET_MALL_DATA', { list: response.data, id : "stores" })
                     resolve(response);
                 }).catch(error => {
                     console.log("Data load error: " + error.message);
@@ -54,23 +52,10 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                 });
             })
         },
-        LOAD_SUB_DATA: function ({commit}, list) {
-            return new Promise((resolve, reject) => {
-                var url = "https://www.mallmaverick.com/api/v4/" + list.url + "/" + list.json_type + ".json";
-                console.log(url);
-                axios.get(list.url).then(response => {
-                    // commit('SET_MALL_DATA', { list: response.data })
-                    resolve(response);
-                }).catch(error => {
-                    console.log("Data load error: " + error.message);
-                    reject(error);
-                });
-            })
-        },
     },
     mutations: {
-        SET_MALL_DATA: (state, {list, data_id}) => {
-            state.results[data_id] = list;
+        SET_MALL_DATA: (state, { list, data_id }) => {
+            state.results[data_id] = list
         },
         SET_LOCALE: (state, { lang }) => {
             state.locale = lang
@@ -90,10 +75,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             let timezone = property !== undefined ? property.timezone_moment : null;
             return timezone;
         },
-        getProperty:  (state, getters, actions)  => {
-            if (state.results.property == undefined) {
-                actions.LOAD_MALL_DATA
-            }
+        getProperty: state => {
             let property = state.results.property;
             return property;
         },
