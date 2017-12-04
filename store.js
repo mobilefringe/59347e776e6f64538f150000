@@ -226,11 +226,11 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             return blogs.find(blog => blog.slug === slug )
         },
         findBlogPostBySlug : (state, getters) => (name, slug) => {
-            console.log(name)
             let blogs = state.results.blogs;
             return blogs.find(blog => blog.name === name )
-            console.log(blogs)
-            // return blogs.find(blog => blogs.posts.slug === slug )
+            let blog_posts = blogs.posts
+            console.log(blog_posts)
+            return blog_posts.find(blog_post => blog_post.slug === slug )
         },
         findMetaDataByPath: (state, getters) => (path) => {
             try {
