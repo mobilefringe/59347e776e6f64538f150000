@@ -212,7 +212,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         },
         findStoreById: (state, getters) => (id) => {
             let stores = state.results.stores;
-            return stores.find(store => _.toNumber(store.id) === id)
+            return stores.find(store => _.toNumber(store.id) === _.toNumber(id))
         },
         findCategoryById: (state, getters) => (id) => {
             let categories = getters.processedCategories;
