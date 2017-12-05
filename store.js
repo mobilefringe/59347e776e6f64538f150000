@@ -224,7 +224,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         },
         findPromoById: (state, getters) => (id) => {
             let promos = getters.processedPromos;
-            return promos.find(promo => _.toNumber(promo.id) === id)
+            return promos.find(promo => _.toNumber(promo.id) === _.toNumber(id))
         },
         findEventBySlug: (state, getters) => (slug) => {
             let events = getters.processedEvents;
@@ -232,7 +232,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         },
         findEventById: (state, getters) => (id) => {
             let events = getters.processedEvents;
-            return events.find(event => _.toNumber(event.id) === id)
+            return events.find(event => _.toNumber(event.id) === _.toNumber(id))
         },
         findCouponBySlug: (state, getters) => (slug) => {
             let coupons = getters.processedCoupons;
@@ -240,7 +240,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         },
         findCouponById: (state, getters) => (id) => {
             let coupons = getters.processedCoupons;
-            return coupons.find(coupon => _.toNumber(coupon.id) === id)
+            return coupons.find(coupon => _.toNumber(coupon.id) === _.toNumber(id))
         },
         findJobBySlug: (state, getters) => (slug) => {
             let jobs = getters.processedJobs;
@@ -248,7 +248,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         },
         findJobById: (state, getters) => (id) => {
             let jobs = getters.processedJobs;
-            return jobs.find(job => _.toNumber(job.id) === id)
+            return jobs.find(job => _.toNumber(job.id) === _.toNumber(id))
         },
         findBlogByName: (state, getters) => (name) => {
             let blogs = state.results.blogs;
