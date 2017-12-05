@@ -170,7 +170,6 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                 let stores = state.results.stores;
                 // Add image_url attribute with CDN link
                 jobs.map(job => {
-                    job.image_url = event.event_image_url_abs;
                     job.locale = state.locale;
                     job.store = null;
                     if (job.jobable_type === "Store") {
