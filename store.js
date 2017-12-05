@@ -247,7 +247,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             return events.find(event => event.slug === slug)
         },
         findJobById: (state, getters) => (id) => {
-            let events = getters.processedEvents;
+            let jobs = getters.processedJobs;
             return events.find(event => _.toNumber(event.id) === id)
         },
         findBlogByName: (state, getters) => (name) => {
