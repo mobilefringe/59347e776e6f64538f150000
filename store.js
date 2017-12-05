@@ -242,6 +242,14 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             let coupons = getters.processedCoupons;
             return coupons.find(coupon => _.toNumber(coupon.id) === id)
         },
+        findJobBySlug: (state, getters) => (slug) => {
+            let events = getters.processedEvents;
+            return events.find(event => event.slug === slug)
+        },
+        findJobById: (state, getters) => (id) => {
+            let events = getters.processedEvents;
+            return events.find(event => _.toNumber(event.id) === id)
+        },
         findBlogByName: (state, getters) => (name) => {
             let blogs = state.results.blogs;
             return blogs.find(blog => blog.name === name )
