@@ -166,21 +166,21 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         },
         processedJobs: state => {
             try {
-                let events = state.results.events;
+                let jobs = state.results.jobs;
                 let stores = state.results.stores;
                 // Add image_url attribute with CDN link
-                events.map(event => {
-                    event.image_url = event.event_image_url_abs;
-                    event.locale = state.locale;
-                    event.store = null;
-                    if (event.eventable_type === "Store") {
-                        let foundStore = stores.find(store => store.id === event.eventable_id.toString());
+                jobs.map(job => {
+                    job.image_url = event.event_image_url_abs;
+                    job.locale = state.locale;
+                    job.store = null;
+                    if (job.jobable_type === "Store") {
+                        let foundStore = stores.find(store => store.id === job.jobable_id.toString());
                         if (foundStore) {
-                            event.store = foundStore;
+                            job.store = foundStore;
                         }
                     }
                 });
-                return events;
+                return jobs;
             } 
             catch (err) {
                 return [];
