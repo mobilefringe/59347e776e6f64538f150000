@@ -98,6 +98,26 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                 return null;
             }
         },
+        getPropertyHours: state => {
+            try {
+                let hours = state.results.hours;
+                let property = state.results.property;
+                let timezone = property.timezone_moment;
+                let todayHours = hours.find(hour => hour.day_of_week === moment().day());
+                // let holidayHours = hours.find(hour => hour.is_holiday == true && (moment(hour.holiday_date).tz(timezone).date() == moment().tz(timezone).date() && moment(hour.holiday_date).tz(timezone).month() + 1 == moment().tz(timezone).month() + 1 && moment(hour.holiday_date).tz(timezone).year() == moment().tz(timezone).year()));
+                // let hoursObject = null;
+                // if (holidayHours){
+                //     hoursObject = holidayHours;
+                // } else {
+                //     hoursObject = todayHours;
+                // }
+                hoursObject.locale = state.locale; // IMPORTANT! Here I am adding the state's locale in the hours object such that it will trigger a change in the template anytime the locale changes in the app.
+                return hoursObject;
+            } 
+            catch (err) {
+                return null;
+            }
+        },
         processedPromos: state => {
             try {
                 let promos = state.results.promotions;
