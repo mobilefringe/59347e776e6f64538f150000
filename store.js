@@ -105,6 +105,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                 let timezone = property.timezone_moment;
                 let allHours = _.filter(hours, function(o) { return !o.store_ids === null && o.is_holiday == 0; });
                 // let holidayHours = hours.find(hour => hour.is_holiday == true && (moment(hour.holiday_date).tz(timezone).date() == moment().tz(timezone).date() && moment(hour.holiday_date).tz(timezone).month() + 1 == moment().tz(timezone).month() + 1 && moment(hour.holiday_date).tz(timezone).year() == moment().tz(timezone).year()));
+                console.log(allHours)
                 let hoursObject = allHours;
                 // if (holidayHours){
                 //     hoursObject = holidayHours;
