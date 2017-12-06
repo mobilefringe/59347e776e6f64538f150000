@@ -103,7 +103,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                 let hours = state.results.hours;
                 let property = state.results.property;
                 let timezone = property.timezone_moment;
-                let allHours = hours.find(hour => hour.store_ids === null && !hour.is_holiday);
+                let allHours = _.filter(hours, function(o) { return !o.store_ids === null && !o.is_holiday; });
                 // let holidayHours = hours.find(hour => hour.is_holiday == true && (moment(hour.holiday_date).tz(timezone).date() == moment().tz(timezone).date() && moment(hour.holiday_date).tz(timezone).month() + 1 == moment().tz(timezone).month() + 1 && moment(hour.holiday_date).tz(timezone).year() == moment().tz(timezone).year()));
                 let hoursObject = allHours;
                 // if (holidayHours){
