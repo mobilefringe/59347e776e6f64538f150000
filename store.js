@@ -292,7 +292,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             return blog_posts.find(blog_post => blog_post.slug === slug )
         },
         findHourById: (state, getters) => (id) => {
-            let jobs = getters.processedJobs;
+            let hours = getters.processedJobs;
             return jobs.find(job => _.toNumber(job.id) === _.toNumber(id))
         },
         findMetaDataByPath: (state, getters) => (path) => {
