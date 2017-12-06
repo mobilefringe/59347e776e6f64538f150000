@@ -291,6 +291,10 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             let blog_posts = blogs.posts;
             return blog_posts.find(blog_post => blog_post.slug === slug )
         },
+        findHourById: (state, getters) => (id) => {
+            let jobs = getters.processedJobs;
+            return jobs.find(job => _.toNumber(job.id) === _.toNumber(id))
+        },
         findMetaDataByPath: (state, getters) => (path) => {
             try {
                 let meta_data = state.meta_data.meta_data;
