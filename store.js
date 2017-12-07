@@ -248,7 +248,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         },
         findCategoryByName: (state, getters) => (name) => {
             let categories = getters.processedCategories;
-            return categories.find(category => _.toNumber(category.name) === _.toNumber(id))
+            return categories.find(category => _.toNumber(category.name) === _.toNumber(name))
         },
         findPromoBySlug: (state, getters) => (slug) => {
             let promos = getters.processedPromos;
