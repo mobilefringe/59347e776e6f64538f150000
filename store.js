@@ -54,7 +54,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         CONTACT_US: function ({commit},send_data) {
             return new Promise((resolve, reject) => {
                 console.log("form data is: " , form_data);
-                axios.post(send_data.url, form_data).then(response => {
+                axios.post(send_data.url, send_data,form_data).then(response => {
                     resolve(response);
                 }).catch(error => {
                     console.log("Data load error: " + error.message);
