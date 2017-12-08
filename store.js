@@ -54,8 +54,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         CONTACT_US: function ({commit}, data) {
             return new Promise((resolve, reject) => {
                 axios.post('/api/oauth/token', creds).then(response => {
-                  commit(types.LOGIN_SUCCESS);
-                  commit(types.SET_CURRENT_USER, { user: response.data.data.user });
+                  
                   resolve(response);
                 }).catch(error => {
                   commit(types.LOGIN_FAILURE);
