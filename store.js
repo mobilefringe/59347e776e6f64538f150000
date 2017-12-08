@@ -57,7 +57,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                   resolve(response);
                 }).catch(error => {
                     console.log("Data load error: " + error.message);
-                  reject(error);
+                    reject(error);
                 });
             })
             
