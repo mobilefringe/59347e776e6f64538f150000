@@ -51,14 +51,15 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                 });
             })
         },
-        CONTACT_US: function ({commit}) {
+        CONTACT_US: function ({commit}, data) {
             return new Promise((resolve, reject) => {
-                axios.get(list.url).then(response => {
-                    // commit('SET_MALL_DATA', { list: response.data })
-                    resolve(response);
+                axios.post('/api/oauth/token', creds).then(response => {
+                  commit(types.LOGIN_SUCCESS);
+                  commit(types.SET_CURRENT_USER, { user: response.data.data.user });
+                  resolve(response);
                 }).catch(error => {
-                    console.log("Data load error: " + error.message);
-                    reject(error);
+                  commit(types.LOGIN_FAILURE);
+                  reject(error);
                 });
             })
             
