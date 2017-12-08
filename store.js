@@ -51,6 +51,8 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                 });
             })
         },
+        CONTACT_US: function ({commit}, list) {
+        },
     },
     mutations: {
         SET_MALL_DATA: (state, { list, data_id }) => {
