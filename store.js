@@ -51,7 +51,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                 });
             })
         },
-        CONTACT_US: function ({commit}, url, form_data) {
+        CONTACT_US: function ({commit},send_data) {
             return new Promise((resolve, reject) => {
                 console.log("form data is: " , form_data);
                 axios.post(url, form_data).then(response => {
