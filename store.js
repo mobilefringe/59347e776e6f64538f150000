@@ -51,7 +51,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                 });
             })
         },
-        CONTACT_US: function ({commit}, form_data) {
+        CONTACT_US: function ({commit}, url, form_data) {
             return new Promise((resolve, reject) => {
                 console.log(state.results.property.mm_host);
                 
