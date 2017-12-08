@@ -51,7 +51,17 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                 });
             })
         },
-        CONTACT_US: function ({commit}, list) {
+        CONTACT_US: function ({commit}) {
+            return new Promise((resolve, reject) => {
+                axios.get(list.url).then(response => {
+                    // commit('SET_MALL_DATA', { list: response.data })
+                    resolve(response);
+                }).catch(error => {
+                    console.log("Data load error: " + error.message);
+                    reject(error);
+                });
+            })
+            
         },
     },
     mutations: {
