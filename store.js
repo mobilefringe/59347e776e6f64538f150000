@@ -312,7 +312,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             let hours = state.results.hours;
             return hours.find(hour => _.toNumber(hour.id) === _.toNumber(id))
         },
-        findHourById: (state, getters) => (id) => {
+        findRepoByName: (state, getters) => (id) => {
             let hours = state.results.hours;
             return hours.find(hour => _.toNumber(hour.id) === _.toNumber(id))
         },
