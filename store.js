@@ -310,7 +310,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         },
         getPointOfInterest: (state, getters) => (name) => {
             let pois = state.results.pois;
-            return pois
+            return pois.find(pois => poi.name === name)
         }
         findPointOfInterestBySlug: (state, getters) => (name, slug) => {
             let pois = getters.getPointsOfInterest(name);
