@@ -370,7 +370,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             let coming_soon = _.filter(stores, function(o) { return o.is_coming_soon_store == true; });
             return coming_soon
         },
-        pointsOfInterest: (state, getters) => {
+        getPointsOfInterest: (state, getters) => {
             let pois = state.results.pois;
             return pois
         },
