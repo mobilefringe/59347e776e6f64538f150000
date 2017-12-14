@@ -359,8 +359,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         getPointsOfInterest: (state, getters) => {
             let pois = state.results.pois;
             return pois
-        },
-        
+        }
     },
     modules: {
 
