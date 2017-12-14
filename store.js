@@ -55,7 +55,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             return new Promise((resolve, reject) => {
                 console.log(send_data);
                 console.log("form data is: " , send_data.form_data);
-                axios.post(send_data.url, {authenticity_token: '<%=form_authenticity_token%>', form_data:send_data.form_data}).then(response => {
+                axios.post(send_data.url, send_data.form_data).then(response => {
                     resolve(response);
                 }).catch(error => {
                     console.log("Data load error: " + error.message);
