@@ -312,10 +312,6 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             let hours = state.results.hours;
             return hours.find(hour => _.toNumber(hour.id) === _.toNumber(id))
         },
-        findRepoByName: (state, getters) => (name) => {
-            let repos = state.results.repos;
-            return repos.find(repo => repo.name === name)
-        },
         findMetaDataByPath: (state, getters) => (path) => {
             try {
                 let meta_data = state.meta_data.meta_data;
