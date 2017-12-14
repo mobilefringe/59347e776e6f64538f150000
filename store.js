@@ -315,7 +315,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         },
         findPointOfInterestBySlug: (state, getters) => (name, slug) => {
             let pois = getters.getPointsOfInterest(name);
-            let blog_posts = blogs.posts;
+            let pois_locations = pois.locations;
             return blog_posts.find(blog_post => blog_post.slug === slug )
         },
         findHourById: (state, getters) => (id) => {
