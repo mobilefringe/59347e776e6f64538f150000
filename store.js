@@ -355,7 +355,12 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             tempStores = _.orderBy(tempStores, store => store.category_name);
             let groupedStoresByCategoryName = _.groupBy(tempStores, store => store.category_name);
             return groupedStoresByCategoryName;
-        }
+        },
+        getPointsOfInterest: (state, getters) => {
+            let pois = state.results.pois;
+            return pois
+        },
+        
     },
     modules: {
 
