@@ -369,8 +369,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             let stores = getters.processedStores;
             let coming_soon = _.filter(stores, function(o) { return o.is_coming_soon_store == true; });
             return coming_soon
-        },
-        
+        }
     },
     modules: {
 
