@@ -308,6 +308,15 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             let blog_posts = blogs.posts;
             return blog_posts.find(blog_post => blog_post.slug === slug )
         },
+        getPointsOfInterest: (state, getters) => {
+            let pois = state.results.pois;
+            return pois
+        }
+        findPointOfInterestBySlug: (state, getters) => (name, slug) => {
+            let pois = getters.getPointsOfInterest(name);
+            let blog_posts = blogs.posts;
+            return blog_posts.find(blog_post => blog_post.slug === slug )
+        },
         findHourById: (state, getters) => (id) => {
             let hours = state.results.hours;
             return hours.find(hour => _.toNumber(hour.id) === _.toNumber(id))
@@ -355,10 +364,6 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             tempStores = _.orderBy(tempStores, store => store.category_name);
             let groupedStoresByCategoryName = _.groupBy(tempStores, store => store.category_name);
             return groupedStoresByCategoryName;
-        },
-        getPointsOfInterest: (state, getters) => {
-            let pois = state.results.pois;
-            return pois
         }
     },
     modules: {
