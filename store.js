@@ -55,7 +55,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             return new Promise((resolve, reject) => {
                 console.log(send_data);
                 console.log("form data is: " , send_data.form_data);
-                axios.post(send_data.url, send_data.form_data).then(response => {
+                axios.post(send_data.url, {authenticity_token: '<%=form_authenticity_token%>', send_data.form_data}).then(response => {
                     resolve(response);
                 }).catch(error => {
                     console.log("Data load error: " + error.message);
@@ -312,10 +312,6 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             let hours = state.results.hours;
             return hours.find(hour => _.toNumber(hour.id) === _.toNumber(id))
         },
-        findRepoByName: (state, getters) => (name) => {
-            let repos = state.results.repos;
-            return repos.find(repo => repo.name === name)
-        },
         findMetaDataByPath: (state, getters) => (path) => {
             try {
                 let meta_data = state.meta_data.meta_data;
@@ -359,21 +355,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             tempStores = _.orderBy(tempStores, store => store.category_name);
             let groupedStoresByCategoryName = _.groupBy(tempStores, store => store.category_name);
             return groupedStoresByCategoryName;
-        },
-        findNewStores: (state, getters) => {
-            let stores = getters.processedStores;
-            let new_stores = _.filter(stores, function(o) { return o.is_new_store == true; });
-            return new_stores
-        },
-        findComingSoonStores: (state, getters) => {
-            let stores = getters.processedStores;
-            let coming_soon = _.filter(stores, function(o) { return o.is_coming_soon_store == true; });
-            return coming_soon
-        },
-        getPointsOfInterest: (state, getters) => {
-            let pois = state.results.pois;
-            return pois
-        },
+        }
     },
     modules: {
 
