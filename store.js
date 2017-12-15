@@ -64,7 +64,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         },
         POST_TO_MM: function ({commit},send_data) {
             return new Promise((resolve, reject) => {
-                axios.post(send_data.url, {form_data: send_data.form_data}).then(response => {
+                axios.post(send_data.url, send_data.form_data).then(response => {
                     resolve(response);
                 }).catch(error => {
                     console.log("Data load error: " + error.message);
