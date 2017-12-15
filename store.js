@@ -62,6 +62,17 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             })
             
         },
+        POST_TO_MM: function ({commit},send_data) {
+            return new Promise((resolve, reject) => {
+                axios.post('/api/v1/contact_us', {form_data: send_data.form_data}).then(response => {
+                    resolve(response);
+                }).catch(error => {
+                    console.log("Data load error: " + error.message);
+                    reject(error);
+                });
+            })
+            
+        },
     },
     mutations: {
         SET_MALL_DATA: (state, { list, data_id }) => {
