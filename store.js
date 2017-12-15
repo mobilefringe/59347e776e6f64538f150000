@@ -260,7 +260,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             try {
                 let contests = state.results.contests;
                 contests.map(contest => {
-                    contest.image_url = "https://mallmaverick.cdn.speedyrails.net" + store.photo_url;
+                    contest.image_url = "https://mallmaverick.cdn.speedyrails.net" + contest.photo_url;
                 });
                 return contests;
             }
