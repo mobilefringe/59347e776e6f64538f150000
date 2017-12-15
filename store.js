@@ -247,6 +247,14 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                 return [];
             }
         },
+        processedContests: state => {
+            try {
+                return state.results.contests;
+            }
+            catch (err) {
+                return [];
+            }
+        },
         findStoreBySlug: (state, getters) => (slug) => {
             let stores = state.results.stores;
             return stores.find(store => store.slug === slug)
