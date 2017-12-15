@@ -262,7 +262,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                 contests.map(contest => {
                     contest.image_url = "https://mallmaverick.cdn.speedyrails.net" + store.photo_url;
                 });
-                return state.results.contests;
+                return contests;
             }
             catch (err) {
                 return [];
