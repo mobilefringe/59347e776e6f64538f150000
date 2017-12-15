@@ -307,7 +307,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             let contests = getters.processedContests;
             return contests.find(contest => coupon.slug === slug)
         },
-        findCouponById: (state, getters) => (id) => {
+        findContestById: (state, getters) => (id) => {
             let coupons = getters.processedCoupons;
             return coupons.find(coupon => _.toNumber(coupon.id) === _.toNumber(id))
         },
