@@ -258,6 +258,10 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
         },
         processedContests: state => {
             try {
+                let contests = state.results.contests;
+                contests.map(store => {
+                    contest.image_url = "https://mallmaverick.cdn.speedyrails.net" + store.store_front_url;
+                });
                 return state.results.contests;
             }
             catch (err) {
