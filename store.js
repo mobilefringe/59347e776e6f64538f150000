@@ -224,6 +224,7 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
                     job.store = null;
                     if (job.jobable_type === "Store") {
                         let foundStore = stores.find(store => store.id === job.jobable_id.toString());
+                        console.log(foundStore);
                         if (foundStore) {
                             job.store = foundStore;
                         }
