@@ -1,5 +1,7 @@
 require.config({
   paths: {
+    'babel': 'https://unpkg.com/requirejs-babel@0.0.9/babel-5.8.34.min',
+    'es6': 'https://unpkg.com/requirejs-babel@0.0.9/es6',
     'Vue': 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.1/vue.min',
     'vue_router': 'https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.7.0/vue-router.min',
     'axios': 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min',
@@ -16,9 +18,7 @@ require.config({
     'js-cookie': 'https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min',
     'vue-meta': 'https://unpkg.com/vue-meta@1.0.4/lib/vue-meta.min',
     'Fuse': 'https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min',
-    'pdf': 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.220/pdf.min',
-    'es6': 'https://unpkg.com/requirejs-babel@0.0.9/es6',
-    'babel': 'https://unpkg.com/requirejs-babel@0.0.9/babel-5.8.34.min'
+    'pdf': 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.220/pdf.min'
   }
 });
 
