@@ -22,7 +22,7 @@ require.config({
   }
 });
 
-require(['Vue', 'vue2-filters', 'vue_router', 'es6!routes', 'es6!store', 'vue-i18n', 'locales', 'moment', "vue-meta", "pdf"], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta, PDFJS) {
+require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'es6!store', 'vue-i18n', 'locales', 'moment', "vue-meta", "pdf"], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta, PDFJS) {
   
   Vue.use(Meta);
   Vue.use(VueRouter);
