@@ -1,6 +1,6 @@
 require.config({
   paths: {
-    'babel': 'https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min',
+    'babel': 'https://unpkg.com/requirejs-babel@0.0.9/babel-5.8.34.min',
     'es6': 'https://unpkg.com/requirejs-babel@0.0.9/es6',
     'Vue': 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.1/vue.min',
     'vue_router': 'https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.7.0/vue-router.min',
@@ -21,12 +21,13 @@ require.config({
     'pdf': 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.220/pdf.min'
   },
   es6: {
-    fileExtension: '.js' // put in .jsx for JSX transformation
-  },
-  babel: {
-    presets: ['es2015'],
-    plugins: ['transform-es2015-modules-amd']
-  }
+      fileExtension: '.js' // put in .jsx for JSX transformation
+    },
+    babel: {
+      blacklist: [],
+      nonStandard: true,
+      modules: 'amd'
+    }
 });
 
 require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'es6!store', 'vue-i18n', 'locales', 'moment', "vue-meta", "pdf"], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta, PDFJS) {
