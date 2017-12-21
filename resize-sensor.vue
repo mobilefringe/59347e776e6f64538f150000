@@ -5,10 +5,9 @@
 </style>
 
 <script>
-"use strict";
 
-define(["Vue", "Fuse"], function(Vue, Fuse) {
-    return Vue.component('search-component', {
+define(["Vue"], function(Vue) {
+    return Vue.component('resize-sensor-component', {
 
     	// thanks to https://github.com/marcj/css-element-queries
     	props: {
