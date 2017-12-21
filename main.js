@@ -1,6 +1,6 @@
 require.config({
   paths: {
-    'babel': 'https://unpkg.com/requirejs-babel@0.0.9/babel-5.8.34.min',
+    'babel': 'https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min',
     'es6': 'https://unpkg.com/requirejs-babel@0.0.9/es6',
     'Vue': 'https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.1/vue.min',
     'vue_router': 'https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.7.0/vue-router.min',
