@@ -19,6 +19,13 @@ require.config({
     'vue-meta': 'https://unpkg.com/vue-meta@1.0.4/lib/vue-meta.min',
     'Fuse': 'https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min',
     'pdf': 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.220/pdf.min'
+  },
+  es6: {
+    fileExtension: '.js' // put in .jsx for JSX transformation
+  },
+  babel: {
+    presets: ['es2015'],
+    plugins: ['transform-es2015-modules-amd']
   }
 });
 
