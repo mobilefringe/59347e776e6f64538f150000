@@ -16,11 +16,13 @@ require.config({
     'js-cookie': 'https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min',
     'vue-meta': 'https://unpkg.com/vue-meta@1.0.4/lib/vue-meta.min',
     'Fuse': 'https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min',
-    'pdf': 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.220/pdf.min'
+    'pdf': 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.220/pdf.min',
+    'es6': 'https://unpkg.com/requirejs-babel@0.0.9/es6',
+    'babel': 'https://unpkg.com/requirejs-babel@0.0.9/babel-5.8.34.min'
   }
 });
 
-require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'locales', 'moment', "vue-meta", "pdf"], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta, PDFJS) {
+require(['Vue', 'vue2-filters', 'vue_router', 'es6!routes', 'es6!store', 'vue-i18n', 'locales', 'moment', "vue-meta", "pdf"], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta, PDFJS) {
   
   Vue.use(Meta);
   Vue.use(VueRouter);
