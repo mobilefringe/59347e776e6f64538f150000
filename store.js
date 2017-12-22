@@ -393,7 +393,12 @@ define(['Vue', 'vuex', 'axios', 'js-cookie', 'moment', 'moment-timezone', 'lodas
             tempStores = _.orderBy(tempStores, store => store.category_name);
             let groupedStoresByCategoryName = _.groupBy(tempStores, store => store.category_name);
             return groupedStoresByCategoryName;
-        }
+        },
+        findNewStores: (state, getters) => {
+            let stores = getters.processedStores;
+            let new_stores = _.filter(stores, function(o) { return o.is_new_store === true; });
+            return new_stores
+        },
     },
     modules: {
 
