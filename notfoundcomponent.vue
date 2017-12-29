@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script type="module">
+<script type="text/babel">
   define(["Vue"], function(Vue) {
     return Vue.component("not-found-component", {
       template: template, // the variable template will be injected
