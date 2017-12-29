@@ -50,7 +50,7 @@
   }
 </style>
 
-<script>
+<script type="module">
   define(["Vue"], function(Vue) {
     return Vue.component("stores-component", {
       template: template, // the variable template will be injected
