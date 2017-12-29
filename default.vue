@@ -2,7 +2,7 @@
   <router-view></router-view>
 </template>
 
-<script type="text/babel">
+<script>
   define(["Vue", "vue-meta"], function(Vue, Meta) {
     Vue.use(Meta);
     return Vue.component("default-component", {
