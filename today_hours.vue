@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<script type="text/babel">
+<script>
   define(["Vue", "moment", "moment-timezone", "vue-moment"], function(Vue, moment, tz, VueMoment) {
     return Vue.component("today-hours", {
       template: template, // the variable template will be injected,
