@@ -3,7 +3,7 @@
 </template>
 
 <script type="text/babel">
-  define(["Vue", "vue-meta"], function(Vue, Meta) {
+  define(["Vue", "vue-meta", "babel"], function(Vue, Meta, babel) {
     Vue.use(Meta);
     return Vue.component("default-component", {
       template: template, // the variable template will be injected
