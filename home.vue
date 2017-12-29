@@ -31,7 +31,7 @@
 </template>
 
 <script type="text/babel">
-  define(["Vue", "vue!today_hours.vue", "vue!search-component.vue"], function(Vue, TodayHoursComponent, SearchComponent) {
+  define(["Vue", "vue!es6!today_hours.vue", "vue!search-component.vue"], function(Vue, TodayHoursComponent, SearchComponent) {
     return Vue.component("home-component", {
       template: template, // the variable template will be injected
       data: function() {
