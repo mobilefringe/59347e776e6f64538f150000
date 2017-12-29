@@ -11,7 +11,7 @@
   </div>
 </template>
 
-<script>
+<script type="module">
   define(["Vue", "moment", "moment-timezone", "vue-moment"], function(Vue, moment, tz, VueMoment) {
     return Vue.component("promo-details-component", {
       template: template, // the variable template will be injected,
