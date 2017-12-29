@@ -10,7 +10,7 @@
   </div>
 </template>
 
-<script>
+<script type="text/babel">
   define(["Vue"], function(Vue) {
     return Vue.component("store-details-component", {
       template: template, // the variable template will be injected,
