@@ -24,7 +24,7 @@
             </article>
           </template>
         </search-component>
-        <calendar></calendar>
+        <v-calendar></v-calendar>
       </div>
     </div>
   </div>
