@@ -37,7 +37,7 @@
     return Vue.component("home-component", {
       components:{
         VCalendar
-      }
+      },
       template: template, // the variable template will be injected
       data: function() {
         return {
