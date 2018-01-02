@@ -32,7 +32,7 @@
 </template>
 
 <script>
-  define(["Vue", "vue!today_hours.vue", "vue!search-component.vue", "vue!calendar"], function(Vue, TodayHoursComponent, SearchComponent, VCalendar) {
+  define(["Vue", "vue!today_hours.vue", "vue!search-component.vue", "vue!Calendar"], function(Vue, TodayHoursComponent, SearchComponent, Calendar) {
     //Vue.use(VCalendar);
     return Vue.component("home-component", {
       template: template, // the variable template will be injected
