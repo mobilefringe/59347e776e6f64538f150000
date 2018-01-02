@@ -17,7 +17,7 @@ require.config({
     'vue-meta': 'https://unpkg.com/vue-meta@1.0.4/lib/vue-meta.min',
     'Fuse': 'https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min',
     'pdf': 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.220/pdf.min',
-    'VCalendar': 'https://unpkg.com/v-calendar@0.5.1/lib/v-calendar.min'
+    'v-calendar': 'https://unpkg.com/v-calendar@0.5.1/lib/v-calendar.min'
   }
 });
 
