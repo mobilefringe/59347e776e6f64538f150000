@@ -16,8 +16,7 @@ require.config({
     'js-cookie': 'https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min',
     'vue-meta': 'https://unpkg.com/vue-meta@1.0.4/lib/vue-meta.min',
     'Fuse': 'https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min',
-    'pdf': 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.220/pdf.min',
-    'v-calendar': 'https://unpkg.com/v-calendar@0.5.1/lib/v-calendar.min'
+    'pdf': 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.220/pdf.min'
   }
 });
 
