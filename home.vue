@@ -32,8 +32,8 @@
 </template>
 
 <script>
-  define(["Vue", "vue!today_hours.vue", "vue!search-component.vue", "v-calendar"], function(Vue, TodayHoursComponent, SearchComponent, VCalendar) {
-    Vue.use(VCalendar);
+  define(["Vue", "vue!today_hours.vue", "vue!search-component.vue", "vue!v-calendar"], function(Vue, TodayHoursComponent, SearchComponent, VCalendar) {
+    //Vue.use(VCalendar);
     return Vue.component("home-component", {
       components:{
         VCalendar: VCalendar
