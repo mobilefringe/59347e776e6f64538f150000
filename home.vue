@@ -24,7 +24,7 @@
             </article>
           </template>
         </search-component>
-        <date-picker></date-picker>
+        <v-date-picker></v-date-picker>
       </div>
     </div>
   </div>
