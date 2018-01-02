@@ -24,7 +24,7 @@
             </article>
           </template>
         </search-component>
-        <v-calendar></v-calendar>
+        <v-date-picker :mode='mode' v-model='selectedDate'></v-date-picker>
       </div>
     </div>
   </div>
