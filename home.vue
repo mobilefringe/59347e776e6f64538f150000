@@ -10,7 +10,6 @@
         <p>{{property.name}}</p>
         <hr/>
         <today-hours></today-hours>
-        <calendar is-double-paned></calendar>
         <search-component v-model="search" :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect">
           <template slot="item" scope="option">
             <article class="media">
@@ -32,12 +31,8 @@
 </template>
 
 <script>
-  define(["Vue", "vue!today_hours.vue", "vue!search-component.vue", "vue!Calendar"], function(Vue, TodayHoursComponent, SearchComponent, Calendar) {
-    //Vue.use(VCalendar);
+  define(["Vue", "vue!today_hours.vue", "vue!search-component.vue"], function(Vue, TodayHoursComponent, SearchComponent) {
     return Vue.component("home-component", {
-      components:{
-          Calendar
-      },
       template: template, // the variable template will be injected
       data: function() {
         return {
