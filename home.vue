@@ -10,7 +10,7 @@
         <p>{{property.name}}</p>
         <hr/>
         <today-hours></today-hours>
-        <!--<v-calendar is-double-paned></v-calendar>-->
+        <v-calendar is-double-paned></v-calendar>
         <search-component v-model="search" :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect">
           <template slot="item" scope="option">
             <article class="media">
