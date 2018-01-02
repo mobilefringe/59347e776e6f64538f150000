@@ -36,7 +36,7 @@
     Vue.use(VCalendar);
     return Vue.component("home-component", {
       components:{
-        VCalender
+        VCalendar
       }
       template: template, // the variable template will be injected
       data: function() {
