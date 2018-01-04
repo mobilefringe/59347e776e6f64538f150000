@@ -35,12 +35,6 @@
       template: template, // the variable template will be injected
       computed: {
         promotions() {
-            var promos = this.$store.getters.processedPromos;
-            _.forEach(promos, function (val) {
-                if(val.description.length >50) {
-                    _.truncate(val.description, {'length':50})
-                }
-            });
           return this.$store.getters.processedPromos;
         },
         timezone () {
