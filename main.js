@@ -29,7 +29,7 @@ require.config({
 });
 
 require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'locales', 'moment', "vue-meta", 'turn-js'], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta, turnJS) {
-
+console.log(turnJS)
   Vue.use(Meta);
   Vue.use(VueRouter);
   Vue.use(Vue2Filters);
