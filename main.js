@@ -17,10 +17,15 @@ require.config({
         'vue-meta': 'https://unpkg.com/vue-meta@1.0.4/lib/vue-meta.min',
         'Fuse': 'https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min',
         'v-calendar': 'https://unpkg.com/v-calendar@0.5.1/lib/v-calendar.min',
+        //Dependencies for Flipbook Component//
         'jquery-no-conflict': 'https://mmvue.codecloudapp.com/jquery_no_conflict',
         'turn-js': 'https://mmvue.codecloudapp.com/turn',
         'wait-js': 'https://mmvue.codecloudapp.com/wait',
-        'fullscreen-js': ''
+        'fullscreen-js': 'https://mmvue.codecloudapp.com/jquery.fullscreen',
+        'address-js': 'https://mmvue.codecloudapp.com/jquery.address-1.6.min',
+        'compatibility-js': 'https://mmvue.codecloudapp.com/compatibility',
+        'pdf-js': 'https://mmvue.codecloudapp.com/pdf',
+        'onload-js': 'https://mmvue.codecloudapp.com/onload'
     }
 });
 
