@@ -16,14 +16,16 @@ require.config({
         'js-cookie': 'https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.4/js.cookie.min',
         'vue-meta': 'https://unpkg.com/vue-meta@1.0.4/lib/vue-meta.min',
         'Fuse': 'https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min',
-        'pdfjs-dist/build/pdf': 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.0.246/pdf.min',
-        'v-calendar': 'https://unpkg.com/v-calendar@0.5.1/lib/v-calendar.min'
+        'v-calendar': 'https://unpkg.com/v-calendar@0.5.1/lib/v-calendar.min',
+        'jquery-no-conflict': 'https://mmvue.codecloudapp.com/jquery_no_conflict',
+        'turn-js': 'https://mmvue.codecloudapp.com/turn',
+        'wait-js': 'https://mmvue.codecloudapp.com/wait',
+        'fullscreen-js': ''
     }
 });
 
-require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'locales', 'moment', "vue-meta", "pdfjs-dist/build/pdf"], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta, PDFJS) {
-  
-  console.log(PDFJS);
+require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'store', 'vue-i18n', 'locales', 'moment', "vue-meta", "pdfjs-dist/build/pdf"], function (Vue, Vue2Filters, VueRouter, appRoutes, store, VueI18n, messages, moment, Meta) {
+
   Vue.use(Meta);
   Vue.use(VueRouter);
   Vue.use(Vue2Filters);
