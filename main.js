@@ -18,9 +18,9 @@ require.config({
         'Fuse': 'https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.0.4/fuse.min',
         'v-calendar': 'https://unpkg.com/v-calendar@0.5.1/lib/v-calendar.min',
         //Dependencies for Flipbook Component//
-        'turn-js': 'https://s3.amazonaws.com/kodekloud/sites/59347e776e6f64538f150000/text/javascript/1367673584000/turn',
-        'wait-js': 'https://mmvue.codecloudapp.com/wait',
-        'fullscreen-js': 'https://mmvue.codecloudapp.com/jquery.fullscreen',
+        'turn-js': 'https://codecloud.cdn.speedyrails.net/sites/59347e776e6f64538f150000/text/javascript/1367673584000/turn',
+        'wait-js': 'https://codecloud.cdn.speedyrails.net/sites/59347e776e6f64538f150000/text/javascript/1401803814000/wait.js',
+        'fullscreen-js': 'https://codecloud.cdn.speedyrails.net/sites/59347e776e6f64538f150000/text/javascript/1401803814000/jquery.fullscreen.js',
         'address-js': 'https://mmvue.codecloudapp.com/jquery.address-1.6.min',
         'compatibility-js': 'https://mmvue.codecloudapp.com/compatibility',
         'pdf-js': 'https://mmvue.codecloudapp.com/pdf',
