@@ -99,23 +99,21 @@
                 }
             },
             mounted () {
-                this.map = $('#mapsvg').mapSvg({
-                    source: this.svgMapUrl,//this.getSVGurl,    // Path to SVG map
-                    colors: this.colours,
-                    viewBox: this.viewBox,
-                    disableAll: this.disableAll,
-                    height:this.height,
-                    width:this.width,
-                    regions:this.regions,
-                    tooltipsMode:'custom',
-                    loadingText: this.loadingText,
-                    zoom: this.zoom,
-                    zoomButtons: this.zoomButtons,
-                    pan:this.pan,
-                    cursor:this.cursor,
-                    responsive:this.responsive,
-                    zoomLimit:this.zoomLimit
-                });
+                this.map = $('#png_map').smoothZoom({
+        		    height: this.height,
+        		    width: this.height,
+        		    initial_ZOOM: 0,
+        			zoom_MIN: 0,
+        			zoom_MAX: 200,
+        			responsive: true,
+        		    responsive_maintain_ratio: true,
+        			zoom_BUTTONS_SHOW : 'YES',
+        			pan_BUTTONS_SHOW : 'NO',
+        			pan_LIMIT_BOUNDARY : 'NO',
+        			button_ALIGN: "top right",
+        			container: 'zoom_container'
+        		});
+                
                 console.log("mounted", this.map);
             },
             methods : {
