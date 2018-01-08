@@ -45,7 +45,7 @@
                     type: Array,
                     default: this.getEmptyArray
                 },
-                button_ALIGN: {
+                buttonAlign: {
                     type: String,
                     default: "top right"
                 },
