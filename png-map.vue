@@ -41,7 +41,7 @@
                     type: Number,
                     default: 1300
                 },
-                regions: {
+                button_ALIGN: {
                     type: Array,
                     default: this.getEmptyArray
                 },
