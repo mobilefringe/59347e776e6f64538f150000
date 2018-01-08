@@ -75,7 +75,7 @@
                 },
                 panLimitBoundary : {
                     type: String,
-                    default: 'pointer'
+                    default: 'NO'
                 }
             },
             data() {
