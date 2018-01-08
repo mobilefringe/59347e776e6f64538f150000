@@ -76,6 +76,10 @@
                 panLimitBoundary : {
                     type: String,
                     default: 'NO'
+                },
+                panLimitBoundary : {
+                    type: String,
+                    default: 'NO'
                 }
             },
             data() {
