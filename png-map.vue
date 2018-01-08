@@ -41,11 +41,11 @@
                     type: Number,
                     default: 1300
                 },
-                button_ALIGN: {
+                regions: {
                     type: Array,
                     default: this.getEmptyArray
                 },
-                loadingText: {
+                button_ALIGN: {
                     type: String,
                     default: "Loading, please wait..."
                 },
