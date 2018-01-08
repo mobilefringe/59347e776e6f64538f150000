@@ -151,6 +151,9 @@
                 setViewBox(val){
                     this.map.setViewBox(val.svgmap_region);
                 },
+                setFloorViewBox(val){
+                    this.map.setViewBox(val);
+                },
                 hideMarkers () {
                     this.map.marksHide();
                 },
