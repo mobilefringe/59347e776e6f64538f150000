@@ -21,18 +21,18 @@
                     type: String,
                     required: true
                 },
-                colours:{
-                    type: Object,
-                    default: this.getColour
-                },
-                viewBox : {
-                    type : Array,
-                    default: this.getEmptyArray //viewBox: [3000,0,6000,6000],
-                },
-                disableAll: {
-                    type: Boolean,
-                    default: false
-                },
+                // colours:{
+                //     type: Object,
+                //     default: this.getColour
+                // },
+                // viewBox : {
+                //     type : Array,
+                //     default: this.getEmptyArray //viewBox: [3000,0,6000,6000],
+                // },
+                // disableAll: {
+                //     type: Boolean,
+                //     default: false
+                // },
                 height: {
                     type: Number,
                     default: 1000
