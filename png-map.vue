@@ -73,7 +73,7 @@
                     type: Array,
                     default: this.getZoomLimit
                 },
-                pan_LIMIT_BOUNDARY : {
+                panLimitBoundary : {
                     
                 }
             },
