@@ -112,7 +112,7 @@
         		    responsive_maintain_ratio: true,
         			zoom_BUTTONS_SHOW : 'YES',
         			pan_BUTTONS_SHOW : 'NO',
-        			pan_LIMIT_BOUNDARY : 'NO',
+        			pan_LIMIT_BOUNDARY : this.panLimitBoundary,
         			button_ALIGN: this.buttonAlign,
         			container: 'zoom_container'
         		});
