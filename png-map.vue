@@ -41,10 +41,10 @@
                     type: Number,
                     default: 1300
                 },
-                regions: {
-                    type: Array,
-                    default: this.getEmptyArray
-                },
+                // regions: {
+                //     type: Array,
+                //     default: this.getEmptyArray
+                // },
                 buttonAlign: {
                     type: String,
                     default: "top right"
