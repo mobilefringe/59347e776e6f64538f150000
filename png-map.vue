@@ -110,7 +110,7 @@
         			zoom_BUTTONS_SHOW : 'YES',
         			pan_BUTTONS_SHOW : 'NO',
         			pan_LIMIT_BOUNDARY : 'NO',
-        			button_ALIGN: "top right",
+        			button_ALIGN: this.buttonAlign,
         			container: 'zoom_container'
         		});
                 
