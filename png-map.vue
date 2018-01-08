@@ -47,7 +47,7 @@
                 },
                 button_ALIGN: {
                     type: String,
-                    default: "Loading, please wait..."
+                    default: "top right"
                 },
                 zoom: {
                     type: Boolean,
