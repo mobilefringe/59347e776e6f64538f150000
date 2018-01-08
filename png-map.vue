@@ -74,7 +74,8 @@
                     default: this.getZoomLimit
                 },
                 panLimitBoundary : {
-                    
+                    type: String,
+                    default: 'pointer'
                 }
             },
             data() {
