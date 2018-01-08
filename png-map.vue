@@ -2,7 +2,7 @@
     <div class="svg-map" >
         <div class="map">
             <div id="zoom_container">
-                <img id="png_map" class="png_map" alt="center map" src="" width="938" height="700"/>
+                <img id="png_map" class="png_map" alt="center map" :src="pngMapUrl" width="938" height="700"/>
             
                 <div class="landmarks" data-show-at-zoom="100" data-allow-drag="true">
                     
@@ -17,7 +17,7 @@
         return Vue.component('png-map', {
             template: template,
             props: {
-                svgMapUrl: {
+                pngMapUrl: {
                     type: String,
                     required: true
                 },
