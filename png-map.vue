@@ -8,7 +8,7 @@
 
 <script>
     define(["Vue"], function(Vue) {
-        return Vue.component('svg-map', {
+        return Vue.component('png-map', {
             template: template,
             props: {
                 svgMapUrl: {
