@@ -59,6 +59,9 @@
           listMode: "alphabetical"
         }
       },
+      created(){
+        this.$store.dispatch("getData", "stores")
+      }
       methods: {
         changeMode (mode) {
           this.listMode = mode;
