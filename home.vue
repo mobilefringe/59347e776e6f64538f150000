@@ -43,10 +43,12 @@
         }
       },
       computed: {
-        ...Vuex.mapGetters([
-          'property',
-          'processedStores'
-        ])
+        property(){
+          return this.$store.getters.getProperty;
+        },
+        processedStores() {
+          return this.$store.getters.processedStores;
+        }
       },
       methods: {
         onOptionSelect(option) {
