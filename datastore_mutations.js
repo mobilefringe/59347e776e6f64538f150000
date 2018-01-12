@@ -9,6 +9,9 @@ define(['datastore_mutation_types', 'js-cookie'], function (types, Cookies) {
     },
     [types.SET_META_DATA] (state, {list}) {
       state.meta_data = list;
+    },
+    [types.SET_STORES] (state, {stores}) {
+      state.stores = stores;
     }
   }
   return mutations;
