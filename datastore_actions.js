@@ -1,6 +1,7 @@
 define(['axios', 'datastore_mutation_types', 'js-cookie'], function (axios, types, Cookies) {
   const actions = {
     LOAD_MALL_DATA: function ({commit}, list) {
+      console.warn("This method is deprecated. Please avoid using all.json")
       return new Promise((resolve, reject) => {
         axios.get(list.url).then(response => {
           commit(types.SET_MALL_DATA, {
