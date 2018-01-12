@@ -4,7 +4,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       let locale = state.locale;
       return locale;
     },
-    getTimezone: state => {
+    timezone: state => {
       let property = state.property;
       let timezone = property !== undefined ? property.timezone_moment : null;
       return timezone;
