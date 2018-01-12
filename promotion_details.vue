@@ -15,28 +15,36 @@
   define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment"], function(Vue, Vuex, moment, tz, VueMoment) {
     return Vue.component("promo-details-component", {
       template: template, // the variable template will be injected,
+      props: ['id'],
       data: function() {
         return {
           currentPromo: null
         }
       },
-      beforeRouteEnter (to, from, next) {
-        next(vm => {
-          // access to component instance via `vm`
-          vm.currentPromo = vm.findPromoBySlug(to.params.id);
-          if (vm.currentPromo === null || vm.currentPromo === undefined){
-            vm.$router.replace({ name: '404'});
-          }
-        })
-      },
-      beforeRouteUpdate (to, from, next) {
-        this.currentPromo = this.findPromoBySlug(to.params.id);
-        if (this.currentPromo === null || this.currentPromo === undefined){
-          this.$router.replace({ name: '404'});
-        }
-      },
+    //   beforeRouteEnter (to, from, next) {
+    //     next(vm => {
+    //       // access to component instance via `vm`
+    //       vm.currentPromo = vm.findPromoBySlug(to.params.id);
+    //       if (vm.currentPromo === null || vm.currentPromo === undefined){
+    //         vm.$router.replace({ name: '404'});
+    //       }
+    //     })
+    //   },
+    //   beforeRouteUpdate (to, from, next) {
+    //     this.currentPromo = this.findPromoBySlug(to.params.id);
+    //     if (this.currentPromo === null || this.currentPromo === undefined){
+    //       this.$router.replace({ name: '404'});
+    //     }
+    //   },
       created(){
-        this.$store.dispatch("getData", "promotions");
+        this.$store.dispatch("getData", "promotions").then(response => {
+          this.currentPromo = this.findPromoBySlug(this.id);
+          if (this.currentPromo === null || this.currentPromo === undefined){
+            this.$router.replace({ name: '404'});
+          }
+        }, error => {
+          console.error("Could not retrieve data from server. Please check internet connection and try again.");
+        });
       },
       computed: {
         ...Vuex.mapGetters([
