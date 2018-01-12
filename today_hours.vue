@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <h3>Shopping Hours</h3>
-    <p v-if="!hours.is_closed">{{todayDate | moment("ddd", timezone)}} {{hours.open_time | moment("LT", timezone)}} - {{hours.close_time | moment("LT", timezone)}}</p>
-    <p v-if="hours.is_closed">Closed</p>
+    <p v-if="!getTodayHours.is_closed">{{todayDate | moment("ddd", timezone)}} {{getTodayHours.open_time | moment("LT", timezone)}} - {{getTodayHours.close_time | moment("LT", timezone)}}</p>
+    <p v-if="getTodayHours.is_closed">Closed</p>
   </div>
 </template>
 
@@ -18,7 +18,7 @@
       },
       computed: {
         ...Vuex.mapGetters([
-          'hours',
+          'getTodayHours',
           'timezone'
         ])
       }
