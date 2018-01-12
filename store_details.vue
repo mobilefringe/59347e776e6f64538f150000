@@ -11,7 +11,7 @@
 </template>
 
 <script>
-  define(["Vue"], function(Vue) {
+  define(["Vue", "vuex"], function(Vue, Vuex) {
     return Vue.component("store-details-component", {
       template: template, // the variable template will be injected,
       data: function() {
@@ -37,9 +37,9 @@
         }
       },
       computed: {
-        findStoreBySlug () {
-          return this.$store.getters.findStoreBySlug;
-        }
+        ...Vuex.mapGetters([
+          'findStoreBySlug'
+        ])
       }
     });
   });
