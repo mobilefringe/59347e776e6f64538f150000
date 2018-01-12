@@ -61,12 +61,12 @@ require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'datastore', 'vue-i18n',
       }
     },
     created: function ()  {
+      this.$store.dispatch('initializeApi', {site: "halifaxcentre", version: "v4"});
+      
       // make an async call to the data store to initialize the locale (i.e. it will check if there is a locale value saved in cookie, otherwise it will default to EN)
       this.$store.dispatch('INITIALIZE_LOCALE');
       
       this.$store.dispatch('LOAD_META_DATA');
-      
-      //this.$store.dispatch('initializeApi', {site: "halifaxcentre", version: "v4"});
       
       this.$store.dispatch("getStores", "someendpoint");
 
