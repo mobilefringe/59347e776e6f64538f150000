@@ -13,9 +13,6 @@
 <script>
   define(["Vue"], function(Vue) {
     return Vue.component("store-details-component", {
-      mounted(){
-          console.table(this.$route)
-      },
       template: template, // the variable template will be injected,
       data: function() {
         return {
