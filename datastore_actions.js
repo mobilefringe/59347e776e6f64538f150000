@@ -1,5 +1,15 @@
 define(['axios', 'datastore_mutation_types', 'js-cookie'], function (axios, types, Cookies) {
   const actions = {
+      
+    getLocation = ({ commit }, id) => {
+      return new Promise((resolve, reject) => {
+        axios.get('/api/locations/' + id).then(response => {
+          resolve(response);
+        }).catch(error => {
+          reject(error);
+        });
+      })
+    },
     LOAD_MALL_DATA: function ({commit}, list) {
       console.warn("Load Mall Data has been deprecated. Please avoid using all.json")
       return new Promise((resolve, reject) => {
