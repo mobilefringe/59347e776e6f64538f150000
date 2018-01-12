@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  define(["Vue", "moment", "moment-timezone", "vue-moment"], function(Vue, moment, tz, VueMoment) {
+  define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment"], function(Vue, Vuex, moment, tz, VueMoment) {
     return Vue.component("promo-details-component", {
       template: template, // the variable template will be injected,
       data: function() {
@@ -35,13 +35,14 @@
           this.$router.replace({ name: '404'});
         }
       },
+      created(){
+        this.$store.dispatch("getData", "promotions");
+      },
       computed: {
-        findPromoBySlug () {
-          return this.$store.getters.findPromoBySlug;
-        },
-        timezone() {
-          return this.$store.getters.getTimezone;
-        }
+        ...Vuex.mapGetters([
+          'findPromoBySlug',
+          'timezone'
+        ])
       }
     });
   });
