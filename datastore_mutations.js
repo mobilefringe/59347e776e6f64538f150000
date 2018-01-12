@@ -12,6 +12,9 @@ define(['datastore_mutation_types', 'js-cookie'], function (types, Cookies) {
     },
     [types.SET_STORES] (state, {stores}) {
       state.stores = stores;
+    },
+    [types.SET_API_VERSION] (state, {version}) {
+      state.apiVersion = version;
     }
   }
   return mutations;
