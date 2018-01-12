@@ -29,17 +29,15 @@
 </style>
 
 <script>
-  define(["Vue", "moment", "moment-timezone", "vue-moment", "vue-meta"], function(Vue, moment, tz, VueMoment, Meta) {
+  define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-meta"], function(Vue, Vuex, moment, tz, VueMoment, Meta) {
     Vue.use(Meta);
     return Vue.component("promos-component", {
       template: template, // the variable template will be injected
       computed: {
-        promotions() {
-          return this.$store.getters.processedPromos;
-        },
-        timezone () {
-          return this.$store.getters.getTimezone;
-        }
+        ...Vuex.mapGetters([
+          'promotions',
+          'timezone'
+        ])
       }
     });
   });
