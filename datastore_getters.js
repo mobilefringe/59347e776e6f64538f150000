@@ -9,7 +9,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       let timezone = property !== undefined ? property.timezone_moment : null;
       return timezone;
     },
-    property: state => {
+    getProperty: state => {
       let property = state.property;
       return property;
     },
