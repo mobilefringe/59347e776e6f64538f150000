@@ -9,10 +9,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       let timezone = property !== undefined ? property.timezone_moment : null;
       return timezone;
     },
-    getProperty: state => {
-      let property = state.property;
-      return property;
-    },
+    property: state => state.property,
     getTodayHours: state => {
       try {
         let hours = state.hours;
