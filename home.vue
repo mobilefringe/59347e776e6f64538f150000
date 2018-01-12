@@ -31,7 +31,7 @@
 </template>
 
 <script>
-  define(["Vue", "vue!today_hours.vue", "vue!search-component.vue"], function(Vue, TodayHoursComponent, SearchComponent) {
+  define(["Vue", "vuex", "vue!today_hours.vue", "vue!search-component.vue"], function(Vue, Vuex, TodayHoursComponent, SearchComponent) {
     return Vue.component("home-component", {
       template: template, // the variable template will be injected
       data: function() {
@@ -43,12 +43,10 @@
         }
       },
       computed: {
-        property(){
-          return this.$store.getters.getProperty;
-        },
-        processedStores() {
-          return this.$store.getters.processedStores;
-        }
+        ...Vuex.mapGetters([
+          'property',
+          'processedStores'
+        ])
       },
       methods: {
         onOptionSelect(option) {
