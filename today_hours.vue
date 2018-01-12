@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  define(["Vue", "moment", "moment-timezone", "vue-moment"], function(Vue, moment, tz, VueMoment) {
+  define(["Vue", "Vuex", "moment", "moment-timezone", "vue-moment"], function(Vue, Vuex, moment, tz, VueMoment) {
     return Vue.component("today-hours", {
       template: template, // the variable template will be injected,
       data: function() {
@@ -17,12 +17,10 @@
         }
       },
       computed: {
-        hours () {
-          return this.$store.getters.getTodayHours;
-        },
-        timezone () {
-          return this.$store.getters.getTimezone;
-        }
+        ...Vuex.mapGetters([
+          'hours',
+          'timezone'
+        ])
       }
     });
   });
