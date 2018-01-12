@@ -2,6 +2,8 @@ define(['Vue', 'vuex', 'datastore_getters', 'datastore_actions', 'datastore_muta
   Vue.use(Vuex);
 
   const state = {
+    apiVersion: null,
+    apiProperty: null,
     results: [],
     meta_data: [],
     locale: null,
