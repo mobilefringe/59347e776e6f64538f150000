@@ -66,7 +66,7 @@ require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'datastore', 'vue-i18n',
       
       this.$store.dispatch('LOAD_META_DATA');
       
-      this.$store.dispatch('initializeApi', {site: "halifaxcentre", version: "v4"});
+      //this.$store.dispatch('initializeApi', {site: "halifaxcentre", version: "v4"});
       
       this.$store.dispatch("getStores", "someendpoint");
 
