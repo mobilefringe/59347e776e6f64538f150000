@@ -4,8 +4,7 @@ define(function () {
     SET_META_DATA: "SET_META_DATA",
     SET_LOCALE: "SET_LOCALE",
     SET_STORES: "SET_STORES",
-    SET_API_VERSION: "SET_API_VERSION",
-    SET_API_PROPERTY: "SET_API_PROPERTY"
+    SET_API_DETAILS: "SET_API_DETAILS"
   }
   return types;
 });
