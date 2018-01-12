@@ -5,18 +5,18 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       return locale;
     },
     getTimezone: state => {
-      let property = state.results.property;
+      let property = state.property;
       let timezone = property !== undefined ? property.timezone_moment : null;
       return timezone;
     },
     getProperty: state => {
-      let property = state.results.property;
+      let property = state.property;
       return property;
     },
     getTodayHours: state => {
       try {
-        let hours = state.results.hours;
-        let property = state.results.property;
+        let hours = state.hours;
+        let property = state.property;
         let timezone = property.timezone_moment;
         let todayHours = hours.find(hour => hour.day_of_week === moment().day());
         let holidayHours = hours.find(hour => hour.is_holiday == true && (moment(hour.holiday_date).tz(timezone).date() == moment().tz(timezone).date() && moment(hour.holiday_date).tz(timezone).month() + 1 == moment().tz(timezone).month() + 1 && moment(hour.holiday_date).tz(timezone).year() == moment().tz(timezone).year()));
@@ -34,8 +34,8 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
     },
     getPropertyHours: state => {
       try {
-        let hours = state.results.hours;
-        let property = state.results.property;
+        let hours = state.hours;
+        let property = state.property;
         let timezone = property.timezone_moment;
         let hoursObject = _.filter(hours, function (o) {
           return o.store_ids === null && !o.is_holiday;
@@ -49,8 +49,8 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
     },
     getPropertyHolidayHours: state => {
       try {
-        let hours = state.results.hours;
-        let property = state.results.property;
+        let hours = state.hours;
+        let property = state.property;
         let timezone = property.timezone_moment;
         let hoursObject = _.filter(hours, function (o) {
           return o.store_ids === null && o.is_holiday;
@@ -64,8 +64,8 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
     },
     processedPromos: state => {
       try {
-        let promos = state.results.promotions;
-        let stores = state.results.stores;
+        let promos = state.promotions;
+        let stores = state.stores;
         // Add image_url attribute with CDN link
         promos.map(promo => {
           promo.image_url = promo.promo_image_url_abs;
@@ -85,8 +85,8 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
     },
     processedEvents: state => {
       try {
-        let events = state.results.events;
-        let stores = state.results.stores;
+        let events = state.events;
+        let stores = state.stores;
         // Add image_url attribute with CDN link
         events.map(event => {
           event.image_url = event.event_image_url_abs;
@@ -106,8 +106,8 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
     },
     processedCoupons: state => {
       try {
-        let coupons = state.results.coupons;
-        let stores = state.results.stores;
+        let coupons = state.coupons;
+        let stores = state.stores;
         // Add image_url attribute with CDN link
         coupons.map(coupon => {
           coupon.image_url = coupon.promo_image_url_abs;
@@ -127,8 +127,8 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
     },
     processedJobs: state => {
       try {
-        let jobs = state.results.jobs;
-        let stores = state.results.stores;
+        let jobs = state.jobs;
+        let stores = state.stores;
         // Add image_url attribute with CDN link
         jobs.map(job => {
           job.locale = state.locale;
@@ -147,7 +147,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
     },
     processedStores: state => {
       try {
-        let stores = state.results.stores;
+        let stores = state.stores;
         // Add image_url attribute with CDN link
         stores.map(store => {
           store.image_url = "https://mallmaverick.cdn.speedyrails.net" + store.store_front_url;
@@ -159,14 +159,14 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
     },
     processedCategories: state => {
       try {
-        return state.results.categories;
+        return state.categories;
       } catch (err) {
         return [];
       }
     },
     processedContests: state => {
       try {
-        let contests = state.results.contests;
+        let contests = state.contests;
         contests.map(contest => {
           contest.image_url = "https://mallmaverick.cdn.speedyrails.net" + contest.photo_url;
         });
@@ -176,11 +176,11 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       }
     },
     findStoreBySlug: (state, getters) => (slug) => {
-      let stores = state.results.stores;
+      let stores = state.stores;
       return stores.find(store => store.slug === slug)
     },
     findStoreById: (state, getters) => (id) => {
-      let stores = state.results.stores;
+      let stores = state.stores;
       return stores.find(store => _.toNumber(store.id) === _.toNumber(id))
     },
     findCategoryById: (state, getters) => (id) => {
@@ -232,19 +232,19 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       return contests.find(contest => _.toNumber(contest.id) === _.toNumber(id))
     },
     findBlogByName: (state, getters) => (name) => {
-      let blogs = state.results.blogs;
+      let blogs = state.blogs;
       return blogs.find(blog => blog.name === name)
     },
     findBlogBySlug: (state, getters) => (slug) => {
-      let blogs = state.results.blogs;
+      let blogs = state.blogs;
       return blogs.find(blog => blog.slug === slug)
     },
     findRepoByName: (state, getters) => (name) => {
-      let repos = state.results.repos;
+      let repos = state.repos;
       return repos.find(repo => repo.name === name)
     },
     findRepoBySlug: (state, getters) => (slug) => {
-      let repos = state.results.repos;
+      let repos = state.repos;
       return repos.find(repo => repo.slug === slug)
     },
     findBlogPostBySlug: (state, getters) => (name, slug) => {
@@ -253,7 +253,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       return blog_posts.find(blog_post => blog_post.slug === slug)
     },
     findPointOfInterest: (state, getters) => (name) => {
-      let pois = state.results.pois;
+      let pois = state.pois;
       return pois.find(poi => poi.name === name)
     },
     findPointOfInterestBySlug: (state, getters) => (name, slug) => {
@@ -262,7 +262,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       return pois_locations.find(pois_location => pois_location.slug === slug)
     },
     findHourById: (state, getters) => (id) => {
-      let hours = state.results.hours;
+      let hours = state.hours;
       return hours.find(hour => _.toNumber(hour.id) === _.toNumber(id))
     },
     findMetaDataByPath: (state, getters) => (path) => {
@@ -295,7 +295,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
     },
     storesByCategoryName: (state, getters) => {
       let stores = getters.processedStores;
-      let categories = state.results.categories;
+      let categories = state.categories;
       let tempStores = [];
       let groupedCategoriesById = _.groupBy(categories, category => category.id.toString());
       _.each(stores, store => _.each(store.categories, cat => {
