@@ -65,6 +65,8 @@ require(['Vue', 'vue2-filters', 'vue_router', 'routes', 'datastore', 'vue-i18n',
       this.$store.dispatch('INITIALIZE_LOCALE');
       
       this.$store.dispatch('LOAD_META_DATA');
+      
+      this.$store.dispatch("getStores", "someendpoint");
 
       // make an async call to load mall data
       this.$store.dispatch('LOAD_MALL_DATA', {url:"https://www.mallmaverick.com/api/v4/halifaxcentre/all.json"}).then(response => {
