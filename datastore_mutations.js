@@ -6,6 +6,9 @@ define(['datastore_mutation_types', 'js-cookie'], function (types, Cookies) {
     [types.SET_BANNERS] (state, {banners}) {
       state.banners = banners;
     },
+    [types.SET_BLOGS] (state, {blogs}) {
+      state.blogs = blogs;
+    },
     [types.SET_CATEGORIES] (state, {categories}) {
       state.categories = categories;
     },
