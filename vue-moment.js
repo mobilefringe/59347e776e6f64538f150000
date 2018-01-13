@@ -13,6 +13,7 @@ define(['Vue', 'moment', 'moment-timezone'], function (Vue, moment, tz) {
         date = moment(string = input[0], formats = input[1], true).tz(timezone);
       } 
       else if (Array.isArray(input) && typeof input[0] === 'number'){
+        console.log("here");
         date = moment().weekday(input[0]).tz(timezone).format(input[1]);
       }
       else {
