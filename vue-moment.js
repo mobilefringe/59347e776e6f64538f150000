@@ -18,6 +18,7 @@ define(['Vue', 'moment', 'moment-timezone'], function (Vue, moment, tz) {
         date = moment().weekday(input[0]).tz(timezone).format(input[1]);
       }
       else {
+        console.log("here3");
         // Otherwise, throw the input at moment and see what happens...
         date = moment(input).tz(timezone);
       }
