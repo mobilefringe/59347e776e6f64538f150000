@@ -31,7 +31,11 @@ define(['Vue', 'moment', 'moment-timezone'], function (Vue, moment, tz) {
         // Format pattern will accept an array of potential formats to parse against.
         // Date string should be at [0], format pattern(s) should be at [1]
         date = moment(string = input[0], formats = input[1], true);
-      } else {
+      } 
+      else if (Array.isArray(input) && typeof input[0] === 'number'){
+        date = moment().weekday(input[0]).format(input[1]);
+      }
+      else {
         // Otherwise, throw the input at moment and see what happens...
         date = moment(input);
       }
