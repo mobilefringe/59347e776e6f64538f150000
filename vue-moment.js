@@ -7,6 +7,7 @@ define(['Vue', 'moment', 'moment-timezone'], function (Vue, moment, tz) {
     
     if (timezone) {
       if (Array.isArray(input) && typeof input[0] === 'string') {
+        console.log("here2");
         // If input is array, assume we're being passed a format pattern to parse against.
         // Format pattern will accept an array of potential formats to parse against.
         // Date string should be at [0], format pattern(s) should be at [1]
