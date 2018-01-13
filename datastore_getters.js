@@ -13,7 +13,9 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       let property = state.property;
       return property;
     },
-    repos: state => state.repos,
+    repos: state => {
+      return state.repos;
+    },
     getTodayHours: state => {
       try {
         let hours = state.hours;
