@@ -7,18 +7,12 @@ define(['Vue', 'moment', 'moment-timezone'], function (Vue, moment, tz) {
     
     if (timezone) {
       if (Array.isArray(input) && typeof input[0] === 'string') {
-        console.log("here2");
         // If input is array, assume we're being passed a format pattern to parse against.
         // Format pattern will accept an array of potential formats to parse against.
         // Date string should be at [0], format pattern(s) should be at [1]
         date = moment(string = input[0], formats = input[1], true).tz(timezone);
-      } 
-      else if (Array.isArray(input) && typeof input[0] === 'number'){
-        console.log("here");
-        date = moment().weekday(input[0]).tz(timezone).format(input[1]);
-      }
-      else {
-        console.log("here3");
+      } else {
+         console.log(input)
         // Otherwise, throw the input at moment and see what happens...
         date = moment(input).tz(timezone);
       }
@@ -38,11 +32,7 @@ define(['Vue', 'moment', 'moment-timezone'], function (Vue, moment, tz) {
         // Format pattern will accept an array of potential formats to parse against.
         // Date string should be at [0], format pattern(s) should be at [1]
         date = moment(string = input[0], formats = input[1], true);
-      } 
-      else if (Array.isArray(input) && typeof input[0] === 'number'){
-        date = moment().weekday(input[0]).format(input[1]);
-      }
-      else {
+      } else {
         // Otherwise, throw the input at moment and see what happens...
         date = moment(input);
       }
