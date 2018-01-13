@@ -12,9 +12,14 @@ define(['Vue', 'moment', 'moment-timezone'], function (Vue, moment, tz) {
         // Date string should be at [0], format pattern(s) should be at [1]
         date = moment(string = input[0], formats = input[1], true).tz(timezone);
       } else {
-         console.log(input)
-        // Otherwise, throw the input at moment and see what happens...
-        date = moment(input).tz(timezone);
+        if (typeof input === 'number' && (input >= 0 and input < 7)){
+          date = moment().weekday(input).tz(timezone)
+        }
+        else{
+          // Otherwise, throw the input at moment and see what happens...
+          date = moment(input).tz(timezone);
+        }
+        
       }
 
       if (!date.isValid()) {
@@ -33,8 +38,13 @@ define(['Vue', 'moment', 'moment-timezone'], function (Vue, moment, tz) {
         // Date string should be at [0], format pattern(s) should be at [1]
         date = moment(string = input[0], formats = input[1], true);
       } else {
-        // Otherwise, throw the input at moment and see what happens...
-        date = moment(input);
+        if (typeof input === 'number' && (input >= 0 and input < 7)){
+          date = moment().weekday(input);
+        }
+        else{
+          // Otherwise, throw the input at moment and see what happens...
+          date = moment(input);
+        }
       }
 
       if (!date.isValid()) {
