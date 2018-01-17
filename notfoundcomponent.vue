@@ -7,7 +7,7 @@
 </template>
 
 <script>
-  define(["Vue"], function(Vue) {
+  define(["Vue", "css!v-calendar-css"], function(Vue, VCalendarCSS) {
     return Vue.component("not-found-component", {
       template: template, // the variable template will be injected
       data: function() {
