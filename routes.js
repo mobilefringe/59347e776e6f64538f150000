@@ -7,9 +7,6 @@ define([], function () {
     {
       path: '/stores',
       component: view('default'),
-      meta:{
-          val: "stores"
-      },
       children: [
         {
           path: '',
