@@ -1,5 +1,6 @@
 define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
   const getters = {
+    route: state => state.route,
     dataLoaded: state => state.dataLoaded,
     getLocale: state => {
       let locale = state.locale;
