@@ -18,6 +18,9 @@ define(['datastore_mutation_types', 'js-cookie'], function (types, Cookies) {
     [types.SET_COUPONS] (state, {coupons}) {
       state.coupons = coupons;
     },
+    [types.SET_DATA_LOADED] (state, {dataLoaded}) {
+      state.dataLoaded = dataLoaded;
+    },
     [types.SET_EVENTS] (state, {events}) {
       state.events = events;
     },
