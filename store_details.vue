@@ -23,6 +23,7 @@
       },
       props:['id'],
       created(){
+        console.log(this.$store.state);
         this.currentStore = this.findStoreBySlug(this.id);
         if (this.currentStore === null || this.currentStore === undefined){
           this.$router.replace({ name: '404'});
