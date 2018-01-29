@@ -290,7 +290,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
     },
     storesByAlphaIndex: (state, getters) => {
       let stores = getters.processedStores;
-      let grouped = _.groupBy(stores, store => (isNaN(store.name.charAt(0)) ? store.name.charAt(0) : "#"));
+      let grouped = _.groupBy(stores, store => (isNaN(_.upperCase(store.name.charAt(0))) ? _.upperCase(store.name.charAt(0)) : "#"));
       return grouped;
     },
     storesByCategoryName: (state, getters) => {
