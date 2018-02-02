@@ -960,6 +960,8 @@ define(["jquery", "mousewheel", "hammer"], function($, mousewheel, hammer){
             console.log("trigger map ready");
 			// Trigger event
 			self.el.trigger('mapready', self);
+			
+			console.log(self);
 
 			// Controls
 			if (self.o.zoom) addControls();
