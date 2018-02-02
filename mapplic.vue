@@ -1,6 +1,6 @@
 <template>
   <div style="position:relative; margin: auto;width: 100%;overflow: hidden;">
-    <div id="mapplic" class="mapplic"  ></div>
+    <div id="mapplic" class="mapplic"></div>
     <div>
         <np-loader v-if="showLoader"></np-loader>
     </div>
@@ -159,6 +159,7 @@
             },
             data() {
                 return {
+                    el: '#mapplic'
                     map: null,
                     self: null,
                     developer: false,
@@ -228,9 +229,9 @@
                     };
                 },
                 initMapplic() {
-                    var map = $('#mapplic').mapplic(this.options);
+                    var map = $(this.$el).mapplic(this.options);
                     //this.self = map.data('mapplic');
-                    console.log("init mapplic");
+                    console.log(map);
                     map.on('mapready', this.mapready);
                     
                     if (this.bindLocationOpened) {
