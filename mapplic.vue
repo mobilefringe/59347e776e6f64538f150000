@@ -246,7 +246,7 @@
                         $("body").on('positionchanged',this.positionchanged);
                     }
                 },
-                mapready(e, location) {
+                mapready(e) {
                     console.log('Map is ready!');
                 },
                 locationopened(e, loc) {
