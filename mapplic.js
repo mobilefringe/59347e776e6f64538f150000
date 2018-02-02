@@ -568,7 +568,7 @@
 
 					// Scroll back to map on mobile
 					if ($(window).width() < 668) {
-						$('html, body').animate({
+						$('html, body').transition({
 							scrollTop: self.container.offset().top
 						}, 400);
 					}
