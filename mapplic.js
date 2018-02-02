@@ -967,6 +967,8 @@
 
 				self.deeplinking.init();
 			}
+			
+			console.log("trigger map ready");
 
 			// Trigger event
 			self.el.trigger('mapready', self);
