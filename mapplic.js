@@ -198,7 +198,7 @@
 					zoom = location.zoom ? parseFloat(location.zoom) : self.o.maxscale;
 				
 				ry = ((self.container.height() - this.drop) / 2 + this.drop) / self.container.height();
-				self.moveTo(location.x, location.y, zoom, 100, 'easeInOutCubic', ry);
+				self.moveTo(location.x, location.y, zoom, 600, 'easeInOutCubic', ry);
 			}
 
 			this.hide = function() {
