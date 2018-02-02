@@ -4,9 +4,7 @@
  * http://www.mapplic.com/
  */
 
-(function (factory) {
-	factory(jQuery);
-}(function($) {
+;(function($) {
 	"use strict";
 
 	var Mapplic = function(element) {
@@ -1384,4 +1382,4 @@
 			element.data('mapplic', instance);
 		});
 	};
-}));
+})(jQuery);
