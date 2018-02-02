@@ -231,7 +231,7 @@
                     this.map = $('#mapplic').mapplic(this.options);
                     this.self = this.map.data('mapplic');
                     
-                    $("body").on('mapready', this.mapready);
+                    map.on('mapready', this.mapready);
                     
                     if (this.bindLocationOpened) {
                         $("body").on('locationopened',this.locationopened);
