@@ -670,7 +670,7 @@
 					self.x = normalizeX(self.x - (self.container.width() / 2 - self.x) * (self.scale / scale - 1));
 					self.y = normalizeY(self.y - (self.container.height() / 2 - self.y) * (self.scale / scale - 1));
 
-					zoomTo(self.x, self.y, self.scale, 0, 'easeInOutCubic');
+					zoomTo(self.x, self.y, self.scale, 0, 'linear');
 				});
 
 				// Zoom out button
