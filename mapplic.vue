@@ -203,6 +203,7 @@
                 this.initMapplic();
             },
             watch: {
+                /*
                 map: function() {
                     if(this.map != null) {
                         // this.$emit('updateMap', this.map);
@@ -215,6 +216,7 @@
                     
                     
                 }
+                */
             },
             methods: {
                 getTooltip() {
