@@ -205,7 +205,7 @@
             watch: {
                 map: function() {
                     if(this.map != null) {
-                        this.$emit('updateMap', this.map);
+                        // this.$emit('updateMap', this.map);
                         
                         //wait for map to load
                         setTimeout(() => {
