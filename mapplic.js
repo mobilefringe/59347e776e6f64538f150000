@@ -1185,6 +1185,13 @@
 
 		var zoomTo = function(x, y, scale, d, easing) {
 			if (scale !== undefined) {
+			    move(self.map.id)
+                .x(x)
+                .y(y)
+                .scaleX(self.contentWidth * scale)
+                .scaleY(self.contentHeight * scale)
+                .end();
+			    /*
 				self.map.stop().animate({
 					'left': x,
 					'top': y,
@@ -1193,6 +1200,7 @@
 				}, d, easing, function() {
 					if (self.tooltip) self.tooltip.position();
 				});
+				*/
 			}
 			else {
 				self.map.css({
