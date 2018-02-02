@@ -201,7 +201,6 @@
             mounted() {
                 // this.store_source = this.loadStoreData();
                 this.initMapplic();
-                console.log(options);
             },
             watch: {
                 map: function() {
