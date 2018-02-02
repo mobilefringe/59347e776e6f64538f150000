@@ -1185,6 +1185,7 @@
 
 		var zoomTo = function(x, y, scale, d, easing) {
 		    easing = 'linear';
+		    d = 10;
 			if (scale !== undefined) {
 				self.map.stop().animate({
 					'left': x,
