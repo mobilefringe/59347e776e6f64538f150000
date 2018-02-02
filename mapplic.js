@@ -1185,7 +1185,7 @@
 
 		var zoomTo = function(x, y, scale, d, easing) {
 			if (scale !== undefined) {
-				self.map.stop().velocity({
+				self.map.velocity({
 					'left': x,
 					'top': y,
 					'width': self.contentWidth * scale,
