@@ -1185,7 +1185,6 @@
 
 		var zoomTo = function(x, y, scale, d, easing) {
 		    easing = 'linear';
-		    /*
 			if (scale !== undefined) {
 				self.map.stop().animate({
 					'left': x,
@@ -1202,11 +1201,6 @@
 					'top': y
 				});
 			}
-			*/
-			self.map.css({
-					'left': x,
-					'top': y
-				});
 			if (self.tooltip) self.tooltip.position();
 			if (self.minimap) self.minimap.update(x, y);
 
