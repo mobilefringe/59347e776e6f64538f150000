@@ -41,7 +41,7 @@
 </style>
 
 <script>
-    define(["Vue","jquery", "mousewheel", "hammer", "mapplic"], function(Vue,$,mousewheel, hammer, mapplic) {
+    define(["Vue","jquery", "mousewheel", "hammer", "jquery-transit", "mapplic"], function(Vue,$,mousewheel, hammer, transit, mapplic) {
         return Vue.component('mapplic-map', {
             template: template,
             props: {
