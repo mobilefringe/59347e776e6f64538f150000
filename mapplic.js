@@ -16,6 +16,7 @@
 			factory(jQuery);
 	}
 }(function($) {
+    window.jQuery = window.$ = $;
 	"use strict";
 
 	var Mapplic = function(element) {
