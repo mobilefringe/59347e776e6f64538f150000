@@ -568,7 +568,7 @@
 
 					// Scroll back to map on mobile
 					if ($(window).width() < 668) {
-						$('html, body').transition({
+						$('html, body').animate({
 							scrollTop: self.container.offset().top
 						}, 400);
 					}
@@ -1186,7 +1186,7 @@
 		var zoomTo = function(x, y, scale, d, easing) {
 			if (scale !== undefined) {
 				self.map.stop();
-				self.map.transition({
+				self.map.animate({
 					'left': x,
 					'top': y,
 					'width': self.contentWidth * scale,
