@@ -229,7 +229,7 @@
                 },
                 initMapplic() {
                     var map = $('#mapplic').mapplic(this.options);
-                    this.self = this.map.data('mapplic');
+                    //this.self = map.data('mapplic');
                     console.log("init mapplic");
                     map.on('mapready', this.mapready);
                     
