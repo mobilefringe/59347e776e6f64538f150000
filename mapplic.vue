@@ -230,7 +230,7 @@
                 initMapplic() {
                     this.map = $('#mapplic').mapplic(this.options);
                     this.self = this.map.data('mapplic');
-                    
+                    console.log("init mapplic");
                     this.map.on('mapready', this.mapready);
                     
                     if (this.bindLocationOpened) {
