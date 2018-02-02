@@ -1191,7 +1191,7 @@
 					'top': y,
 					'width': self.contentWidth * scale,
 					'height': self.contentHeight * scale
-				}, 'fast', function() {
+				}, d, easing, function() {
 					if (self.tooltip) self.tooltip.position();
 				});
 			}
