@@ -1186,7 +1186,7 @@
 		var zoomTo = function(x, y, scale, d, easing) {
 			if (scale !== undefined) {
 				self.map.stop();
-				$(self.map.id).transition({
+				self.map.transition({
 					'left': x,
 					'top': y,
 					'width': self.contentWidth * scale,
