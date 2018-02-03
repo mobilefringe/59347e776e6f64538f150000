@@ -559,7 +559,7 @@ define(["jquery", "mousewheel", "hammer", "Velocity"], function($, mousewheel, h
 
 					// Scroll back to map on mobile
 					if ($(window).width() < 668) {
-						$('html, body').animate({
+						$('html, body').velocity({
 							scrollTop: self.container.offset().top
 						}, 400);
 					}
@@ -1179,7 +1179,7 @@ define(["jquery", "mousewheel", "hammer", "Velocity"], function($, mousewheel, h
 		var zoomTo = function(x, y, scale, d, easing) {
 			if (scale !== undefined) {
 				self.map.stop();
-				self.map.animate({
+				self.map.velocity({
 					'left': x,
 					'top': y,
 					'width': self.contentWidth * scale,
