@@ -5,6 +5,8 @@
  */
 
 define(["jquery", "mousewheel", "hammer"], function($, mousewheel, hammer){
+    window.jQuery = $;
+    console.log(window.jQuery);
 	"use strict";
 
 	var Mapplic = function(element) {
