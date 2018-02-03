@@ -957,10 +957,10 @@ define(["jquery", "mousewheel", "hammer"], function($, mousewheel, hammer){
 				self.deeplinking.init();
 			}
             
-            //setTimeout(function () {
+            setTimeout(function () {
 			    // Trigger event
-			self.el.trigger('mapready', self);
-            //}, 1000);
+			    self.el.trigger('mapready', self);
+            }, 1000);
 			
 			// Controls
 			if (self.o.zoom) addControls();
