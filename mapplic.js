@@ -558,7 +558,7 @@ define(["mousewheel", "hammer", "Velocity"], function(mousewheel, hammer, veloci
 
 					// Scroll back to map on mobile
 					if ($(window).width() < 668) {
-						$('html, body').velocity({
+						$('html, body').animate({
 							scrollTop: self.container.offset().top
 						}, 400);
 					}
