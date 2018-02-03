@@ -1178,7 +1178,7 @@ define(["mousewheel", "hammer", "Velocity"], function(mousewheel, hammer, veloci
 		var zoomTo = function(x, y, scale, d, easing) {
 			if (scale !== undefined) {
 				self.map.stop();
-				self.map.velocity({
+				self.map.animate({
 					'left': x,
 					'top': y,
 					'width': self.contentWidth * scale,
