@@ -4,8 +4,7 @@
  * http://www.mapplic.com/
  */
 
-define(["mousewheel", "hammer", "Velocity"], function(mousewheel, hammer, velocity){
-    console.log(window.jQuery);
+define(["jquery", "mousewheel", "hammer"], function(mousewheel, hammer){
 	"use strict";
 
 	var Mapplic = function(element) {
