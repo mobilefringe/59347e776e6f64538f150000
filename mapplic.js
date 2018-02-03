@@ -959,7 +959,7 @@ define(["jquery", "mousewheel", "hammer"], function($, mousewheel, hammer){
             
             //setTimeout(function () {
 			    // Trigger event
-			    self.el.trigger('mapready', self);
+			self.el.trigger('mapready', self);
             //}, 1000);
 			
 			// Controls
