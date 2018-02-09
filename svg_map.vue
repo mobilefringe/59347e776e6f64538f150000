@@ -36,8 +36,8 @@
                     default: 1300
                 },
                 regions: {
-                    type: Array,
-                    default: this.getEmptyArray
+                    type: Object,
+                    default: this.getEmptyObject
                 },
                 loadingText: {
                     type: String,
@@ -114,10 +114,10 @@
             },
             methods : {
                 getColour() {
-                    return {stroke: '#aaaaaa', selected: "#CC00CC", hover: "#CC00CC"} ;
+                    return {stroke: '#aaaaaa', selected: -20, hover: "#CC00CC"} ;
                 },
-                getEmptyArray () {
-                    return [];
+                getEmptyObject () {
+                    return {};
                 },
                 getZoomBtn () {
                     return {'show': true,'location': 'left' };
@@ -150,9 +150,6 @@
                 },
                 setViewBox(val){
                     this.map.setViewBox(val.svgmap_region);
-                },
-                setFloorViewBox(val){
-                    this.map.setViewBox(val);
                 },
                 hideMarkers () {
                     this.map.marksHide();
