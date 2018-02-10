@@ -48,4 +48,25 @@
     .loading-container .vue-simple-spinner-text{
         line-height: 1;
     }
+    .loading-container {
+        width:100%;
+        margin: auto;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    .loading-container .vue-simple-spinner {
+        border-color: rgb(0, 0, 0) rgb(182, 184, 186) rgb(182, 184, 186) !important;
+    }
+    .loading-container .vue-simple-spinner-text {
+        margin-top: 24px !important;
+        color: #000 !important;
+        text-transform: uppercase;
+    }
 </style>
