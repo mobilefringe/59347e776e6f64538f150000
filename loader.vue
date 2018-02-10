@@ -48,19 +48,5 @@
     .loading-container .vue-simple-spinner-text{
         line-height: 1;
     }
-    .loading-container {
-        width:100%;
-        margin: auto;
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-    }
-    .loading-container .vue-simple-spinner {
-        border-color: rgb(0, 0, 0) rgb(182, 184, 186) rgb(182, 184, 186);
-    }
-    .loading-container .vue-simple-spinner-text {
-        margin-top: 24px;
-        color: #000;
-        text-transform: uppercase;
-    }
+    
 </style>
