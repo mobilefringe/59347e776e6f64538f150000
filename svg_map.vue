@@ -87,10 +87,10 @@
                 // console.log(vm.$on('setMarker',this.addMarker));
             },
             watch : {
-                map : function () {
-                    this.$emit('updateMap', this.map);  
-                    // console.log(this.$on('setMarker',this.addMarker));
-                }
+                // map : function () {
+                //     this.$emit('updateMap', this.map);  
+                //     // console.log(this.$on('setMarker',this.addMarker));
+                // }
             },
             mounted () {
                 this.map = $('#mapsvg').mapSvg({
@@ -111,7 +111,7 @@
                     zoomLimit:this.zoomLimit
                 });
                 console.log("mounted", this.map);
-                 this.$emit('updateMap', this.map);  
+                this.$emit('updateMap', this.map);  
             },
             methods : {
                 getColour() {
