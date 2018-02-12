@@ -111,6 +111,7 @@
                     zoomLimit:this.zoomLimit
                 });
                 console.log("mounted", this.map);
+                 this.$emit('updateMap', this.map);  
             },
             methods : {
                 getColour() {
