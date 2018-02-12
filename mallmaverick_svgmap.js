@@ -2022,7 +2022,7 @@
             
             setTimeout(function () {
 			    // Trigger event
-			    self.el.trigger('mapready', self);
+			    _this.trigger('mapready', self);
             }, 1000);
             
             if (_data.options.afterLoad)
