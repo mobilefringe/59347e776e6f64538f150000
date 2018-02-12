@@ -86,12 +86,12 @@
             created() {
                 // console.log(vm.$on('setMarker',this.addMarker));
             },
-            watch : {
+            // watch : {
                 // map : function () {
                 //     this.$emit('updateMap', this.map);  
                 //     // console.log(this.$on('setMarker',this.addMarker));
                 // }
-            },
+            // },
             mounted () {
                 this.map = $('#mapsvg').mapSvg({
                     source: this.svgMapUrl,//this.getSVGurl,    // Path to SVG map
