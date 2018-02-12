@@ -2019,7 +2019,12 @@
               }
             }
             loading.hide();
-
+            
+            setTimeout(function () {
+			    // Trigger event
+			    self.el.trigger('mapready', self);
+            }, 1000);
+            
             if (_data.options.afterLoad)
               _data.options.afterLoad.call(_this);
 
