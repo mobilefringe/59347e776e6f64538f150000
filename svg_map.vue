@@ -167,6 +167,10 @@
                     this.hideMarkers();
                     this.setMarkerOnMap(this.all_markers);
                     
+                },
+                mapready () {
+                    console.log("Map is ready");
+                    this.$emit('updateMap', this.map);
                 }
             },
             beforeDestroy: function() {
