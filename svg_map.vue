@@ -108,7 +108,8 @@
                     pan:this.pan,
                     cursor:this.cursor,
                     responsive:this.responsive,
-                    zoomLimit:this.zoomLimit
+                    zoomLimit:this.zoomLimit,
+                    afterLoad : this.mapready
                 });
                 console.log("mounted", this.map);
                 // this.$emit('updateMap', this.map);  
