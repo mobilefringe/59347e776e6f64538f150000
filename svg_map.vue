@@ -112,6 +112,7 @@
                 });
                 console.log("mounted", this.map);
                 this.$emit('updateMap', this.map);  
+                $("#png_map").on('load',this.mapready);
             },
             methods : {
                 getColour() {
