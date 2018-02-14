@@ -117,7 +117,12 @@
             },
             methods : {
                 getColour() {
-                    return {stroke: '#aaaaaa', selected: -20, hover: "#CC00CC"} ;
+                    var obj = {};
+                    obj.stroke = '#aaaaaa';
+                    obj.selected= -20;
+                    obj.hover = hover: "#CC00CC";
+                    // return {stroke: '#aaaaaa', selected: -20, hover: "#CC00CC"} ;
+                    return obj;
                 },
                 getEmptyObject () {
                     return {};
