@@ -172,6 +172,9 @@
                 mapready () {
                     console.log("Map is ready");
                     this.$emit('updateMap', this.map);
+                },
+                destroyMap(){
+                    this.map.destroy();
                 }
             },
             beforeDestroy: function() {
