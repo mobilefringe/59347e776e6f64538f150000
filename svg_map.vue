@@ -112,7 +112,7 @@
                 });
                 console.log("mounted", this.map);
                 // this.$emit('updateMap', this.map);  
-                this.map.on('load',this.mapready);
+                $('body').on('load',this.mapready);
             },
             methods : {
                 getColour() {
