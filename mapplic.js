@@ -1350,7 +1350,8 @@ define(["jquery", "mousewheel", "hammer"], function(mousewheel, hammer){
 		    var location = self.getLocationData(id);
 		    var top = location.y * 100,
     			left = location.x * 100;
-    
+            var layer = $('.mapplic-layer[data-floor="' + target + '"]', self.el);
+            
     		if (!location.pin) location.pin = 'default';
     		if (location.pin.indexOf('hidden') == -1) {
     			if (self.o.markers) {
