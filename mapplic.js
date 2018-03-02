@@ -92,7 +92,7 @@ define(["jquery", "mousewheel", "hammer"], function(mousewheel, hammer){
 				this.content = $('<div></div>').addClass('mapplic-tooltip-content').appendTo(this.el);
 				this.title = $('<h4></h4>').addClass('mapplic-tooltip-title').appendTo(this.content);
 				this.desc = $('<div></div>').addClass('mapplic-tooltip-description').appendTo(this.content);
-				if (this.tooltiplink) this.link = $('<a>'+ this.tooltiplabel +'</a>').addClass('mapplic-popup-link').attr('href', '#').hide().appendTo(this.el);
+				if (this.tooltiplink) this.link = $('<a>'+ self.o.tooltiplabel +'</a>').addClass('mapplic-popup-link').attr('href', '#').hide().appendTo(this.el);
 				this.triangle = $('<div></div>').addClass('mapplic-tooltip-triangle').prependTo(this.el);
 
 				// Append
