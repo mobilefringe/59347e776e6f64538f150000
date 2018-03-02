@@ -210,7 +210,7 @@ define(["jquery", "mousewheel", "hammer"], function(mousewheel, hammer){
 				this.el = $('<div></div>').addClass('mapplic-lightbox mfp-hide');
 				this.title = $('<h2></h2>').addClass('mapplic-lightbox-title').appendTo(this.el);
 				this.desc = $('<div></div>').addClass('mapplic-lightbox-description').appendTo(this.el);
-				this.link = $('<a>More</a>').addClass('mapplic-popup-link').attr('href', '#').hide().appendTo(this.el);
+				this.link = $('<a>'+self.o.tooltiplabel+'</a>').addClass('mapplic-popup-link').attr('href', '#').hide().appendTo(this.el);
 
 				// Popup Image
 				$('body').magnificPopup({
