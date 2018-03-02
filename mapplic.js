@@ -1346,6 +1346,27 @@ define(["jquery", "mousewheel", "hammer"], function(mousewheel, hammer){
 				location.el.css({'top': top + '%', 'left': left + '%'});
 			}
 		}
+		self.addPin = function (id) {
+		    var location = self.getLocationData(id);
+		    var top = location.y * 100,
+    			left = location.x * 100;
+    
+    		if (!location.pin) location.pin = 'default';
+    		if (location.pin.indexOf('hidden') == -1) {
+    			if (self.o.markers) {
+    				var pin = $('<a></a>').attr('href', '#').addClass('mapplic-pin').css({'top': top + '%', 'left': left + '%'}).appendTo(layer);
+    				pin.on('click touchend', function(e) {
+    					e.preventDefault();
+    					self.showLocation(location.id, 600);
+    				});
+    				if (location.label) pin.html(location.label);
+    				if (location.fill) pin.css('background-color', location.fill);
+    				pin.attr('data-location', location.id);
+    				pin.addClass(location.pin);
+    				location.el = pin;
+    			}
+    		}
+		}
 
 	};
 
