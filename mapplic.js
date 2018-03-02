@@ -1350,6 +1350,15 @@ define(["jquery", "mousewheel", "hammer"], function(mousewheel, hammer){
 		    var location = self.getLocationData(id);
 		    var top = location.y * 100,
     			left = location.x * 100;
+    		
+    		var target = null;
+    			$.each(self.data.levels, function(index, level) {
+    				$.each(level.locations, function(index, location) {
+    					if (location.id == id) {
+    						target = level.id;
+    					}
+    				});
+    			});
             var layer = $('.mapplic-layer[data-floor="' + target + '"]', self.el);
             
     		if (!location.pin) location.pin = 'default';
