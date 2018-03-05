@@ -776,8 +776,9 @@ define(["jquery", "mousewheel", "hammer"], function(mousewheel, hammer){
 										var fill = null;
 										if (location.fill) {fill = location.fill;}
 										else if (self.o.fillcolor && self.o.fillcolor !== "none") fill = self.o.fillcolor;
-                                        console.log("fill", fill);
+                                        
 										if (fill) {
+										    console.log("fill", fill);
 											$(this).css('fill', fill);
 											$('> *', this).css('fill', fill);
 										}
