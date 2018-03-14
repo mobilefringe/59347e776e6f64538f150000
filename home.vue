@@ -36,7 +36,7 @@
       template: template, // the variable template will be injected
       data: function() {
         return {
-          title: "MM with Vue.js!",
+          title: "MM with Vue.jss!",
           description: "An example of integration of Mall Maverick with Vue.js",
           suggestionAttribute: 'name',
           search: ''
