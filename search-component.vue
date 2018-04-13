@@ -1,7 +1,8 @@
 <template>
   <div class="search-component" v-if="autocomplete">
     <p class="control has-icon has-icon-right">
-      <input type="search" class="input is-large" :placeholder="placeholder" :suggestionAttribute="suggestionAttribute" v-on:input="onInput($event.target.value)" v-on:keyup.esc="isOpen = false" v-on:blur="isOpen = false" v-on:keydown.down="moveDown" v-on:keydown.up="moveUp" v-on:keydown.enter="select" :value="value">
+        <label for="search" style="display: none">Enter your search query</label>
+      <input name="search" type="search" class="input is-large" :placeholder="placeholder" :suggestionAttribute="suggestionAttribute" v-on:input="onInput($event.target.value)" v-on:keyup.esc="isOpen = false" v-on:blur="isOpen = false" v-on:keydown.down="moveDown" v-on:keydown.up="moveUp" v-on:keydown.enter="select" :value="value">
       <i class="fa fa-angle-down"></i>
     </p>
     <ul v-show="isOpen" class="options-list">
