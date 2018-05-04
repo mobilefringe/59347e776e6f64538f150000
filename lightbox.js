@@ -105,7 +105,7 @@
 
     var self = this;
     $(
-      '<div id="lightboxOverlay" class="lightboxOverlay"></div><div id="lightbox" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Lightbox Image"/><div class="lb-nav"><a class="lb-prev" href="" ><p style="display:none;">Previous Gallery Image</p></a><a class="lb-next" href="" ><p style="display:none;">Next Gallery Image</p></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div>'
+      '<div id="lightboxOverlay" class="lightboxOverlay"></div><div id="lightbox" class="lightbox"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt="This is the Lightbox Image"/><div class="lb-nav"><a class="lb-prev" href="" ><p style="display:none;">Previous Gallery Image</p></a><a class="lb-next" href="" ><p style="display:none;">Next Gallery Image</p></a></div><div class="lb-loader"><a class="lb-cancel"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close"></a></div></div></div></div>'
     ).appendTo($("body"));
 
     // Cache jQuery objects
