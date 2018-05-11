@@ -442,7 +442,7 @@
                             var svg_width = 1530;
                             var svg_height = 1358;
                             
-                            temp_val.x = val.x_coordinate / svgWidth;
+                            temp_val.x = val.x_coordinate / this.svgWidth;
                             temp_val.y = val.y_coordinate / svgHeight;
                             floor_1.locations.push(temp_val);
                         });
