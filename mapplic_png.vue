@@ -304,13 +304,15 @@
                 },
                 showLocation(id, d) {
                     this.self.showLocation(id, d);
+                    if(vm.showPin){
+                        vm.self.addPin(val);
+                    }
                 },
                 hideLocation() {
                     this.self.hideLocation();
                 },
                 updateLocation(id) {
                     this.self.updateLocation(id);
-                    
                 },
                 loadStoreData() {
                     var mall_json = {};
