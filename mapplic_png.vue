@@ -273,6 +273,7 @@
                     
                     // this.mapLoaded();
                     this.$emit('updateMap');
+                    this.showLoader = false;
                 },
                 locationopened(e, loc) {
                     if(loc) {
