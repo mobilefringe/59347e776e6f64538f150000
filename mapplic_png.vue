@@ -445,7 +445,7 @@
                             
                             temp_val.x = val.x_coordinate / this.svgWidth;
                             temp_val.y = val.y_coordinate / this.svgHeight;
-                            console.log(temp_val.x, temp_val.u)
+                            console.log(temp_val.x, temp_val.y);
                             floor_1.locations.push(temp_val);
                         });
                         mall_json.levels.push(floor_1);
