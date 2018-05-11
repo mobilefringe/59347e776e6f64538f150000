@@ -443,7 +443,7 @@
                             var svg_height = 1358;
                             
                             temp_val.x = val.x_coordinate / this.svgWidth;
-                            temp_val.y = val.y_coordinate / svgHeight;
+                            temp_val.y = val.y_coordinate / this.svgHeight;
                             floor_1.locations.push(temp_val);
                         });
                         mall_json.levels.push(floor_1);
