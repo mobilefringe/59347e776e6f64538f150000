@@ -375,16 +375,16 @@
                             
                             temp_val.x = val.x_coordinate / vm.svgWidth;
                             temp_val.y = val.y_coordinate / vm.svgHeight;
-                                                if(vm.showPin){
-                                      location.pin = "black-pin";
-                                       
-                                    }
-                                    vm.self.updateLocation(val);
-                                    // var location1 = vm.self.getLocationData(val);
-                                    // console.log("location1",  location1.x ,location1.y);
-                                    if(vm.showPin){
-                                        vm.self.addPin(val);
-                                    }
+                            if(vm.showPin){
+                              location.pin = "black-pin";
+                               
+                            }
+                            vm.self.updateLocation(val);
+                            // var location1 = vm.self.getLocationData(val);
+                            // console.log("location1",  location1.x ,location1.y);
+                            if(vm.showPin){
+                                vm.self.addPin(val);
+                            }
                             floor_1.locations.push(temp_val);
                         });
                         mall_json.levels.push(floor_1);
