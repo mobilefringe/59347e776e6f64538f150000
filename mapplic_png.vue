@@ -81,7 +81,7 @@
                 },
                 sidebar: {
                     type: Boolean,
-                    default: true
+                    default: false
                 },
                 search: {
                     type: Boolean,
