@@ -38,6 +38,9 @@
     /*.mapplic-coordinates {*/
     /*    visibility: hidden;*/
     /*}*/
+    .mapplic-map .mapplic-map-image {
+        
+    }
 </style>
 
 <script>
