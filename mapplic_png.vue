@@ -384,7 +384,7 @@
                 loadStoreData() {
                     var mall_json = {};
                     var landmarks = {};
-                    mall_json.mapwidth = "1000";
+                    mall_json.mapwidth = this.svgWidth;//"1000";
                     mall_json.mapheight = "1000";
                     mall_json.categories = [];
                     var vm = this;
