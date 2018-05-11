@@ -376,10 +376,9 @@
                             temp_val.x = val.x_coordinate / vm.svgWidth;
                             temp_val.y = val.y_coordinate / vm.svgHeight;
                             if(vm.showPin){
-                              location.pin = "black-pin";
+                                location.pin = "black-pin";
                                
                             }
-                            vm.self.updateLocation(val);
                             // var location1 = vm.self.getLocationData(val);
                             // console.log("location1",  location1.x ,location1.y);
                             if(vm.showPin){
