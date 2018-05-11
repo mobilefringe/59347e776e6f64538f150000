@@ -385,7 +385,7 @@
                     var mall_json = {};
                     var landmarks = {};
                     mall_json.mapwidth = this.svgWidth;//"1000";
-                    mall_json.mapheight = this.svgHeight;"1000";
+                    mall_json.mapheight = this.svgHeight;//"1000";
                     mall_json.categories = [];
                     var vm = this;
                     if(vm.categories!= null && vm.categories!= undefined && vm.categories.length > 0) {
@@ -445,6 +445,7 @@
                             
                             temp_val.x = val.x_coordinate / this.svgWidth;
                             temp_val.y = val.y_coordinate / this.svgHeight;
+                            console.log(temp_val.x, temp_val.u)
                             floor_1.locations.push(temp_val);
                         });
                         mall_json.levels.push(floor_1);
