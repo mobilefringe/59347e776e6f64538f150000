@@ -304,9 +304,6 @@
                 },
                 showLocation(id, d) {
                     this.self.showLocation(id, d);
-                    if(this.showPin){
-                        this.self.addPin(id);
-                    }
                 },
                 hideLocation() {
                     this.self.hideLocation();
