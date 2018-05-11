@@ -441,9 +441,9 @@
                             //get svg's wifth/height by checking the map
                             var svg_width = 1530;
                             var svg_height = 1358;
-    
-                            temp_val.x = 0.5;//val.x_coordinate / svg_width;
-                            temp_val.y = 0.5;//val.y_coordinate / svg_height;
+                            
+                            temp_val.x = val.x_coordinate / svgWidth;
+                            temp_val.y = val.y_coordinate / svgHeight;
                             floor_1.locations.push(temp_val);
                         });
                         mall_json.levels.push(floor_1);
