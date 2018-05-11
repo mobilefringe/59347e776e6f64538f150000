@@ -39,7 +39,7 @@
     /*    visibility: hidden;*/
     /*}*/
     .mapplic-map .mapplic-map-image {
-        
+        left: 0;
     }
 </style>
 
