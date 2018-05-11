@@ -77,7 +77,7 @@
                 },
                 minimap: {
                     type: Boolean,
-                    default: true
+                    default: false
                 },
                 sidebar: {
                     type: Boolean,
