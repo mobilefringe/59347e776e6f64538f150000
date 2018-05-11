@@ -416,7 +416,7 @@
                         _.forEach(stores_on_floors, function(val, key) {
                             //for testing limiting the store numbers to vm
                             var temp_val = {};
-                            temp_val.id = val.svgmap_region;
+                            temp_val.id = val.id;
                             temp_val.title = val.name;
                             temp_val.about = _.truncate(val.description, { 'length':200, 'separator': ' ' });
                             if(val.categories != null) {
