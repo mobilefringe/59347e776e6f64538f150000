@@ -310,6 +310,9 @@
                 },
                 updateLocation(id) {
                     this.self.updateLocation(id);
+                    if(vm.showPin){
+                                vm.self.addPin(val);
+                            }
                 },
                 loadStoreData() {
                     var mall_json = {};
