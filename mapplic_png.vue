@@ -167,10 +167,6 @@
                     type: Number,
                     default: 2500
                 },
-                svgId: {
-                    type: String,
-                    default: 'landmarks-1'
-                },
                 tooltiplabel: {
                     type: String,
                     default: 'More'
