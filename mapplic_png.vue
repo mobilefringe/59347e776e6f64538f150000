@@ -271,7 +271,7 @@
                     console.log('Map is ready!');
                     this.self = location;
                     
-                    this.mapLoaded();
+                    // this.mapLoaded();
                     this.$emit('updateMap');
                 },
                 locationopened(e, loc) {
