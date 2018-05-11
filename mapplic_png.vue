@@ -381,9 +381,7 @@
                             }
                             // var location1 = vm.self.getLocationData(val);
                             // console.log("location1",  location1.x ,location1.y);
-                            if(vm.showPin){
-                                vm.self.addPin(val);
-                            }
+                            
                             floor_1.locations.push(temp_val);
                         });
                         mall_json.levels.push(floor_1);
