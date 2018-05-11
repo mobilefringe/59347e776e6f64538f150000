@@ -412,7 +412,7 @@
                             
                         floor_1.show = value.show;
                         floor_1.locations = [];
-                        var stores_on_floors = _.filter(vm.storelist, function(o) { if(o.z_coordinate == null) {return true;} else { value.z_index === o.z_coordinate; }}); // ['z_coordinate', value.z_index]);
+                        var stores_on_floors = _.filter(vm.storelist, function(o) { if(o.z_coordinate == null) {return true;} else { return value.z_index === o.z_coordinate; }}); // ['z_coordinate', value.z_index]);
                         _.forEach(stores_on_floors, function(val, key) {
                             //for testing limiting the store numbers to vm
                             var temp_val = {};
@@ -443,8 +443,8 @@
                             var svg_width = 1530;
                             var svg_height = 1358;
                             
-                            temp_val.x = val.x_coordinate / this.svgWidth;
-                            temp_val.y = val.y_coordinate / this.svgHeight;
+                            temp_val.x = val.x_coordinate / vm.svgWidth;
+                            temp_val.y = val.y_coordinate / vm.svgHeight;
                             console.log(temp_val.x, temp_val.y);
                             floor_1.locations.push(temp_val);
                         });
