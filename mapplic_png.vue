@@ -93,7 +93,7 @@
                 },
                 deeplinking: {
                     type: Boolean,
-                    default: true
+                    default: false
                 },
                 clearbutton: {
                     type: Boolean,
