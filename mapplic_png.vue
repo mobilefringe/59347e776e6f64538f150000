@@ -377,8 +377,6 @@
                                 location.pin = "black-pin";
                                
                             }
-                            // var location1 = vm.self.getLocationData(val);
-                            // console.log("location1",  location1.x ,location1.y);
                             
                             floor_1.locations.push(temp_val);
                         });
