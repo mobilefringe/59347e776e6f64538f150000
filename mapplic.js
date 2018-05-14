@@ -88,7 +88,7 @@ define(["jquery", "mousewheel", "hammer"], function(mousewheel, hammer){
 					self.hideLocation();
 					if (!self.o.zoom || self.o.zoomoutclose) self.moveTo(0.5, 0.5, self.fitscale, 400, 'easeInOutCubic');
 				});
-				if (this.tooltipthumb) this.thumbnail = $('<img>').addClass('mapplic-tooltip-thumbnail').hide().appendTo(this.el);
+				if (this.tooltipthumb) this.thumbnail = $('<img alt="">').addClass('mapplic-tooltip-thumbnail').hide().appendTo(this.el);
 				this.content = $('<div></div>').addClass('mapplic-tooltip-content').appendTo(this.el);
 				this.title = $('<h4></h4>').addClass('mapplic-tooltip-title').appendTo(this.content);
 				this.desc = $('<div></div>').addClass('mapplic-tooltip-description').appendTo(this.content);
