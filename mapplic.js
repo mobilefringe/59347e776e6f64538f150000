@@ -83,7 +83,7 @@ define(["jquery", "mousewheel", "hammer"], function(mousewheel, hammer){
 				// Construct
 				this.el = $('<div></div>').addClass('mapplic-tooltip');
 				this.close = $('<a></a>').addClass('mapplic-tooltip-close').attr('href', '#').appendTo(this.el);
-				$('<p style="display:none;">Close</p>').appendTo($(this.close));
+				$('<p style="display:none;">Close</p>').appendTo($(this.close);
 				this.close.on('click touchend', function(e) {
 					e.preventDefault();
 					self.hideLocation();
