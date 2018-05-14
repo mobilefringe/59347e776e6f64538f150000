@@ -314,8 +314,8 @@
                 loadStoreData() {
                     var mall_json = {};
                     var landmarks = {};
-                    mall_json.mapwidth = this.svgWidth;//"1000";
-                    mall_json.mapheight = this.svgHeight;//"1000";
+                    mall_json.mapwidth = this.svgWidth;
+                    mall_json.mapheight = this.svgHeight;
                     mall_json.categories = [];
                     var vm = this;
                     if(vm.categories!= null && vm.categories!= undefined && vm.categories.length > 0) {
@@ -362,6 +362,7 @@
                             if(val.zoom){
                                 temp_val.zoom = val.zoom;
                             }
+                            
                             //get svg's wifth/height by checking the map
                             temp_val.x = val.x_coordinate / vm.svgWidth;
                             temp_val.y = val.y_coordinate / vm.svgHeight;
