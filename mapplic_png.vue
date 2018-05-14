@@ -44,7 +44,7 @@
 </style>
 
 <script>
-    define(["Vue", "mapplic"], function(Vue, mapplic) {
+    define(["Vue", "mapplic", "loader"], function(Vue, mapplic) {
         return Vue.component('mapplic-png-map', {
             template: template,
             props: {
