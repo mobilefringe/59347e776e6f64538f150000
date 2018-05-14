@@ -370,8 +370,6 @@
                             // temp_val.fill = "#";
                             
                             //get svg's wifth/height by checking the map
-                            var svg_width = 1530;
-                            var svg_height = 1358;
                             
                             temp_val.x = val.x_coordinate / vm.svgWidth;
                             temp_val.y = val.y_coordinate / vm.svgHeight;
