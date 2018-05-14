@@ -362,10 +362,7 @@
                             if(val.zoom){
                                 temp_val.zoom = val.zoom;
                             }
-                            // temp_val.fill = "#";
-                            
                             //get svg's wifth/height by checking the map
-                            
                             temp_val.x = val.x_coordinate / vm.svgWidth;
                             temp_val.y = val.y_coordinate / vm.svgHeight;
                             if(vm.showPin){
