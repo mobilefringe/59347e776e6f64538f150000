@@ -358,12 +358,7 @@
                                 }
                             }
                             temp_val.link = "/stores/" + val.slug;
-                            // if(vm.showPin){
-                            //     temp_val.pin = "black-pin"
-                            // }
-                            // else {
-                                temp_val.pin = "hidden";
-                            // }
+                            temp_val.pin = "hidden";
                             if(val.zoom){
                                 temp_val.zoom = val.zoom;
                             }
