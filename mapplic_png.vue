@@ -367,7 +367,7 @@
                             //get svg's wifth/height by checking the map
                             temp_val.x = val.x_coordinate / vm.svgWidth;
                             temp_val.y = val.y_coordinate / vm.svgHeight;
-                            if(temp_val.showPin){
+                            if(val.showPin){
                                 temp_val.pin = "black-pin";
                                
                             }
