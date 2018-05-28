@@ -350,7 +350,7 @@
                             temp_val.id = val.id;
                             temp_val.title = val.name;
                             if(val.show_desc) {
-                                temp_val.description = _.truncate(val.description, { 'length':200, 'separator': ' ' });
+                                temp_val.description = _.truncate(val.tooltip_desc, { 'length':200, 'separator': ' ' });
                             }
                             if(val.categories != null) {
                                 if(val.categories.length>1){
