@@ -349,7 +349,9 @@
                             var temp_val = {};
                             temp_val.id = val.id;
                             temp_val.title = val.name;
-                            temp_val.description = _.truncate(val.description, { 'length':200, 'separator': ' ' });
+                            if(val.show_desc) {
+                                temp_val.description = _.truncate(val.description, { 'length':200, 'separator': ' ' });
+                            }
                             if(val.categories != null) {
                                 if(val.categories.length>1){
                                 temp_val.category = val.categories[1];
