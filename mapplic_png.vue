@@ -2,7 +2,7 @@
   <div style="position:relative; margin: auto;width: 100%;overflow: hidden;">
     <div id="mapplic" class="mapplic"  ></div>
     <div>
-        <!--<loader v-if="showLoader"></loader>-->
+        <loader v-if="showLoader"></loader>
     </div>
 </div>
 </template>
@@ -44,7 +44,7 @@
 </style>
 
 <script>
-    define(["Vue", "mapplic"], function(Vue, mapplic) {
+    define(["Vue", "mapplic", "vue!loader"], function(Vue, mapplic, Loader) {
         return Vue.component('mapplic-png-map', {
             template: template,
             props: {
@@ -359,7 +359,7 @@
                                 }
                             }
                             temp_val.link = "/stores/" + val.slug;
-                            temp_val.pin = "hidden";
+                            
                             if(val.zoom){
                                 temp_val.zoom = val.zoom;
                             }
@@ -370,6 +370,9 @@
                             if(vm.showPin){
                                 location.pin = "black-pin";
                                
+                            }
+                            else {
+                                temp_val.pin = "hidden";
                             }
                             
                             floor_1.locations.push(temp_val);
