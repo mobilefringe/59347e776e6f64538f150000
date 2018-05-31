@@ -342,7 +342,10 @@
                             
                         floor_1.show = value.show;
                         floor_1.locations = [];
-                        var stores_on_floors = _.filter(vm.storelist, function(o) { if(o.z_coordinate == nul) {return true;} else { return value.z_index === o.z_coordinate; }}); // ['z_coordinate', value.z_index]);
+                        if( value.z_coordinate == 0) {
+                            
+                        }
+                        var stores_on_floors = _.filter(vm.storelist, function(o) { if(o.z_coordinate == null) {return true;} else { return value.z_index === o.z_coordinate; }}); // ['z_coordinate', value.z_index]);
                         
                         _.forEach(stores_on_floors, function(val, key) {
                             //for testing limiting the store numbers to vm
