@@ -343,7 +343,6 @@
                         floor_1.show = value.show;
                         floor_1.locations = [];
                         var stores_on_floors= [];
-                        console.log( value.z_index);
                         if( value.z_index === 0) {
                             stores_on_floors = vm.storelist;
                         } else {
