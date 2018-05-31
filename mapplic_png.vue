@@ -343,7 +343,7 @@
                         floor_1.show = value.show;
                         floor_1.locations = [];
                         if( value.z_coordinate == 0) {
-                            
+                            var stores_on_floors = vm.storelist
                         }
                         var stores_on_floors = _.filter(vm.storelist, function(o) { if(o.z_coordinate == null) {return true;} else { return value.z_index === o.z_coordinate; }}); // ['z_coordinate', value.z_index]);
                         
