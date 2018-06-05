@@ -169,7 +169,7 @@
                 },
                 tooltiplabel: {
                     type: String,
-                    default: 'More'
+                    default: 'More Info'
                 },
                 showPin : {
                     type: Boolean,
