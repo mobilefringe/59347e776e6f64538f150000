@@ -29,8 +29,6 @@
                 }
             },
             mounted() {
-                // window.initMap();
-                console.log("hello", this.property);
                 property_string = this.property.address1+"+"+ this.property.city + "+" + this.property.country + "+" + this.property.postal_code;
                 console.log(property_string.replace(/ /g,"+"));
                 property_string = property_string.replace(/ /g,"+");
