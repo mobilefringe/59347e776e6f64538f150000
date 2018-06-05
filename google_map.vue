@@ -30,7 +30,6 @@
             },
             mounted() {
                 property_string = this.property.address1+"+"+ this.property.city + "+" + this.property.country + "+" + this.property.postal_code;
-                console.log(property_string.replace(/ /g,"+"));
                 property_string = property_string.replace(/ /g,"+");
                 axios.get('https://maps.googleapis.com/maps/api/geocode/json?address='+property_string +'&key=AIzaSyCukCjH3fsuDYBdI44hZKL43m60jEToJjY').then(response => {
                     geometry = response.data.results[0].geometry;
