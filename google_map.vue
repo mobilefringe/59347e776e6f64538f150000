@@ -10,7 +10,7 @@
 </style>
 
 <script>
-    define(["Vue", "vuex", 'google-map-api', 'axios', 'json!google_theme.json'], function(Vue, Vuex, googleMapAPI, axios, GoolgeTheme) {
+    define(["Vue", "vuex", 'google-map-api', 'axios', 'json!google_theme.json'], function(Vue, Vuex, googleMapAPI, axios, GoogleTheme) {
         return Vue.component("google-map", {
             template: template, 
             props: {
