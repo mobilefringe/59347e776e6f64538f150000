@@ -35,14 +35,11 @@
                 console.log(property_string.replace(/ /g,"+"));
                 property_string = property_string.replace(/ /g,"+");
                 axios.get('https://maps.googleapis.com/maps/api/geocode/json?address='+property_string +'&key=AIzaSyCukCjH3fsuDYBdI44hZKL43m60jEToJjY').then(response => {
-                    // resolve(response);
-                    console.log("response", response.data.results[0]);
                     geometry = response.data.results[0].geometry;
                     var new_pos = {};
                     new_pos.lat = geometry.location.lat;
                     new_pos.lng = geometry.location.lng;
                     this.position = new_pos;
-                    console.log(this.position)
                 });
             },
             watch : {
