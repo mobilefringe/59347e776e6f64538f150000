@@ -376,7 +376,7 @@
                                 temp_val.x = val.x_coordinate / vm.svgWidth;
                             }
                             else {
-                                temp_val.x = val.x_coordinate / vm.svgWidth;
+                                temp_val.x =0.5;
                             }
                             temp_val.y = val.y_coordinate / vm.svgHeight;
                             if(val.showPin){
