@@ -378,7 +378,7 @@
                             else {
                                 temp_val.x = 0.5;
                             }
-                            if(val.x_coordinate) {
+                            if(val.y_coordinate) {
                                 temp_val.x = val.x_coordinate / vm.svgWidth;
                             }
                             else {
