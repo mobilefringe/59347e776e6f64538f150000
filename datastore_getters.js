@@ -227,6 +227,10 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       let contests = getters.processedContests;
       return contests.find(contest => contest.slug === slug)
     },
+    findContestByShowOnSlug: (state, getters) => (slug) => {
+      let contests = getters.processedContests;
+      return contests.find(contest => contest.show_on_slug === slug)
+    },
     findContestById: (state, getters) => (id) => {
       let contests = getters.processedContests;
       return contests.find(contest => _.toNumber(contest.id) === _.toNumber(id))
