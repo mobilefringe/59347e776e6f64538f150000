@@ -7,6 +7,9 @@
       #map {
         height: 100%;
       }
+      #map {
+          
+      }
 </style>
 
 <script>
