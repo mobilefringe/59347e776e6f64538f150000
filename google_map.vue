@@ -2,12 +2,12 @@
     <div class="" id="map"></div>
 </template>
 <style>
-      #map {
+    #map {
         height: 100%;
-      }
-      #map {
-             max-height: none;
-      }
+    }
+    #map {
+         max-height: none;
+    }
 </style>
 
 <script>
