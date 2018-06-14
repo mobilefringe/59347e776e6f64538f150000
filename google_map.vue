@@ -5,8 +5,8 @@
     #map {
         height: 100%;
     }
-    #map {
-         max-height: none;
+    #map img{
+        max-height: none;
     }
 </style>
 
