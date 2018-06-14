@@ -8,7 +8,7 @@
         height: 100%;
       }
       #map {
-          
+             max-height: none;
       }
 </style>
 
