@@ -249,6 +249,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
     },
     findRepoBySlug: (state, getters) => (slug) => {
       let repos = state.repos;
+      console.log(repos);
       return repos.find(repo => repo.slug === slug)
     },
     findBlogPostBySlug: (state, getters) => (name, slug) => {
