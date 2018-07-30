@@ -363,7 +363,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       tempStores = _.orderBy(tempStores, store => store.category_name);
       let groupedStoresByCategoryName = _.groupBy(tempStores, store => store.category_name);
       return groupedStoresByCategoryName;
-    },
+    }
   }
   return getters;
 });
