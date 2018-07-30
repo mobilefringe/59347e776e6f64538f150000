@@ -9,7 +9,8 @@ define(['axios', 'datastore_mutation_types', 'js-cookie'], function (axios, type
         return;
       }
       return new Promise((resolve, reject) => {
-        axios.get('https://www.mallmaverick.com/api/' + state.api.version + "/" + state.api.site + "/" + resource + ".json").then(response => {
+        if(resource !== "subcategories") {
+            axios.get('https://www.mallmaverick.com/api/' + state.api.version + "/" + state.api.site + "/" + resource + ".json").then(response => {
           switch(resource) {
             case "banners":
               commit(types.SET_BANNERS, { banners: response.data.banners });
@@ -67,6 +68,10 @@ define(['axios', 'datastore_mutation_types', 'js-cookie'], function (axios, type
         }).catch(error => {
           reject(error);
         });
+        }
+        else {
+            
+        }
       })
     },
     setDataLoaded: function ({commit}, dataLoaded) {
