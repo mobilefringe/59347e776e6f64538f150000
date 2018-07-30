@@ -206,10 +206,6 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       let categories = getters.processedSubcategories;
       return categories.find(category => _.toString(category.name) === _.toString(name))
     },
-    findSubcategoriesByParentID: (state, getters) => (parent_category_id) => {
-      let categories = getters.processedSubcategories;
-      return categories.filter(category => _.toNumber(category.parent_category_id) === _.toNumber(parent_category_id))
-    },
     findPromoBySlug: (state, getters) => (slug) => {
       let promos = getters.processedPromos;
       return promos.find(promo => promo.slug === slug)
@@ -345,7 +341,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
     findComingSoonStores: (state, getters) => {
       let stores = getters.processedStores;
       let coming_soon = _.filter(stores, function (o) {
-        return o.is_coming_soon_store === true;
+        return o.is_coming_soon_store == true;
       });
       return coming_soon
     }
