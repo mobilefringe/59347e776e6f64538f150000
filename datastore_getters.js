@@ -164,6 +164,13 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
         return [];
       }
     },
+    processedSubcategories: state => {
+      try {
+        return state.categories;
+      } catch (err) {
+        return [];
+      }
+    },
     processedContests: state => {
       try {
         let contests = state.contests;
