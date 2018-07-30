@@ -344,7 +344,26 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
         return o.is_coming_soon_store == true;
       });
       return coming_soon
-    }
+    },
+    getSubcategoriesByParentID: (state, getters) => {
+      let stores = getters.processedStores;
+      let categories = state.categories;
+      let tempStores = [];
+      let groupedCategoriesById = _.groupBy(categories, category => category.id.toString());
+      _.each(stores, store => _.each(store.categories, cat => {
+        try{
+          catName = groupedCategoriesById[cat][0].name;
+          store.category_name = catName;
+          tempStores.push(store);
+        }
+        catch(e){
+          // some exception
+        }
+      }));
+      tempStores = _.orderBy(tempStores, store => store.category_name);
+      let groupedStoresByCategoryName = _.groupBy(tempStores, store => store.category_name);
+      return groupedStoresByCategoryName;
+    },
   }
   return getters;
 });
