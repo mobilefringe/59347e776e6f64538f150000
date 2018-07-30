@@ -71,7 +71,7 @@ define(['axios', 'datastore_mutation_types', 'js-cookie'], function (axios, type
         }
         else {
             axios.get('https://www.mallmaverick.com/api/' + state.api.version + "/" + state.api.site + "/" + resource + ".json").then(response => {
-                commit(types.SET_SUBCATEGORIES, { categories: response.data.categories });
+                commit(types.SET_SUBCATEGORIES, { subcategories: response.data.subcategories });
                 resolve(response);
             }).catch(error => {
               reject(error);
