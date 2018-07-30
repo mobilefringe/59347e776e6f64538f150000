@@ -66,6 +66,9 @@ define(['datastore_mutation_types', 'js-cookie'], function (types, Cookies) {
     },
     [types.SET_STORES] (state, {stores}) {
       state.stores = stores;
+    },
+    [types.SET_SUBCATEGORIES] (state, {subcategories}) {
+      state.subcategories = subcategories;
     }
   }
   return mutations;
