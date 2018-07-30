@@ -11,66 +11,72 @@ define(['axios', 'datastore_mutation_types', 'js-cookie'], function (axios, type
       return new Promise((resolve, reject) => {
         if(resource !== "subcategories") {
             axios.get('https://www.mallmaverick.com/api/' + state.api.version + "/" + state.api.site + "/" + resource + ".json").then(response => {
-          switch(resource) {
-            case "banners":
-              commit(types.SET_BANNERS, { banners: response.data.banners });
-              break;
-            case "blogs":
-              commit(types.SET_BLOGS, { blogs: response.data.blogs });
-              break;
-            case "categories":
-              commit(types.SET_CATEGORIES, { categories: response.data.categories });
-              break;
-            case "contests":
-              commit(types.SET_CONTESTS, { contests: response.data.contests });
-              break;
-            case "coupons":
-              commit(types.SET_COUPONS, { coupons: response.data.coupons });
-              break;
-            case "events":
-              commit(types.SET_EVENTS, { events: response.data.events });
-              break;
-            case "fashions":
-              commit(types.SET_FASHIONS, { fashions: response.data.fashions });
-              break;
-            case "feature_items":
-              commit(types.SET_FEATURE_ITEMS, { feature_items: response.data.feature_items });
-              break;
-            case "hours":
-              commit(types.SET_HOURS, { hours: response.data.hours });
-              break;
-            case "jobs":
-              commit(types.SET_JOBS, { jobs: response.data.jobs });
-              break;
-            case "landmarks":
-              commit(types.SET_LANDMARKS, { landmarks: response.data.landmarks });
-              break;
-            case "point_of_interests":
-              commit(types.SET_POIS, { pois: response.data.pois });
-              break;
-            case "popups":
-              commit(types.SET_POPUPS, { popups: response.data.popups });
-              break;
-            case "promotions":
-              commit(types.SET_PROMOTIONS, { promotions: response.data.promotions });
-              break;
-            case "property":
-              commit(types.SET_PROPERTY, { property: response.data });
-              break;
-            case "repos":
-              commit(types.SET_REPOS, { repos: response.data.repos });
-              break;
-            case "stores":
-              commit(types.SET_STORES, { stores: response.data.stores });
-              break;
-          }
-          resolve(response);
-        }).catch(error => {
-          reject(error);
-        });
+              switch(resource) {
+                case "banners":
+                  commit(types.SET_BANNERS, { banners: response.data.banners });
+                  break;
+                case "blogs":
+                  commit(types.SET_BLOGS, { blogs: response.data.blogs });
+                  break;
+                case "categories":
+                  commit(types.SET_CATEGORIES, { categories: response.data.categories });
+                  break;
+                case "contests":
+                  commit(types.SET_CONTESTS, { contests: response.data.contests });
+                  break;
+                case "coupons":
+                  commit(types.SET_COUPONS, { coupons: response.data.coupons });
+                  break;
+                case "events":
+                  commit(types.SET_EVENTS, { events: response.data.events });
+                  break;
+                case "fashions":
+                  commit(types.SET_FASHIONS, { fashions: response.data.fashions });
+                  break;
+                case "feature_items":
+                  commit(types.SET_FEATURE_ITEMS, { feature_items: response.data.feature_items });
+                  break;
+                case "hours":
+                  commit(types.SET_HOURS, { hours: response.data.hours });
+                  break;
+                case "jobs":
+                  commit(types.SET_JOBS, { jobs: response.data.jobs });
+                  break;
+                case "landmarks":
+                  commit(types.SET_LANDMARKS, { landmarks: response.data.landmarks });
+                  break;
+                case "point_of_interests":
+                  commit(types.SET_POIS, { pois: response.data.pois });
+                  break;
+                case "popups":
+                  commit(types.SET_POPUPS, { popups: response.data.popups });
+                  break;
+                case "promotions":
+                  commit(types.SET_PROMOTIONS, { promotions: response.data.promotions });
+                  break;
+                case "property":
+                  commit(types.SET_PROPERTY, { property: response.data });
+                  break;
+                case "repos":
+                  commit(types.SET_REPOS, { repos: response.data.repos });
+                  break;
+                case "stores":
+                  commit(types.SET_STORES, { stores: response.data.stores });
+                  break;
+              }
+              resolve(response);
+            }).catch(error => {
+              reject(error);
+            });
         }
         else {
-            
+            axios.get('https://www.mallmaverick.com/api/' + state.api.version + "/" + state.api.site + "/" + resource + ".json").then(response => {
+                commit(types.SET_BANNERS, { banners: response.data.banners });
+                
+                resolve(response);
+            }).catch(error => {
+              reject(error);
+            });
         }
       })
     },
