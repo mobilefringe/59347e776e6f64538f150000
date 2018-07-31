@@ -206,7 +206,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       let categories = getters.processedSubcategories;
       return categories.find(category => _.toString(category.name) === _.toString(name))
     },
-    findSubcategoriesByParentID: (state, getters) =>  (id) => {
+    findSubcategoriesByParentID: (state, getters) =>  (parent_cat_id) => {
       let all_subcategories = getters.processedSubcategories;
       let subcategory = _.filter(all_subcategories, function (o) {
         return o.parare_category_id === true;
