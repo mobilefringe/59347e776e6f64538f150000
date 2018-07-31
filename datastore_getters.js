@@ -208,10 +208,10 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
     },
     findSubcategoriesByParentID: (state, getters) => {
       let stores = getters.processedSubcategories;
-      let new_stores = _.filter(stores, function (o) {
+      let subcategories = _.filter(stores, function (o) {
         return o.is_new_store === true;
       });
-      return new_stores
+      return subcategories
     },
     findPromoBySlug: (state, getters) => (slug) => {
       let promos = getters.processedPromos;
