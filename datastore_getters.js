@@ -278,6 +278,11 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       let blog_posts = blogs.posts;
       return blog_posts.find(blog_post => blog_post.slug === slug)
     },
+    findBlogPostBySlug2: (state, getters) => (slug, subSlug) => {
+      let blogs = getters.findBlogBySlug(slug);
+      let blog_posts = blogs.posts;
+      return blog_posts.find(blog_post => blog_post.slug === subSlug)
+    },
     findPointOfInterest: (state, getters) => (name) => {
       let pois = state.pois;
       return pois.find(poi => poi.name === name)
