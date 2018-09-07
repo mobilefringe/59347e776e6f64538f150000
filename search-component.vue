@@ -1,5 +1,6 @@
 <template>
-	<div class="search-component" v-if="autocomplete">
+	<div>
+	    <div class="search-component" v-if="autocomplete">
 		<p class="control has-icon has-icon-right">
 			<label style="display:none;" for="search_box">Search</label>
 			<input id="search_box" type="search" class="input is-large" :placeholder="placeholder" :suggestionAttribute="suggestionAttribute" v-on:input="onInput($event.target.value)"
@@ -25,6 +26,7 @@
 				:value="value">
 			<i id="siteSearchBtn" class="fa fa-search"  @click="select"></i>
 		</p>
+	</div>
 	</div>
 </template>
 <!--<template>-->
