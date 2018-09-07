@@ -29,32 +29,6 @@
     	</div>
 	</div>
 </template>
-<!--<template>-->
-<!--  <div class="search-component" v-if="autocomplete">-->
-<!--    <p class="control has-icon has-icon-right">-->
-<!--        <label for="searchComponentInput" style="display: none">Enter your search query</label>-->
-<!--      <input id="searchComponentInput" type="search" class="input is-large" :placeholder="placeholder" :suggestionAttribute="suggestionAttribute" v-on:input="onInput($event.target.value)" v-on:keyup.esc="isOpen = false" v-on:blur="isOpen = false" v-on:keydown.down="moveDown" v-on:keydown.up="moveUp" v-on:keydown.enter="select" :value="value">-->
-<!--      <i class="fa fa-angle-down"></i>-->
-<!--    </p>-->
-<!--    <ul v-show="isOpen" class="options-list" v-if="result.length > 0">-->
-<!--      <li  v-for="(option, index) in result" :class="{'highlighted': index === highlightedPosition}" v-on:mouseenter="highlightedPosition = index" v-on:mousedown="select" :key="index">-->
-<!--        <slot name="item" :data="option"></slot>-->
-<!--      </li>-->
-        
-<!--    </ul>-->
-<!--    <ul v-else  v-show="isOpen" class="options-list">-->
-<!--        <li>-->
-<!--           <p>No Results</p>-->
-<!--      </li>-->
-<!--    </ul>-->
-<!--  </div>-->
-<!--  <div class="search-component" v-else>-->
-<!--    <p class="control has-icon has-icon-right">-->
-<!--      <input type="search" class="input is-large" :placeholder="placeholder" v-on:keydown.enter="select" v-on:input="onInput($event.target.value)" :value="value">-->
-<!--      <i class="fa fa-angle-down"></i>-->
-<!--    </p>-->
-<!--  </div>-->
-<!--</template>-->
 
 <style>
   .search-component ul{
