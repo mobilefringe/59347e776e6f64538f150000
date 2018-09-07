@@ -225,9 +225,9 @@
             options.id = this.id
           }
           if (this.keys === undefined) {
-        options.keys = [];
-        options.keys.push(this.suggestionAttribute);
-      }
+            options.keys = [];
+            options.keys.push(this.suggestionAttribute);
+          }
           return options
         }
       },
