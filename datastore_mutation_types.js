@@ -23,6 +23,7 @@ define(function () {
     SET_REPOS: "SET_REPOS",
     SET_STORES: "SET_STORES",
     SET_SUBCATEGORIES: "SET_SUBCATEGORIES",
+    SET_SEO: "SET_SEO",
   }
   return types;
 });
