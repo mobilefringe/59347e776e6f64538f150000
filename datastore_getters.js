@@ -151,6 +151,14 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
         // Add image_url attribute with CDN link
         stores.map(store => {
           store.image_url = "https://mallmaverick.cdn.speedyrails.net" + store.store_front_url;
+          //if it has https || http remove it
+          if( _includes(store.website, 'http://')){
+            store.website = _.trim(store.website,'http://');
+          }
+          else if( _includes(store.website, 'https://')){
+            store.website = _.trim(store.website,'http://');
+          }
+          
         });
         return stores;
       } catch (err) {
