@@ -158,7 +158,6 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
           else if( _includes(store.website, 'https://')){
             store.website = _.trim(store.website,'https://');
           }
-          console.log("store.website", store.website)
         });
         return stores;
       } catch (err) {
