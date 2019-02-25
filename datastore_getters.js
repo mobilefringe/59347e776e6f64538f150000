@@ -190,8 +190,16 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       }
     },
     findStoreBySlug: (state, getters) => (slug) => {
-        console.log("getters.processedStores", getters.processedStores)
       let stores = state.stores;
+      stores.map(store => {
+          //if it has https || http remove it
+          if( _includes(store.website, 'http://')){
+            store.website = _.trim(store.website,'http://');
+          }
+          else if( _includes(store.website, 'https://')){
+            store.website = _.trim(store.website,'https://');
+          }
+        });
       return stores.find(store => store.slug === slug)
     },
     findStoreById: (state, getters) => (id) => {
