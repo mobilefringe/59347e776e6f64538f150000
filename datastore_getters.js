@@ -191,7 +191,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       }
     },
     findStoreBySlug: (state, getters) => (slug) => {
-      let stores = getters.processedStores;
+      let stores = state.stores;
       return stores.find(store => store.slug === slug)
     },
     findStoreById: (state, getters) => (id) => {
