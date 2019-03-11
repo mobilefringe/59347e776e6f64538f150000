@@ -38,7 +38,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
         let property = state.property;
         let timezone = property.timezone_moment;
         let hoursObject = _.filter(hours, function (o) {
-          return o.store_ids === null && !o.is_holiday;
+          return o.store_ids === null && !o.is_holiday  && !o.is_extended_hour;
         });
 
         hoursObject.locale = state.locale; // IMPORTANT! Here I am adding the state's locale in the hours object such that it will trigger a change in the template anytime the locale changes in the app.
