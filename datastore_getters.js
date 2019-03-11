@@ -62,6 +62,21 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
         return null;
       }
     },
+    getPropertyExtendedHours: state => {
+      try {
+        let hours = state.hours;
+        let property = state.property;
+        let timezone = property.timezone_moment;
+        let hoursObject = _.filter(hours, function (o) {
+          return o.store_ids === null && o.is_holiday;
+        });
+
+        hoursObject.locale = state.locale; // IMPORTANT! Here I am adding the state's locale in the hours object such that it will trigger a change in the template anytime the locale changes in the app.
+        return hoursObject;
+      } catch (err) {
+        return null;
+      }
+    },
     processedPromos: state => {
       try {
         let promos = state.promotions;
