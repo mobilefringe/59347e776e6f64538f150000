@@ -278,6 +278,8 @@
                     if(loc) {
                         console.log(loc.title + ' opened.');
                         console.log(loc);
+                    } else {
+                        console.log(Cannot open)
                     }
                 },
                 locationclosed(e) {
