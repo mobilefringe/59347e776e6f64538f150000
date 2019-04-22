@@ -358,6 +358,7 @@ var SocialSharing = {
 SocialSharing.version = '2.3.3';
 
 SocialSharing.install = function (Vue) {
+    console.log("Vue", Vue)
   Vue.component('social-sharing', SocialSharing);
 };
 
