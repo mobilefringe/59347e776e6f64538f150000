@@ -22,7 +22,6 @@ var SocialSharingNetwork = {
   },
 
   render: function (createElement, context) {
-      console.log("Vue", Vue)
     var network = context.parent._data.baseNetworks[context.props.network];
 
     if (!network) {
