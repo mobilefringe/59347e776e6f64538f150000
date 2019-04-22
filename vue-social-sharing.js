@@ -321,7 +321,7 @@ var SocialSharing = {
    * Merge base networks list with user's list
    */
   beforeMount: function beforeMount () {
-      console.log("Vue.util", Vue)
+      console.log("Vue.util", Vue, "$window", $window)
     this.baseNetworks = Vue.util.extend(this.baseNetworks, this.networks);
   },
 
