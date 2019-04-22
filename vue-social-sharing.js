@@ -4,7 +4,7 @@
  * Released under the MIT License.
  */
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('vue')) :
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('vue').default) :
 	typeof define === 'function' && define.amd ? define(['vue'], factory) :
 	(global.VueSocialSharing = factory(global.Vue));
 }(this, (function (Vue) { 'use strict';
