@@ -1,6 +1,6 @@
 /*!
  * vue-social-sharing v2.3.3 
- * (c) 2017 nicolasbeauvais
+ * (c) 2017 nicolasbeauvais THIS IS JS
  * Released under the MIT License.
  */
 (function (global, factory) {
