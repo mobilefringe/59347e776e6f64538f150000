@@ -23,7 +23,7 @@
 						<div class="store_tag" v-if="!store.total_published_promos && !store.is_coming_soon_store && store.is_new_store">
 							<div class="store_tag_text">New Store</div>
 						</div>
-						<div class="store_details">
+						<div class="store_details" :class="{ no_logo : store.no_store_logo }">
 						    <div class="store_text"><h2>{{ store.name }}</h2></div>    
 						</div>
             		</router-link>
