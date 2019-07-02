@@ -34,7 +34,6 @@
 </template>
 <script>
     define(["Vue", "vuex"], function(Vue, Vuex) {
-        Vue.use(VueMasonryPlugin.default);
         return Vue.component("image-popup", {
             template: template, // the variable template will be injected,
             data() {
