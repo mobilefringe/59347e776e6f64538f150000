@@ -67,6 +67,12 @@
                   }
                   return popup;
                 },
+            },
+            methods: {
+                closePopup() {
+                  this.show_popup = false;
+                  document.getElementById("popup_backdrop").style.display = "none";
+                }
             }
         });
     });
