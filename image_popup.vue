@@ -33,7 +33,7 @@
                           return _.includes(o.slug, "english");
                         });
                       }
-                      return popup;
+                      this.currentPopup= popup;
                     });
             },
             mounted() {
