@@ -15,13 +15,11 @@
             data() {
                 return {
                   show_popup: false,
-                  dataLoaded:false,
                   currentPopup: null
                 }
             },
             created(){
                 this.loadData().then(response => {
-                    this.dataLoaded = true;  
                     //   var popup = this.$store.state.popups[0];
                       var popup = null;
                       if (this.locale == "fr") {
@@ -33,7 +31,7 @@
                           return _.includes(o.slug, "english");
                         });
                       }
-                      this.currentPopup= popup;
+                      this.currentPopup = popup;
                     });
             },
             mounted() {
