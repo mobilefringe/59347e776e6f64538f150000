@@ -81,3 +81,40 @@
         });
     });
 </script>
+<style>
+    /******** popup ***********/
+.custom_backdrop {
+  opacity: 0.5;
+  display: none;
+}
+
+.close_popup {
+  height: 33px;
+  width: 56px;
+  left: auto;
+  right: 0px;
+  bottom: auto;
+  top: 0px;
+  padding: 8px;
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 14px;
+  border: 1px none #ffffff;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px 0px rgba(2, 2, 2, 0.23);
+  text-shadow: 0px 0px 0px rgba(0, 0, 0, 0.23);
+  background-color: #012d1c;
+  text-align: center;
+  position: absolute;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.popup_container {
+  position: absolute;
+  z-index: 1041;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+</style>
