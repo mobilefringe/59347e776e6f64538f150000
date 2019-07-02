@@ -22,14 +22,7 @@
                   console.log("this", this)
                   var popup = null;
                   if (this.$store.state.popups && this.$store.state.popups.length > 0) {
-                    popup = _.find(this.$store.state.popups, function(o) {
-                      return _.includes(o.slug, "french");
-                    });
-                  } else {
-                    popup = _.find(this.$store.state.popups, function(o) {
-                      return _.includes(o.slug, "english");
-                    });
-                  }
+                    popup = this.$store.state.popups[0]
                   this.currentPopup = popup;
                   var viewed = null;
                     viewed = Cookies.get("popup_viewed");
