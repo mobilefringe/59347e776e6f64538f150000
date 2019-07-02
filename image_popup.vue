@@ -23,6 +23,37 @@
                     this.dataLoaded = true;  
                 });
             },
+            
+  mounted() {
+    var viewed = null;
+    if (this.locale == "en") {
+      viewed = Cookies.get("popup_viewed_en");
+    } else {
+      viewed = Cookies.get("popup_viewed_fr");
+    }
+
+    if (this.currentPopup && viewed !== "true") {
+      if (this.locale == "en") {
+        Cookies.set("popup_viewed_en", "true");
+      } else {
+        Cookies.set("popup_viewed_fr", "true");
+      }
+      this.show_popup = true;
+      this.currentPopup.image_url =
+        "//mallmaverick.cdn.speedyrails.net" + this.currentPopup.photo_url;
+      if (document.getElementById("popup_backdrop")) {
+        document.getElementById("popup_backdrop").style.display = "block";
+      }
+    } else {
+      if (document.getElementById("popup_backdrop")) {
+        document.getElementById("popup_backdrop").style.display = "none";
+      }
+    }
+    //update SEO
+    if (this.tempSEO) {
+      this.currentSEO = this.localeSEO(this.tempSEO, this.locale);
+    }
+  },
             watch: {
                 show_popup() {
                   if (this.show_popup === true) {
