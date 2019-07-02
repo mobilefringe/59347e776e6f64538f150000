@@ -1,11 +1,9 @@
 <template>
-    <div v-if="dataLoaded">
-      <div class="popup_container" v-if="currentPopup && show_popup">
-          <i class="fa fa-times close_popup" @click="closePopup()"></i>
-          <a :href="currentPopup.photo_link" target="_target">
-            <img :src="currentPopup.image_url">
-          </a>
-      </div>
+    <div class="popup_container" v-if="currentPopup && show_popup">
+      <i class="fa fa-times close_popup" @click="closePopup()"></i>
+      <a :href="currentPopup.photo_link" target="_target">
+        <img :src="currentPopup.image_url">
+      </a>
     </div>
 </template>
 <script>
