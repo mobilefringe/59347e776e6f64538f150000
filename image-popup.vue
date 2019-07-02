@@ -25,6 +25,10 @@
                 }
             },
             computed: {
+                ...Vuex.mapGetters([
+                    'property',
+                    'timezone',
+                ]),
                 currentPopup() {
                   //   var popup = this.$store.state.popups[0];
                   var popup = null;
