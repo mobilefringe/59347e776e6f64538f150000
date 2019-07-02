@@ -15,13 +15,26 @@
             data() {
                 return {
                   show_popup: false,
-                  dataLoaded:false
+                  dataLoaded:false,
+                  currentPopup: null
                 }
             },
             created(){
                 this.loadData().then(response => {
                     this.dataLoaded = true;  
-                });
+                    //   var popup = this.$store.state.popups[0];
+                      var popup = null;
+                      if (this.locale == "fr") {
+                        popup = _.find(this.$store.state.popups, function(o) {
+                          return _.includes(o.slug, "french");
+                        });
+                      } else {
+                        popup = _.find(this.$store.state.popups, function(o) {
+                          return _.includes(o.slug, "english");
+                        });
+                      }
+                      return popup;
+                    });
             },
             mounted() {
                 var viewed = null;
@@ -48,21 +61,7 @@
                 ...Vuex.mapGetters([
                     'property',
                     'timezone'
-                ]),
-                currentPopup() {
-                  //   var popup = this.$store.state.popups[0];
-                  var popup = null;
-                  if (this.locale == "fr") {
-                    popup = _.find(this.$store.state.popups, function(o) {
-                      return _.includes(o.slug, "french");
-                    });
-                  } else {
-                    popup = _.find(this.$store.state.popups, function(o) {
-                      return _.includes(o.slug, "english");
-                    });
-                  }
-                  return popup;
-                }
+                ])
             },
             methods: {
                 closePopup() {
