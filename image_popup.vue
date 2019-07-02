@@ -19,6 +19,7 @@
             created(){
                 this.loadData().then(response => {
                     //   var popup = this.$store.state.popups[0];
+                    console.log("this", this)
                       var popup = null;
                       if (this.locale == "fr") {
                         popup = _.find(this.$store.state.popups, function(o) {
