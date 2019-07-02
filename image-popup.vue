@@ -38,10 +38,20 @@
         return Vue.component("image-popup", {
             template: template, // the variable template will be injected,
             data() {
-            return {
-              show_popup: false
-            };
-          },
+                return {
+                  show_popup: false
+                };
+            },
+            
+            watch: {
+                show_popup() {
+                  if (this.show_popup === true) {
+                    document.body.classList.add("no-scroll");
+                  } else if (this.show_popup === false) {
+                    document.body.classList.remove("no-scroll");
+                  }
+                }
+            },
         });
     });
 </script>
