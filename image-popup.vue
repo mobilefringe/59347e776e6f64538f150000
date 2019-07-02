@@ -38,25 +38,10 @@
         return Vue.component("image-popup", {
             template: template, // the variable template will be injected,
             data() {
-    return {
-      slickOptions: {
-        arrows: true,
-        autoplay: false,
-        autoplaySpeed: 5000,
-        cssEase: "linear",
-        dots: false,
-        fade: true,
-        infinite: true,
-        slidesToShow: 1,
-        speed: 1600,
-        prevArrow: ".prev",
-        nextArrow: ".next"
-      },
-      show_popup: false,
-      currentSEO: {},
-      tempSEO: null
-    };
-  },
+            return {
+              show_popup: false
+            };
+          },
         });
     });
 </script>
