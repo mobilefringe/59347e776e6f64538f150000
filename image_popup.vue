@@ -41,10 +41,6 @@
                   this.currentPopup.image_url =
                     "//mallmaverick.cdn.speedyrails.net" + this.currentPopup.photo_url;
                   $('<div class="modal-backdrop custom_backdrop"></div>').appendTo(document.body);
-                } else {
-                  if (document.getElementById("popup_backdrop")) {
-                    document.getElementById("popup_backdrop").style.display = "none";
-                  }
                 }
             },
             watch: {
