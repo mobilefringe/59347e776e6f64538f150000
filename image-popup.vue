@@ -27,7 +27,7 @@
             computed: {
                 ...Vuex.mapGetters([
                     'property',
-                    'timezone',
+                    'timezone'
                 ]),
                 currentPopup() {
                   //   var popup = this.$store.state.popups[0];
@@ -48,7 +48,15 @@
                 closePopup() {
                   this.show_popup = false;
                   document.getElementById("popup_backdrop").style.display = "none";
-                }
+                },
+                loadData: async function() {
+                    try {
+                        let results = await Promise.all([this.$store.dispatch("getData", "banners"), this.$store.dispatch("getData","promotions"), this.$store.dispatch("getData", "events"), this.$store.dispatch('LOAD_PAGE_DATA', {url: "https://pleasanthill.mallmaverick.com/api/v4/pleasanthill/social.json"})]);
+                        return results;
+                    } catch(e) {
+                        console.log("Error loading data: " + e.message);    
+                    }
+                },
             }
         });
     });
