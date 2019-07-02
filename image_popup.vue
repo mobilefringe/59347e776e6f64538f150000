@@ -25,11 +25,7 @@
             },
             mounted() {
                 var viewed = null;
-                if (this.locale == "en") {
-                  viewed = Cookies.get("popup_viewed_en");
-                } else {
-                  viewed = Cookies.get("popup_viewed_fr");
-                }
+                viewed = Cookies.get("popup_viewed");
             
                 if (this.currentPopup && viewed !== "true") {
                   if (this.locale == "en") {
