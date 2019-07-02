@@ -19,19 +19,29 @@
             created(){
                 this.loadData().then(response => {
                     //   var popup = this.$store.state.popups[0];
-                    console.log("this", this)
-                      var popup = null;
-                      if (this.locale == "fr") {
-                        popup = _.find(this.$store.state.popups, function(o) {
-                          return _.includes(o.slug, "french");
-                        });
-                      } else {
-                        popup = _.find(this.$store.state.popups, function(o) {
-                          return _.includes(o.slug, "english");
-                        });
-                      }
-                      this.currentPopup = popup;
+                  console.log("this", this)
+                  var popup = null;
+                  if (this.locale == "fr") {
+                    popup = _.find(this.$store.state.popups, function(o) {
+                      return _.includes(o.slug, "french");
                     });
+                  } else {
+                    popup = _.find(this.$store.state.popups, function(o) {
+                      return _.includes(o.slug, "english");
+                    });
+                  }
+                  this.currentPopup = popup;
+                  var viewed = null;
+                viewed = Cookies.get("popup_viewed");
+            
+                if (this.currentPopup && viewed !== "true") {
+                  Cookies.set("popup_viewed", "true");
+                  this.show_popup = true;
+                  this.currentPopup.image_url =
+                    "//mallmaverick.cdn.speedyrails.net" + this.currentPopup.photo_url;
+                  $('<div class="modal-backdrop custom_backdrop"></div>').appendTo(document.body);
+                }
+                });
             },
             watch: {
                 show_popup() {
