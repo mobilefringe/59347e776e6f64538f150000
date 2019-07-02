@@ -75,7 +75,7 @@
             methods: {
                 closePopup() {
                   this.show_popup = false;
-                  document.getElementById("popup_backdrop").style.display = "none";
+                  $(".modal-backdrop").remove();
                 },
                 loadData: async function() {
                     try {
