@@ -42,7 +42,6 @@
                   show_popup: false
                 };
             },
-            
             watch: {
                 show_popup() {
                   if (this.show_popup === true) {
