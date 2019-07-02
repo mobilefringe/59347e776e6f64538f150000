@@ -48,10 +48,6 @@
                     document.getElementById("popup_backdrop").style.display = "none";
                   }
                 }
-                //update SEO
-                if (this.tempSEO) {
-                  this.currentSEO = this.localeSEO(this.tempSEO, this.locale);
-                }
             },
             watch: {
                 show_popup() {
