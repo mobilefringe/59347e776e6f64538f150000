@@ -33,7 +33,7 @@
     </div>
 </template>
 <script>
-    define(["Vue", "vuex",  "masonry","vue-masonry-plugin"], function(Vue, Vuex, masonry, VueMasonryPlugin) {
+    define(["Vue", "vuex"], function(Vue, Vuex) {
         Vue.use(VueMasonryPlugin.default);
         return Vue.component("image-popup", {
             template: template, // the variable template will be injected,
