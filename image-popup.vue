@@ -52,6 +52,23 @@
                   }
                 }
             },
+            computed: {
+                
+    currentPopup() {
+      //   var popup = this.$store.state.popups[0];
+      var popup = null;
+      if (this.locale == "fr") {
+        popup = _.find(this.$store.state.popups, function(o) {
+          return _.includes(o.slug, "french");
+        });
+      } else {
+        popup = _.find(this.$store.state.popups, function(o) {
+          return _.includes(o.slug, "english");
+        });
+      }
+      return popup;
+    },
+            }
         });
     });
 </script>
