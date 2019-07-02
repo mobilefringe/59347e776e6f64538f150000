@@ -28,11 +28,7 @@
                 viewed = Cookies.get("popup_viewed");
             
                 if (this.currentPopup && viewed !== "true") {
-                  if (this.locale == "en") {
-                    Cookies.set("popup_viewed_en", "true");
-                  } else {
-                    Cookies.set("popup_viewed_fr", "true");
-                  }
+                  Cookies.set("popup_viewed", "true");
                   this.show_popup = true;
                   this.currentPopup.image_url =
                     "//mallmaverick.cdn.speedyrails.net" + this.currentPopup.photo_url;
