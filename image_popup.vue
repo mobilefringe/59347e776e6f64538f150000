@@ -9,7 +9,7 @@
     </div>
 </template>
 <script>
-    define(["Vue", "vuex"], function(Vue, Vuex) {
+    define(["Vue", "vuex", "jquery", 'js-cookie'], function(Vue, Vuex,$, Cookies) {
         return Vue.component("image-popup-component", {
             template: template, // the variable template will be injected,
             data() {
