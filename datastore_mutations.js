@@ -24,6 +24,9 @@ define(['datastore_mutation_types', 'js-cookie'], function (types, Cookies) {
     [types.SET_EVENTS] (state, {events}) {
       state.events = events;
     },
+    [types.SET_NEWS](state, {news}) {
+        state.news = news;
+    },
     [types.SET_FASHIONS] (state, {fashions}) {
       state.fashions = fashions;
     },
