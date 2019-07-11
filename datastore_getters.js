@@ -266,6 +266,14 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       let events = getters.processedEvents;
       return events.find(event => _.toNumber(event.id) === _.toNumber(id))
     },
+    findNewsBySlug: (state, getters) => (slug) => {
+        let events = getters.processedNews;
+        return events.find(event => event.slug === slug)
+    },
+    findNewsById: (state, getters) => (id) => {
+        let events = getters.processedNews;
+        return events.find(event => _.toNumber(event.id) === _.toNumber(id))
+    },
     findCouponBySlug: (state, getters) => (slug) => {
       let coupons = getters.processedCoupons;
       return coupons.find(coupon => coupon.slug === slug)
