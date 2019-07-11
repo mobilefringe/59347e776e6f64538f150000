@@ -119,6 +119,27 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
         return [];
       }
     },
+    processedNews: state => {
+        try {
+          let news = state.news;
+          let stores = state.stores;
+          // Add image_url attribute with CDN link
+          news.map(event => {
+            event.image_url = event.event_image_url_abs;
+            event.locale = state.locale;
+            event.store = null;
+            if (event.eventable_type === "Store") {
+              let foundStore = stores.find(store => store.id === event.eventable_id.toString());
+              if (foundStore) {
+                event.store = foundStore;
+              }
+            }
+          });
+          return news;
+        } catch (err) {
+          return [];
+        }
+    },
     processedCoupons: state => {
       try {
         let coupons = state.coupons;
