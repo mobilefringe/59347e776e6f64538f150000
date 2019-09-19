@@ -348,6 +348,14 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       let hours = state.hours;
       return hours.find(hour => _.toNumber(hour.id) === _.toNumber(id))
     },
+    findGalleryById: (state, getters) => (id) => {
+        let repos = state.fashions;
+        return repos.find(repo => repo.id === id)
+    },
+    findGalleryBySlug: (state, getters) => (slug) => {
+        let repos = state.fashions;
+        return repos.find(repo => repo.slug === slug)
+    },
     findMetaDataByPath: (state, getters) => (path) => {
       try {
         let meta_data = state.meta_data.meta_data;
