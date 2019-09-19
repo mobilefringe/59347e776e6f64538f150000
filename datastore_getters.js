@@ -219,6 +219,13 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
         return [];
       }
     },
+    processedGallerries: state => {
+      try {
+        return state.fashions;
+      } catch (err) {
+        return [];
+      }
+    },
     findStoreBySlug: (state, getters) => (slug) => {
       let stores = state.stores;
       return stores.find(store => store.slug === slug)
