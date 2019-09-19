@@ -219,7 +219,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
         return [];
       }
     },
-    processedGallerries: state => {
+    processedGalleries: state => {
       try {
         return state.fashions;
       } catch (err) {
