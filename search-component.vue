@@ -80,6 +80,10 @@
     return Vue.component('search-component', {
       template: template,
       props: {
+        inputID: {
+            type: String,
+            default: "search_box"
+        }
         value: {
           type: String,
           default: ""
