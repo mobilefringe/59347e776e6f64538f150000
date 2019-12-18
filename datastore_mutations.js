@@ -51,7 +51,6 @@ define(['datastore_mutation_types', 'js-cookie'], function (types, Cookies) {
     },
     [types.SET_META_DATA] (state, {list}) {
       state.meta_data = list;
-      console.log('state.meta_data', state.meta_data)
     },
     [types.SET_POIS] (state, {pois}) {
       state.pois = pois;
