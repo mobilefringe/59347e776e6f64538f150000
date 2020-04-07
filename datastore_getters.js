@@ -212,7 +212,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       try {
         let contests = state.contests;
         contests.map(contest => {
-          contest.image_url = "https://mallmaverick.cdn.speedyrails.net" + contest.photo_url;
+          contest.image_url = "https://assets.mallmaverick.com" + contest.photo_url;
         });
         return contests;
       } catch (err) {
