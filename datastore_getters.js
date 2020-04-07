@@ -186,7 +186,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
         let stores = state.stores;
         // Add image_url attribute with CDN link
         stores.map(store => {
-          store.image_url = "https://mallmaverick.cdn.speedyrails.net" + store.store_front_url;
+          store.image_url = "https://assets.mallmaverick.com" + store.store_front_url;
           //if it has https || http remove it
         });
         return stores;
