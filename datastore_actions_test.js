@@ -70,7 +70,7 @@ define(['axios', 'datastore_mutation_types', 'js-cookie'], function (axios, type
             });
         }
         else {
-            axios.get('https://www.mallmaverick.com/api/' + state.api.version + "/" + state.api.site + "/" + resource + ".json?bust=true").then(response => {
+            axios.get('https://'+state.api.site+'.mallmaverick.com/api/' + state.api.version + "/" + state.api.site + "/" + resource + ".json?bust=true").then(response => {
                 commit(types.SET_SUBCATEGORIES, { subcategories: response.data.subcategories });
                 resolve(response);
             }).catch(error => {
