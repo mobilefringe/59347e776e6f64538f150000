@@ -10,7 +10,7 @@ define(['axios', 'datastore_mutation_types', 'js-cookie'], function (axios, type
       }
       return new Promise((resolve, reject) => {
         if(resource !== "subcategories") {
-            axios.get('https://www.mallmaverick.com/api/' + state.api.version + "/" + state.api.site + "/" + resource + ".json").then(response => {
+            axios.get('https://'+state.api.site+'.mallmaverick.com/api/' + state.api.version + "/" + state.api.site + "/" + resource + ".json").then(response => {
               switch(resource) {
                 case "banners":
                   commit(types.SET_BANNERS, { banners: response.data.banners });
