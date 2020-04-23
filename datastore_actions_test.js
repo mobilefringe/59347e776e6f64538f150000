@@ -116,7 +116,7 @@ define(['axios', 'datastore_mutation_types', 'js-cookie'], function (axios, type
     },
     LOAD_META_DATA_NEW: function ({state, commit}) {
       return new Promise((resolve, reject) => {
-        axios.get('https://www.mallmaverick.com/api/' + state.api.version + "/" + state.api.site + "/seo.json").then(response => {
+        axios.get('https://'+state.api.site+'.mallmaverick.com/api/' + state.api.version + "/" + state.api.site + "/seo.json").then(response => {
           commit(types.SET_META_DATA, {
             list: response.data
           })
