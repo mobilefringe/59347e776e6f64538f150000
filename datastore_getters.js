@@ -360,6 +360,7 @@ define(['moment', 'moment-timezone', 'lodash'], function (moment, tz, _) {
       try {
         let meta_data = state.meta_data.meta_data;
         let found = meta_data.find(meta => meta.path === path);
+        console.log('found', found)
         if (found) {
           return found;
         } else {
